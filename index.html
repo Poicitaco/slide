@@ -10,71 +10,79 @@
 <link rel="stylesheet" href="./vendor/html-ppt/assets/animations/animations.css">
 <style>
   :root {
-    --steam-navy: #17202a;
+    --steam-dark: #17202a;
     --steam-blue: #1b6fa8;
     --steam-cyan: #66c0f4;
     --steam-green: #75b73b;
     --steam-amber: #f2a541;
+    --paper: #f7fafc;
+  }
+
+  .steam-deck .slide {
+    padding: 48px 66px;
   }
 
   .steam-deck .slide::before {
     content: "";
     position: absolute;
     inset: 0;
-    pointer-events: none;
     background:
       linear-gradient(120deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
-      radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--steam-green) 10%, transparent), transparent 24%);
-    opacity: 0.75;
+      radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--steam-green) 12%, transparent), transparent 22%);
+    pointer-events: none;
   }
 
-  .steam-deck .slide {
-    padding: 58px 76px;
+  .steam-deck .speaker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-2);
+    font-size: 14px;
+    font-weight: 700;
   }
 
-  .steam-deck .kicker {
-    margin: 0 0 12px;
-    font-family: var(--font-mono, monospace);
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-3);
+  .steam-deck .speaker b {
+    color: var(--accent);
   }
 
   .steam-deck h1 {
     margin: 0;
     max-width: 980px;
-    font-size: 58px;
+    font-size: 56px;
     line-height: 1.08;
     letter-spacing: 0;
   }
 
   .steam-deck h2 {
-    margin: 0 0 24px;
-    font-size: 40px;
+    margin: 0 0 20px;
+    font-size: 38px;
     line-height: 1.18;
     letter-spacing: 0;
   }
 
   .steam-deck h3 {
-    margin: 0 0 10px;
-    font-size: 22px;
+    margin: 0 0 8px;
+    font-size: 20px;
   }
 
   .steam-deck p,
   .steam-deck li,
   .steam-deck td,
   .steam-deck th {
-    font-size: 17px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.48;
   }
 
   .steam-deck .lede {
-    max-width: 780px;
-    margin-top: 22px;
+    max-width: 850px;
+    margin: 20px 0 0;
     color: var(--text-2);
-    font-size: 21px;
-    line-height: 1.55;
+    font-size: 20px;
   }
 
   .steam-deck .accent {
@@ -82,97 +90,77 @@
     font-weight: 800;
   }
 
-  .steam-deck .mono {
-    font-family: var(--font-mono, monospace);
-    font-size: 0.9em;
-    color: var(--accent);
-    background: var(--surface-2);
-    border-radius: 6px;
-    padding: 2px 7px;
-  }
-
   .steam-deck .grid {
     display: grid;
-    gap: 18px;
+    gap: 16px;
   }
 
-  .steam-deck .g2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .steam-deck .g3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .steam-deck .g2 { grid-template-columns: 1fr 1fr; }
+  .steam-deck .g3 { grid-template-columns: repeat(3, 1fr); }
+  .steam-deck .g4 { grid-template-columns: repeat(4, 1fr); }
 
   .steam-deck .card {
-    min-height: 116px;
-    padding: 18px 20px;
+    min-height: 112px;
+    padding: 17px 18px;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--surface);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.08);
-  }
-
-  .steam-deck .card strong {
-    color: var(--text-1);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
   }
 
   .steam-deck .card p {
     margin: 0;
     color: var(--text-2);
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
-  .steam-deck .stat {
-    padding: 18px 20px;
-    border-left: 5px solid var(--accent);
-    background: var(--surface);
-    border-radius: 10px;
-  }
-
-  .steam-deck .stat b {
-    display: block;
-    font-size: 30px;
-    line-height: 1.1;
-    color: var(--accent);
-  }
-
-  .steam-deck .stat span {
-    display: block;
-    margin-top: 8px;
-    color: var(--text-2);
-    font-size: 15px;
-  }
-
-  .steam-deck .split {
+  .steam-deck .hero {
     display: grid;
-    grid-template-columns: 0.92fr 1.08fr;
-    gap: 30px;
-    align-items: center;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 30px;
   }
 
-  .steam-deck .image-frame {
+  .steam-deck .hero-box {
+    padding: 28px;
+    border-radius: 16px;
+    color: white;
+    background: linear-gradient(135deg, rgba(23,32,42,0.98), rgba(27,111,168,0.94));
+    box-shadow: 0 22px 56px rgba(0,0,0,0.24);
+  }
+
+  .steam-deck .hero-box h3 {
+    font-size: 28px;
+  }
+
+  .steam-deck .hero-box p {
+    color: rgba(255,255,255,0.84);
+    font-size: 17px;
+  }
+
+  .steam-deck .tag-list {
     display: grid;
-    place-items: center;
-    min-height: 430px;
-    padding: 14px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .steam-deck .tag {
+    padding: 13px 14px;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--surface);
-  }
-
-  .steam-deck .image-frame img {
-    max-width: 100%;
-    max-height: 410px;
-    object-fit: contain;
+    color: var(--text-2);
+    font-size: 14px;
   }
 
   .steam-deck table {
     width: 100%;
     border-collapse: collapse;
+    border-radius: 12px;
     overflow: hidden;
-    border-radius: 10px;
     background: var(--surface);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
   }
 
   .steam-deck th,
@@ -191,41 +179,79 @@
 
   .steam-deck td {
     color: var(--text-2);
-    font-size: 14.5px;
+    font-size: 14px;
   }
 
-  .steam-deck .timeline {
+  .steam-deck .split {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .steam-deck .image-frame {
+    display: grid;
+    place-items: center;
+    min-height: 405px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+  }
+
+  .steam-deck .image-frame img {
+    max-width: 100%;
+    max-height: 385px;
+    object-fit: contain;
+  }
+
+  .steam-deck .flow {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
   }
 
   .steam-deck .step {
-    min-height: 150px;
-    padding: 14px;
+    min-height: 130px;
+    padding: 13px;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--surface);
   }
 
   .steam-deck .step b {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--accent);
     font-family: var(--font-mono, monospace);
   }
 
   .steam-deck .step span {
+    display: block;
     color: var(--text-2);
-    font-size: 14px;
-    line-height: 1.45;
+    font-size: 13.5px;
+    line-height: 1.42;
   }
 
-  .steam-deck .footer-note {
+  .steam-deck .why {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-left: 5px solid var(--steam-amber);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-2);
+  }
+
+  .steam-deck .why strong {
+    color: var(--text-1);
+  }
+
+  .steam-deck .footer {
     position: absolute;
-    left: 76px;
-    right: 76px;
-    bottom: 28px;
+    left: 66px;
+    right: 66px;
+    bottom: 24px;
     display: flex;
     justify-content: space-between;
     gap: 18px;
@@ -234,525 +260,398 @@
     font-size: 12px;
   }
 
-  .steam-deck .hero-panel {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 26px;
-    align-items: stretch;
-    margin-top: 34px;
+  .steam-deck .compact {
+    margin: 0;
+    padding-left: 20px;
   }
 
-  .steam-deck .hero-box {
-    min-height: 250px;
-    padding: 28px;
-    border-radius: 14px;
-    color: white;
-    background:
-      linear-gradient(135deg, rgba(23,32,42,0.96), rgba(27,111,168,0.92)),
-      linear-gradient(45deg, rgba(102,192,244,0.22), transparent);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+  .steam-deck .compact li {
+    margin-bottom: 8px;
   }
 
-  .steam-deck .hero-box h3 {
-    font-size: 28px;
-  }
-
-  .steam-deck .hero-box p {
-    color: rgba(255,255,255,0.82);
-    font-size: 17px;
-  }
-
-  .steam-deck .mini-nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .steam-deck .mini-nav span {
-    display: block;
-    padding: 13px 14px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--surface);
-    color: var(--text-2);
-    font-size: 14px;
-  }
-
-  .steam-deck .ui-grid {
+  .steam-deck .screen-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    gap: 13px;
   }
 
-  .steam-deck .ui-card {
-    min-height: 132px;
-    padding: 15px;
-    border-radius: 12px;
+  .steam-deck .screen-card {
+    min-height: 128px;
+    padding: 14px;
     border: 1px solid var(--border);
+    border-radius: 12px;
     background: var(--surface);
   }
 
-  .steam-deck .ui-card .screen {
-    height: 48px;
-    margin-bottom: 12px;
-    border-radius: 8px;
+  .steam-deck .screen-card .mock {
+    height: 44px;
+    margin-bottom: 10px;
+    border-radius: 9px;
     background: linear-gradient(135deg, var(--steam-blue), var(--steam-cyan));
     position: relative;
     overflow: hidden;
   }
 
-  .steam-deck .ui-card .screen::after {
+  .steam-deck .screen-card .mock::after {
     content: "";
     position: absolute;
-    inset: 9px 12px;
-    border-top: 7px solid rgba(255,255,255,0.72);
-    border-bottom: 7px solid rgba(255,255,255,0.32);
+    left: 10px;
+    right: 10px;
+    top: 11px;
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 15px 0 rgba(255,255,255,0.32);
   }
 
-  .steam-deck .ui-card b {
+  .steam-deck .screen-card b {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: var(--text-1);
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
-  .steam-deck .ui-card p {
+  .steam-deck .screen-card p {
     margin: 0;
     color: var(--text-2);
-    font-size: 13px;
+    font-size: 12.8px;
     line-height: 1.38;
   }
 
-  .steam-deck .flow-box {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 12px;
-    align-items: center;
-    margin-top: 18px;
-  }
-
-  .steam-deck .flow-item {
-    min-height: 92px;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-  }
-
-  .steam-deck .flow-arrow {
-    color: var(--accent);
-    font-size: 28px;
-    font-weight: 800;
-  }
-
-  .steam-deck .member-head {
-    display: grid;
-    grid-template-columns: 92px 1fr;
-    gap: 18px;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-
-  .steam-deck .avatar {
-    display: grid;
-    place-items: center;
-    width: 82px;
-    height: 82px;
-    border-radius: 18px;
-    color: white;
-    background: linear-gradient(135deg, var(--steam-blue), var(--steam-green));
-    font-size: 28px;
-    font-weight: 900;
-  }
-
-  .steam-deck .member-head p {
-    margin: 4px 0 0;
-    color: var(--text-2);
-  }
-
-  .steam-deck .why {
-    border-left: 5px solid var(--steam-amber);
-    padding: 15px 18px;
-    border-radius: 10px;
-    background: var(--surface);
-    color: var(--text-2);
-  }
-
-  .steam-deck .compact-list {
-    margin: 0;
-    padding-left: 22px;
-  }
-
-  .steam-deck .compact-list li {
-    margin-bottom: 8px;
-  }
-
-  .steam-deck .tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 22px;
-  }
-
-  .steam-deck .tag {
-    padding: 7px 10px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--text-2);
-    background: var(--surface);
-    font-size: 14px;
-  }
-
-  .steam-deck .notes {
-    display: none;
-  }
+  .steam-deck .notes { display: none; }
 </style>
 </head>
 <body class="steam-deck">
 <div class="deck">
 
   <section class="slide" data-title="Mở đầu">
-    <p class="kicker">Kỹ thuật phần mềm</p>
-    <h1 class="anim-fade-up">Phân tích và thiết kế hệ thống <span class="accent">Steam Store</span></h1>
-    <p class="lede">Bài trình bày tổng hợp chủ đề, phạm vi hệ thống, phân công nhóm và các mô hình phân tích thiết kế tiêu biểu.</p>
-    <div class="hero-panel">
+    <div class="speaker">Trình bày: <b>Đạt</b> · mở đầu</div>
+    <h1>Phân tích và thiết kế hệ thống <span class="accent">Steam Store</span></h1>
+    <p class="lede">Bài trình bày đi theo đúng vai trò của 5 thành viên: Đạt tổng quan, Khoa yêu cầu, Dương giao diện, Khánh UML nghiệp vụ, Đô kiến trúc và dữ liệu.</p>
+    <div class="hero">
       <div class="hero-box">
         <h3>Steam Store dưới góc nhìn kỹ thuật phần mềm</h3>
-        <p>Không chỉ là website bán game, Steam Store còn là hệ thống quản lý tài khoản, giao dịch, license, review, hoàn tiền và nội dung từ nhà phát hành.</p>
+        <p>Steam Store không chỉ là website bán game. Đây là hệ thống quản lý tài khoản, catalog game, giỏ hàng, thanh toán, license, thư viện, review, refund và công cụ cho nhà phát hành.</p>
       </div>
-      <div class="mini-nav">
-        <span>Nhóm: Đạt, Khoa, Khánh, Dương, Đô</span>
-        <span>Chủ đề: phân tích và thiết kế hệ thống</span>
-        <span>Trọng tâm: mua game, license, refund</span>
-        <span>Minh chứng: báo cáo + UML</span>
+      <div class="tag-list">
+        <div class="tag">Nhóm: Đạt, Khoa, Khánh, Dương, Đô</div>
+        <div class="tag">Đề tài: phân tích website Steam Store</div>
+        <div class="tag">Trọng tâm: mua game, license, refund</div>
+        <div class="tag">Minh chứng: báo cáo + bộ sơ đồ UML</div>
       </div>
     </div>
-    <div class="footer-note"><span>Steam Store analysis deck</span><span class="slide-number" data-current="1" data-total="17"></span></div>
-    <aside class="notes"><p>Em xin ch?o th?y v? c?c b?n. Nh?m em tr?nh b?y ?? t?i <strong>ph?n t?ch v? thi?t k? h? th?ng Steam Store</strong>. Steam Store l? n?n t?ng ph?n ph?i game tr?c tuy?n, nh?ng trong ph?m vi m?n k? thu?t ph?n m?m, nh?m xem Steam Store nh? m?t h? th?ng ph?n m?m c? nhi?u nghi?p v? li?n k?t v?i nhau.</p>
-<p>H? th?ng c? ng??i d?ng t?m ki?m game, xem chi ti?t, th?m wishlist, mua game, thanh to?n, nh?n game trong th? vi?n, vi?t review v? y?u c?u ho?n ti?n. Ngo?i ng??i d?ng, h? th?ng c?n c? nh? ph?t h?nh qu?n l? s?n ph?m, qu?n tr? vi?n ki?m duy?t n?i dung v? c?ng thanh to?n x? l? giao d?ch.</p>
-<p>H??ng ph?n t?ch c?a nh?m ?i t? t?ng quan ??n chi ti?t. Tr??c h?t l? x?c ??nh y?u c?u v? vai tr? ng??i d?ng. Sau ?? nh?m m? h?nh h?a b?ng use case, sequence, activity, state, BCE, class diagram, ERD v? deployment. M?i m? h?nh gi?i th?ch m?t g?c nh?n kh?c nhau c?a h? th?ng.</p></aside>
+    <div class="footer"><span>Steam Store analysis</span><span class="slide-number" data-current="1" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Em xin chào thầy và các bạn. Nhóm em trình bày đề tài phân tích và thiết kế hệ thống Steam Store. Trong bài này, nhóm không xem Steam Store chỉ là một trang bán game, mà xem nó như một hệ thống phần mềm có nhiều nghiệp vụ liên kết với nhau.</p>
+      <p>Hệ thống có người dùng tìm kiếm game, xem chi tiết, thêm vào wishlist, mua game, thanh toán, nhận game trong thư viện, viết review và yêu cầu hoàn tiền. Ngoài ra còn có nhà phát hành quản lý game, quản trị viên kiểm duyệt và cổng thanh toán xử lý giao dịch.</p>
+      <p>Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách tổng quan và kết luận. Khoa phụ trách yêu cầu và phân quyền. Dương phụ trách giao diện và hành trình người dùng. Khánh phụ trách UML nghiệp vụ. Đô phụ trách kiến trúc, dữ liệu và thiết kế kỹ thuật.</p>
+    </aside>
   </section>
 
-  <section class="slide" data-title="Mục lục">
-    <p class="kicker">Nội dung trình bày</p>
-    <h2>Nội dung trình bày</h2>
-    <div class="grid g2">
-      <div class="card"><h3>1. Giới thiệu chủ đề</h3><p>Steam Store là gì, phạm vi hệ thống và lý do chọn đề tài.</p></div>
-      <div class="card"><h3>2. Khối lượng công việc</h3><p>Các phần nhóm đã hoàn thành trong báo cáo và bộ sơ đồ UML.</p></div>
-      <div class="card"><h3>3. Phân công nhóm</h3><p>Vai trò của Đạt, Khoa, Khánh, Dương và Đô.</p></div>
-      <div class="card"><h3>4. Giao diện chính</h3><p>Các màn hình người dùng, publisher và admin cần có.</p></div>
-      <div class="card"><h3>5. Nội dung theo thành viên</h3><p>Phạm vi phụ trách, UML liên quan và lý do chọn hướng phân tích.</p></div>
-      <div class="card"><h3>6. Kết luận</h3><p>Tổng kết kết quả đạt được và hướng phát triển.</p></div>
-    </div>
-    <div class="footer-note"><span>Luồng trình bày: từ tổng quan đến mô hình chi tiết</span><span class="slide-number" data-current="2" data-total="17"></span></div>
-    <aside class="notes"><p>B?i tr?nh b?y g?m s?u n?i dung ch?nh. N?i dung th? nh?t l? gi?i thi?u ch? ??, l?m r? Steam Store l? h? th?ng g? v? ph?m vi ph?n t?ch c?a nh?m. N?i dung th? hai l? c?c giao di?n ch?nh, gi?p h?nh dung ng??i d?ng v? c?c vai tr? kh?c thao t?c tr?n nh?ng m?n h?nh n?o.</p>
-<p>N?i dung th? ba l? kh?i l??ng c?ng vi?c ?? ho?n th?nh, g?m y?u c?u h? th?ng, b?ng ph?n t?ch v? c?c s? ?? UML. N?i dung th? t? l? ph?n c?ng nh?m, th? hi?n m?i th?nh vi?n ph? tr?ch m?t m?ng r? r?ng.</p>
-<p>N?i dung th? n?m l? ph?n theo t?ng th?nh vi?n. M?i m?ng ??u g?n v?i UML li?n quan v? l? do ch?n h??ng ph?n t?ch. Cu?i c?ng l? ph?n t?ng h?p c?c m? h?nh c? th?: y?u c?u, use case, quy tr?nh mua game, ki?n tr?c, d? li?u v? k?t lu?n.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Giới thiệu chủ đề">
-    <p class="kicker">1. Giới thiệu chủ đề</p>
-    <h2>Steam Store là một hệ thống thương mại số cho game</h2>
-    <div class="split">
-      <div>
-        <ul class="compact-list">
-          <li>Cho phép người dùng tìm kiếm, xem chi tiết, mua và tải game.</li>
-          <li>Quản lý wishlist, giỏ hàng, thanh toán, thư viện, review và hoàn tiền.</li>
-          <li>Hỗ trợ publisher quản lý trang game, media, giá bán và khuyến mãi.</li>
-          <li>Đòi hỏi bảo mật tài khoản, toàn vẹn giao dịch và khả năng mở rộng cao.</li>
-        </ul>
-      </div>
-      <div class="image-frame"><img src="./assets/uml/architecture.png" alt="Kiến trúc Steam Store"></div>
-    </div>
-    <div class="footer-note"><span>Trọng tâm: nghiệp vụ mua game và quản lý quyền sở hữu số</span><span class="slide-number" data-current="3" data-total="17"></span></div>
-    <aside class="notes"><p>Steam Store l? m?t h? th?ng th??ng m?i s? d?nh cho game. ?i?m kh?c bi?t so v?i b?n h?ng th?ng th??ng l? s?n ph?m sau khi mua kh?ng ph?i h?ng v?t l?, m? l? <strong>quy?n truy c?p s?</strong>. Trong b?o c?o, quy?n truy c?p n?y ???c m? h?nh h?a b?ng license.</p>
-<p>Khi ng??i d?ng thanh to?n th?nh c?ng, h? th?ng c?p license ?? game xu?t hi?n trong th? vi?n. Ngo?i mua game, Steam Store c?n h? tr? t?m ki?m theo tag, l?c theo gi? ho?c n?n t?ng, xem review, th?m wishlist, vi?t ??nh gi? v? ho?n ti?n.</p>
-<p>??i v?i nh? ph?t h?nh, h? th?ng c? ch?c n?ng qu?n l? th?ng tin game, media, DLC, gi? v? khuy?n m?i. ??i v?i qu?n tr? vi?n, h? th?ng h? tr? ki?m duy?t n?i dung, h? tr? t?i kho?n v? theo d?i giao d?ch b?t th??ng. Ch? ?? n?y ph? h?p v? c? nhi?u actor, nhi?u lu?ng nghi?p v?, y?u c?u b?o m?t cao v? d? li?u li?n k?t ch?t ch?.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Giao diện chính">
-    <p class="kicker">Giao diện hệ thống</p>
-    <h2>Các màn hình chính cần có trong Steam Store</h2>
-    <div class="ui-grid">
-      <div class="ui-card"><div class="screen"></div><b>Trang chủ Store</b><p>Game nổi bật, sale, danh mục, thanh tìm kiếm.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Tìm kiếm / lọc game</b><p>Lọc theo tag, giá, nền tảng, đánh giá, ngày phát hành.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Chi tiết game</b><p>Trailer, ảnh, giá, DLC, review, cấu hình, publisher.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Đăng nhập / Steam Guard</b><p>Email, mật khẩu, mã xác thực hoặc xác nhận thiết bị.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Wishlist</b><p>Theo dõi game yêu thích và nhận thông báo giảm giá.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Giỏ hàng / Checkout</b><p>Snapshot giá, phương thức thanh toán, xác nhận đơn hàng.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Thư viện game</b><p>Game đã sở hữu, trạng thái license, tải/cập nhật qua client.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Review / Refund</b><p>Viết đánh giá và gửi yêu cầu hoàn tiền khi đủ điều kiện.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Publisher Dashboard</b><p>Quản lý thông tin game, media, DLC, giá và khuyến mãi.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Admin Dashboard</b><p>Kiểm duyệt nội dung, hỗ trợ tài khoản, theo dõi giao dịch.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Thông báo</b><p>Sale wishlist, mua hàng, bảo mật và trạng thái hoàn tiền.</p></div>
-      <div class="ui-card"><div class="screen"></div><b>Lịch sử giao dịch</b><p>Đơn hàng, payment, refund và biên nhận mua game.</p></div>
-    </div>
-    <div class="footer-note"><span>Phần giao diện giúp người nghe hình dung trải nghiệm thực tế</span><span class="slide-number" data-current="4" data-total="17"></span></div>
-    <aside class="notes"><p>C?c giao di?n ch?nh ???c m? t? theo h?nh tr?nh s? d?ng h? th?ng. Ng??i d?ng b?t ??u ? trang ch? Store, n?i hi?n th? game n?i b?t, game ?ang sale, danh m?c v? thanh t?m ki?m. T? ??, ng??i d?ng chuy?n sang trang t?m ki?m ho?c l?c game theo tag, gi?, n?n t?ng, ??nh gi? v? ng?y ph?t h?nh.</p>
-<p>Trang chi ti?t game cung c?p trailer, h?nh ?nh, m? t?, gi?, DLC, review v? c?u h?nh y?u c?u. Khi quy?t ??nh mua, ng??i d?ng s? d?ng wishlist, gi? h?ng v? checkout. Sau thanh to?n th?nh c?ng, game xu?t hi?n trong th? vi?n.</p>
-<p>Ngo?i ra c?n c? m?n h?nh review, refund, th?ng b?o v? l?ch s? giao d?ch. ? ph?a qu?n tr?, Publisher Dashboard ph?c v? nh? ph?t h?nh qu?n l? s?n ph?m, c?n Admin Dashboard ph?c v? ki?m duy?t, h? tr? t?i kho?n v? gi?m s?t giao d?ch. Ph?n giao di?n gi?p n?i y?u c?u nghi?p v? v?i c?c use case v? activity diagram.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Khối lượng công việc">
-    <p class="kicker">2. Khối lượng công việc đã đạt được</p>
-    <h2>Nhóm đã hoàn thành các phần chính của phân tích và thiết kế</h2>
-    <div class="grid g3">
-      <div class="stat"><b>15</b><span>Yêu cầu chức năng từ đăng ký, tìm kiếm, mua game đến hoàn tiền và quản trị.</span></div>
-      <div class="stat"><b>8</b><span>Nhóm yêu cầu phi chức năng: hiệu năng, mở rộng, bảo mật, sẵn sàng, dữ liệu.</span></div>
-      <div class="stat"><b>14+</b><span>Sơ đồ UML và mô hình gồm use case, sequence, activity, state, BCE, class, ERD, deployment.</span></div>
-    </div>
-    <table style="margin-top:24px">
-      <tr><th>Nhóm công việc</th><th>Sản phẩm đã hoàn thành</th></tr>
-      <tr><td>Xác định yêu cầu</td><td>Mô tả bài toán, glossary, FR/NFR, phân quyền theo vai trò.</td></tr>
-      <tr><td>Phân tích nghiệp vụ</td><td>Use case, mô tả use case, sequence, activity và state diagram.</td></tr>
-      <tr><td>Thiết kế hệ thống</td><td>Kiến trúc dịch vụ, subsystem, interface, deployment, class design và ERD.</td></tr>
-    </table>
-    <div class="footer-note"><span>Minh chứng nằm trong báo cáo LaTeX/PDF và thư mục assets/uml</span><span class="slide-number" data-current="5" data-total="17"></span></div>
-    <aside class="notes"><p>Kh?i l??ng c?ng vi?c c?a nh?m g?m ba l?p n?i dung. L?p th? nh?t l? <strong>x?c ??nh y?u c?u</strong>, bao g?m m? t? b?i to?n, b?ng thu?t ng?, y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng v? ph?n quy?n theo vai tr?.</p>
-<p>L?p th? hai l? <strong>ph?n t?ch nghi?p v? b?ng UML</strong>. Nh?m x?y d?ng use case cho ng??i d?ng v? qu?n tr?, sequence diagram cho c?c lu?ng nh? mua game, ??ng nh?p, t?m ki?m, review v? c?p nh?t game t? nh? ph?t h?nh. Activity diagram ???c d?ng cho quy tr?nh mua game v? ho?n ti?n. State diagram ???c d?ng cho v?ng ??i order v? refund.</p>
-<p>L?p th? ba l? <strong>thi?t k? h? th?ng</strong>, g?m architecture diagram, deployment diagram, BCE, class design v? ERD. C?c m? h?nh n?y t?o th?nh chu?i li?n k?t t? y?u c?u ban ??u ??n c?u tr?c k? thu?t v? d? li?u.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Phân công">
-    <p class="kicker">3. Bảng phân công công việc</p>
-    <h2>Phân chia theo năng lực và mức độ kỹ thuật</h2>
+  <section class="slide" data-title="Lộ trình">
+    <div class="speaker">Trình bày: <b>Đạt</b> · lộ trình nhóm</div>
+    <h2>Nội dung trình bày và người phụ trách</h2>
     <table>
-      <tr><th>Thành viên</th><th>Vai trò</th><th>Nội dung phụ trách</th><th>Phần trình bày</th></tr>
-      <tr><td>Đạt</td><td>Trưởng nhóm</td><td>Quản lý tiến độ, tổng hợp nội dung, mở đầu và kết luận.</td><td>Giới thiệu, mục tiêu, tổng quan, kết luận.</td></tr>
-      <tr><td>Khoa</td><td>Thành viên</td><td>Phân tích yêu cầu chức năng, phi chức năng và phân quyền.</td><td>Yêu cầu hệ thống.</td></tr>
-      <tr><td>Khánh</td><td>Thành viên</td><td>Phân tích actor, use case và các luồng nghiệp vụ chính.</td><td>Use case, mua game, đăng nhập, hoàn tiền.</td></tr>
-      <tr><td>Dương</td><td>Thành viên</td><td>Tìm hiểu giao diện, trải nghiệm người dùng và hỗ trợ phần giới thiệu.</td><td>Trang chủ, tìm kiếm, chi tiết game, giỏ hàng, thư viện.</td></tr>
-      <tr><td>Đô</td><td>Thành viên</td><td>Thiết kế kỹ thuật: kiến trúc, class diagram, ERD và database.</td><td>Kiến trúc hệ thống và thiết kế dữ liệu.</td></tr>
+      <tr><th>Phần</th><th>Người trình bày</th><th>Nội dung chính</th><th>Sơ đồ / minh chứng</th></tr>
+      <tr><td>1</td><td>Đạt</td><td>Giới thiệu chủ đề, phạm vi, khối lượng công việc</td><td>Architecture tổng quan, bảng khối lượng</td></tr>
+      <tr><td>2</td><td>Khoa</td><td>Yêu cầu chức năng, phi chức năng, phân quyền actor</td><td>Use case user/admin, ma trận truy vết</td></tr>
+      <tr><td>3</td><td>Dương</td><td>Giao diện chính và hành trình người dùng</td><td>Boundary trong BCE, activity mua game</td></tr>
+      <tr><td>4</td><td>Khánh</td><td>Use case, sequence, activity, state cho nghiệp vụ</td><td>Sequence purchase, state order/refund</td></tr>
+      <tr><td>5</td><td>Đô</td><td>Kiến trúc, class/BCE, ERD, deployment</td><td>Architecture, deployment, class, ERD</td></tr>
     </table>
-    <div class="footer-note"><span>Phân công theo từng mảng: yêu cầu, nghiệp vụ, giao diện, kỹ thuật</span><span class="slide-number" data-current="6" data-total="17"></span></div>
-    <aside class="notes"><p>Nh?m ph?n c?ng theo t?ng m?ng c?ng vi?c. ??t l? tr??ng nh?m, ph? tr?ch ?i?u ph?i, t?ng h?p n?i dung, m? ??u v? k?t lu?n. Khoa ph? tr?ch ph?n t?ch y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng v? ph?n quy?n h? th?ng.</p>
-<p>Kh?nh ph? tr?ch actor, use case v? c?c lu?ng nghi?p v? ch?nh. D??ng ph? tr?ch giao di?n v? tr?i nghi?m ng??i d?ng, t?p trung v?o c?c m?n h?nh nh? trang ch?, t?m ki?m, chi ti?t game, gi? h?ng, th? vi?n, review v? refund.</p>
-<p>?? ph? tr?ch ph?n k? thu?t g?m ki?n tr?c h? th?ng, BCE, class diagram, ERD v? database. C?ch ph?n c?ng n?y gi?p m?i th?nh vi?n c? m?t ph?m vi r? r?ng, ??ng th?i c?c ph?n v?n li?n k?t v?i nhau theo d?ng ph?n t?ch t? y?u c?u ??n thi?t k?.</p></aside>
+    <div class="why"><strong>Cách đi của bài:</strong> từ người dùng và yêu cầu nghiệp vụ → UML mô tả hành vi → thiết kế kiến trúc và dữ liệu.</div>
+    <div class="footer"><span>Mỗi phần đều có nội dung, UML liên quan và lý do chọn hướng phân tích</span><span class="slide-number" data-current="2" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Đây là lộ trình trình bày của nhóm. Phần đầu do Đạt trình bày, tập trung vào lý do chọn đề tài, phạm vi hệ thống và khối lượng công việc nhóm đã hoàn thành.</p>
+      <p>Tiếp theo, Khoa trình bày yêu cầu hệ thống. Phần này trả lời câu hỏi hệ thống cần làm gì, có những actor nào và mỗi actor được sử dụng chức năng nào. Dương trình bày giao diện và hành trình người dùng để người nghe hình dung hệ thống dưới góc nhìn thực tế.</p>
+      <p>Sau đó Khánh trình bày các UML mô tả nghiệp vụ như use case, sequence, activity và state. Cuối cùng Đô trình bày thiết kế kỹ thuật gồm kiến trúc, BCE, class diagram, ERD và deployment. Cách đi này giúp bài thuyết trình liền mạch: từ yêu cầu đến hành vi, rồi đến cấu trúc hệ thống.</p>
+    </aside>
   </section>
 
-  <section class="slide" data-title="Đạt trình bày">
-    <p class="kicker">Đạt - trưởng nhóm</p>
-    <div class="member-head">
-      <div class="avatar">Đ</div>
-      <div>
-        <h2>Tổng quan đề tài và hướng phân tích</h2>
-        <p>Vai trò: mở đầu, phạm vi hệ thống, tổng hợp báo cáo và kết luận.</p>
-      </div>
-    </div>
-    <div class="grid g3">
-      <div class="card"><h3>Phạm vi phụ trách</h3><p>Giới thiệu Steam Store, lý do chọn đề tài, phạm vi phân tích và kết quả chung của nhóm.</p></div>
-      <div class="card"><h3>UML liên quan</h3><p>Architecture diagram để giới thiệu hệ thống nhiều thành phần và mối liên hệ tổng thể.</p></div>
-      <div class="card"><h3>Luận điểm chính</h3><p>Steam không chỉ bán game, mà còn quản lý tài khoản, thanh toán, license, review và refund.</p></div>
-    </div>
-    <p class="why"><strong>Tại sao chọn hướng này?</strong> Nhóm bắt đầu từ tổng quan nghiệp vụ vì Steam Store có nhiều vai trò và luồng xử lý. Nếu không xác định phạm vi trước, các UML phía sau sẽ dễ bị rời rạc.</p>
-    <div class="footer-note"><span>Đạt: trả lời câu hỏi “hệ thống này là gì và nhóm phân tích theo hướng nào?”</span><span class="slide-number" data-current="7" data-total="17"></span></div>
-    <aside class="notes"><p>Steam Store ???c ch?n v? ??y l? m?t h? th?ng ?? l?n ?? ph?n t?ch b?ng k? thu?t ph?n m?m. H? th?ng c? nhi?u actor nh? kh?ch v?ng lai, ng??i d?ng Steam, Steam Client, nh? ph?t h?nh, qu?n tr? vi?n v? c?ng thanh to?n. M?i actor c? m?c ti?u v? quy?n thao t?c kh?c nhau.</p>
-<p>S? ?? li?n quan ? ph?n t?ng quan l? <strong>architecture diagram</strong>. S? ?? n?y th? hi?n b?c tranh to?n h? th?ng: Web Frontend v? Steam Client ? ph?a ng??i d?ng, API Gateway ? gi?a, c?c service nghi?p v? ? ph?a sau, c?ng database, search index, CDN, event queue v? payment gateway.</p>
-<p>H??ng ph?n t?ch b?t ??u t? t?ng quan v? Steam Store c? nhi?u nghi?p v? li?n k?t. Khi x?c ??nh tr??c ph?m vi v? ki?n tr?c m?c cao, c?c ph?n sau nh? y?u c?u, use case, sequence, ERD v? deployment c? c?ng m?t b?i c?nh chung, tr?nh t?nh tr?ng m?i s? ?? m? t? m?t h??ng r?i r?c.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Khoa trình bày">
-    <p class="kicker">Khoa - phân tích yêu cầu</p>
-    <div class="member-head">
-      <div class="avatar">K</div>
-      <div>
-        <h2>Yêu cầu hệ thống và phân quyền vai trò</h2>
-        <p>Vai trò: chức năng, phi chức năng, actor và quyền thao tác.</p>
-      </div>
-    </div>
-    <div class="grid g3">
-      <div class="card"><h3>Chức năng</h3><p>Đăng nhập, Steam Guard, tìm kiếm, wishlist, giỏ hàng, thanh toán, thư viện, review, hoàn tiền.</p></div>
-      <div class="card"><h3>Phi chức năng</h3><p>Bảo mật, hiệu năng, mở rộng, sẵn sàng, toàn vẹn dữ liệu, khả dụng và bảo trì.</p></div>
-      <div class="card"><h3>UML liên quan</h3><p>Use case user/admin và ma trận truy vết từ yêu cầu sang mô hình.</p></div>
-    </div>
-    <p class="why"><strong>Tại sao chọn hướng này?</strong> Nhóm tách yêu cầu theo vai trò để tránh gom mọi chức năng vào một actor duy nhất. Cách này làm rõ ai được làm gì và giúp kiểm soát nghiệp vụ nhạy cảm như thanh toán, refund, quản trị.</p>
-    <div class="footer-note"><span>Khoa: yêu cầu hệ thống và quyền sử dụng theo vai trò</span><span class="slide-number" data-current="8" data-total="17"></span></div>
-    <aside class="notes"><p>Ph?n y?u c?u h? th?ng ???c chia th?nh ba nh?m: y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng v? ph?n quy?n. Y?u c?u ch?c n?ng m? t? nh?ng vi?c h? th?ng th?c hi?n, ch?ng h?n ??ng k?, ??ng nh?p, Steam Guard, t?m ki?m game, wishlist, gi? h?ng, thanh to?n, th? vi?n, review v? ho?n ti?n.</p>
-<p>Y?u c?u phi ch?c n?ng m? t? ch?t l??ng c?a h? th?ng. V?i Steam Store, c?c ti?u ch? quan tr?ng g?m b?o m?t t?i kho?n, hi?u n?ng t?m ki?m, kh? n?ng m? r?ng trong c?c ??t sale l?n, ?? ?n ??nh c?a checkout v? t?nh to?n v?n gi?a thanh to?n v?i c?p license.</p>
-<p>Y?u c?u ???c t?ch theo vai tr? ?? l?m r? quy?n s? d?ng. Kh?ch v?ng lai ch? xem v? t?m ki?m. Ng??i d?ng Steam ???c mua, review v? ho?n ti?n. Publisher qu?n l? game. Admin ki?m duy?t v? h? tr?. C?ng thanh to?n x? l? giao d?ch. C?ch ph?n t?ch n?y l? c? s? ?? x?y d?ng use case user v? use case admin.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Khánh trình bày">
-    <p class="kicker">Khánh - use case và luồng nghiệp vụ</p>
-    <div class="member-head">
-      <div class="avatar">Kh</div>
-      <div>
-        <h2>Phân tích các UML động của hệ thống</h2>
-        <p>Vai trò: use case, sequence, activity và state diagram.</p>
-      </div>
-    </div>
-    <div class="grid g3">
-      <div class="card"><h3>Use case</h3><p>Xác định actor, chức năng chính và quan hệ include/extend giữa các nghiệp vụ.</p></div>
-      <div class="card"><h3>Sequence / Activity</h3><p>Mô tả thứ tự xử lý mua game, đăng nhập Steam Guard, tìm kiếm, review và refund.</p></div>
-      <div class="card"><h3>State</h3><p>Phân tích vòng đời order và refund để tránh bỏ sót trạng thái lỗi hoặc duyệt thủ công.</p></div>
-    </div>
-    <p class="why"><strong>Tại sao chọn hướng này?</strong> Các nghiệp vụ như mua game và hoàn tiền không chỉ là một hành động đơn giản. Nhóm dùng nhiều loại UML để nhìn cùng một nghiệp vụ từ nhiều góc: ai làm, làm theo thứ tự nào, rẽ nhánh ra sao và trạng thái thay đổi thế nào.</p>
-    <div class="footer-note"><span>Khánh: trả lời câu hỏi “nghiệp vụ chạy như thế nào trong hệ thống?”</span><span class="slide-number" data-current="9" data-total="17"></span></div>
-    <aside class="notes"><p>Use case v? c?c UML ??ng m? t? c?ch nghi?p v? v?n h?nh trong h? th?ng. <strong>Use case diagram</strong> tr? l?i c?u h?i actor n?o t??ng t?c v?i h? th?ng v? h? s? d?ng ch?c n?ng n?o. V? d? ng??i d?ng Steam c? wishlist, gi? h?ng, thanh to?n, th? vi?n, review v? ho?n ti?n.</p>
-<p><strong>Sequence diagram</strong> m? t? th? t? trao ??i gi?a c?c th?nh ph?n theo th?i gian. Trong lu?ng mua game, Web UI g?i Cart Service, Order Service, Payment Gateway v? Library Service. Nh? ??, th? t? x? l? thanh to?n v? c?p license ???c th? hi?n r?.</p>
-<p><strong>Activity diagram</strong> m? t? quy tr?nh c? ?i?u ki?n r? nh?nh, c?n <strong>state diagram</strong> m? t? v?ng ??i tr?ng th?i c?a order v? refund. Nh?m d?ng nhi?u lo?i UML v? m?i lo?i gi?i th?ch m?t c?u h?i ri?ng: ai l?m g?, th? t? x? l? ra sao, quy tr?nh r? nh?nh th? n?o v? tr?ng th?i thay ??i nh? th? n?o.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Dương trình bày">
-    <p class="kicker">Dương - giao diện và trải nghiệm</p>
-    <div class="member-head">
-      <div class="avatar">D</div>
-      <div>
-        <h2>Giao diện chính và hành trình người dùng</h2>
-        <p>Vai trò: mô tả các màn hình và thao tác người dùng nhìn thấy.</p>
-      </div>
-    </div>
-    <div class="grid g3">
-      <div class="card"><h3>Luồng người dùng</h3><p>Trang chủ → tìm kiếm → chi tiết game → giỏ hàng → checkout → thư viện.</p></div>
-      <div class="card"><h3>Màn hình hỗ trợ</h3><p>Wishlist, review, refund, thông báo và lịch sử giao dịch.</p></div>
-      <div class="card"><h3>Liên hệ UML</h3><p>Giao diện tương ứng với boundary trong BCE và các bước trong activity diagram.</p></div>
-    </div>
-    <p class="why"><strong>Tại sao chọn hướng này?</strong> Giao diện được trình bày theo hành trình người dùng để người nghe dễ hình dung hệ thống thực tế. Cách này cũng giúp nối phần yêu cầu với use case và activity diagram.</p>
-    <div class="footer-note"><span>Dương: trả lời câu hỏi “người dùng thao tác trên những màn hình nào?”</span><span class="slide-number" data-current="10" data-total="17"></span></div>
-    <aside class="notes"><p>Giao di?n v? tr?i nghi?m ng??i d?ng ???c tr?nh b?y theo h?nh tr?nh s? d?ng th?c t?. Ng??i d?ng v?o trang ch? Store, t?m ki?m ho?c l?c game, m? trang chi ti?t, th?m v?o wishlist ho?c gi? h?ng, checkout, thanh to?n v? cu?i c?ng game xu?t hi?n trong th? vi?n.</p>
-<p>M?i m?n h?nh ph?c v? m?t nghi?p v? c? th?. Trang t?m ki?m gi?p ng??i d?ng t?m game nhanh h?n. Trang chi ti?t h? tr? quy?t ??nh mua. Gi? h?ng v? checkout ph?c v? thanh to?n. Th? vi?n hi?n th? game ?? c? license. Review cho ph?p ??nh gi? sau khi s? h?u game. Refund h? tr? ho?n ti?n theo ?i?u ki?n.</p>
-<p>Trong m? h?nh BCE, c?c m?n h?nh giao di?n t??ng ?ng v?i l?p <strong>Boundary</strong>. Boundary ti?p nh?n t??ng t?c t? ng??i d?ng, Control x? l? nghi?p v?, c?n Entity l?u d? li?u c?t l?i. V? v?y ph?n giao di?n l? ?i?m b?t ??u c?a use case, activity diagram v? BCE.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Đô trình bày">
-    <p class="kicker">Đô - thiết kế kỹ thuật</p>
-    <div class="member-head">
-      <div class="avatar">Đô</div>
-      <div>
-        <h2>Kiến trúc, class diagram, ERD và deployment</h2>
-        <p>Vai trò: mô hình hóa cấu trúc hệ thống và dữ liệu.</p>
-      </div>
-    </div>
-    <div class="grid g3">
-      <div class="card"><h3>Architecture / Deployment</h3><p>Tách client, API Gateway, backend services, database, search index, CDN và payment gateway.</p></div>
-      <div class="card"><h3>Class / BCE</h3><p>Phân lớp boundary, control, entity và thiết kế các lớp User, Game, Order, Payment, License.</p></div>
-      <div class="card"><h3>ERD</h3><p>Liên kết user, game, order, payment, library, license, review, wishlist và refund.</p></div>
-    </div>
-    <p class="why"><strong>Tại sao chọn hướng này?</strong> Nhóm tách kiến trúc theo miền nghiệp vụ để hệ thống dễ mở rộng và dễ bảo trì. ERD đặt license ở trung tâm giữa thanh toán và thư viện để bảo đảm mua thành công mới có quyền truy cập game.</p>
-    <div class="footer-note"><span>Đô: trả lời câu hỏi “hệ thống được tổ chức và lưu dữ liệu như thế nào?”</span><span class="slide-number" data-current="11" data-total="17"></span></div>
-    <aside class="notes"><p>Thi?t k? k? thu?t b?t ??u t? ki?n tr?c h? th?ng. Nh?m ch?n ki?n tr?c t?ch theo mi?n nghi?p v? v? Steam Store c? nhi?u ch?c n?ng v?i ??c ?i?m kh?c nhau. Catalog c?n t?m ki?m nhanh, Order c?n x? l? giao d?ch ch?nh x?c, Library c?n qu?n l? license, Review c?n ki?m tra quy?n s? h?u v? ki?m duy?t n?i dung.</p>
-<p>Trong <strong>BCE diagram</strong>, h? th?ng ???c t?ch th?nh Boundary, Control v? Entity. Boundary nh?n thao t?c t? giao di?n. Control ?i?u ph?i nghi?p v?. Entity ??i di?n cho d? li?u c?t l?i nh? User, Game, Cart, Order, Payment, License, Review v? RefundRequest. Class diagram l?m r? th?m thu?c t?nh v? ph??ng th?c c?a c?c l?p n?y.</p>
-<p>Trong <strong>ERD</strong>, license l? ?i?m quan tr?ng. Ng??i d?ng kh?ng s? h?u game ch? v? c? order, m? c? quy?n truy c?p khi payment th?nh c?ng v? license ???c c?p v?o library. Thi?t k? n?y h? tr? x? l? ho?n ti?n, v? khi refund ???c duy?t, h? th?ng c? th? c?p nh?t order v? thu h?i license t??ng ?ng.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Yêu cầu hệ thống">
-    <p class="kicker">Yêu cầu hệ thống</p>
-    <h2>Yêu cầu được chia theo chức năng, chất lượng và phân quyền</h2>
-    <div class="grid g3">
-      <div class="card"><h3>Chức năng người dùng</h3><p>Đăng ký, đăng nhập, Steam Guard, tìm kiếm, wishlist, giỏ hàng, checkout, thư viện, review, refund.</p></div>
-      <div class="card"><h3>Chức năng quản trị</h3><p>Publisher quản lý game, media, giá, DLC, khuyến mãi; admin kiểm duyệt, hỗ trợ và theo dõi giao dịch.</p></div>
-      <div class="card"><h3>Phi chức năng</h3><p>Hiệu năng, mở rộng, bảo mật, sẵn sàng, toàn vẹn dữ liệu, khả dụng, bảo trì và đa khu vực.</p></div>
-    </div>
-    <div class="flow-box">
-      <div class="flow-item"><h3>Actor</h3><p>Ai sử dụng hệ thống?</p></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-item"><h3>Use case</h3><p>Họ thực hiện chức năng gì?</p></div>
-      <div class="flow-arrow">→</div>
-      <div class="flow-item"><h3>UML</h3><p>Luồng xử lý được mô hình hóa ra sao?</p></div>
-    </div>
-    <div class="footer-note"><span>Yêu cầu là nền để xây use case và thiết kế hệ thống</span><span class="slide-number" data-current="12" data-total="17"></span></div>
-    <aside class="notes"><p>Y?u c?u h? th?ng l? n?n t?ng ?? x?y d?ng c?c m? h?nh sau. Y?u c?u ch?c n?ng m? t? h? th?ng th?c hi?n nh?ng nghi?p v? n?o: ??ng nh?p, t?m ki?m, wishlist, thanh to?n, th? vi?n, review, refund, qu?n l? game c?a publisher v? ki?m duy?t c?a admin.</p>
-<p>Y?u c?u phi ch?c n?ng m? t? h? th?ng ph?i ??t ch?t l??ng ra sao. Trang t?m ki?m c?n ph?n h?i nhanh. Checkout c?n ?n ??nh. T?i kho?n c?n b?o m?t b?ng Steam Guard. D? li?u thanh to?n v? license c?n to?n v?n ?? tr?nh l?i ng??i d?ng tr? ti?n nh?ng kh?ng nh?n game, ho?c ch?a tr? ti?n nh?ng v?n c? game.</p>
-<p>Nh?m ph?n t?ch y?u c?u tr??c khi v? UML v? m?i m? h?nh ph?i truy v?t ???c v? m?t y?u c?u c? th?. V? d? y?u c?u thanh to?n d?n ??n use case mua game, sequence purchase, state order v? c?c b?ng orders, payments, licenses trong ERD.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Use case">
-    <p class="kicker">4. Nội dung cụ thể</p>
-    <h2>Use case cho thấy phạm vi chức năng của hệ thống</h2>
-    <div class="split">
-      <div class="image-frame"><img src="./assets/uml/use_case_user.png" alt="Use case người dùng"></div>
-      <div>
-        <h3>Các actor chính</h3>
-        <ul class="compact-list">
-          <li>Khách vãng lai: xem store, tìm kiếm, đăng ký.</li>
-          <li>Người dùng Steam: wishlist, giỏ hàng, thanh toán, thư viện, review, hoàn tiền.</li>
-          <li>Steam Client: tải, cài đặt, cập nhật game thông qua thư viện.</li>
-          <li>Publisher, admin và cổng thanh toán xử lý phần quản trị và tích hợp.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-note"><span>Use case là cầu nối từ yêu cầu sang luồng nghiệp vụ</span><span class="slide-number" data-current="13" data-total="17"></span></div>
-    <aside class="notes"><p>Use case diagram th? hi?n ph?m vi ch?c n?ng c?a h? th?ng. V?i ph?a ng??i d?ng, actor g?m kh?ch v?ng lai, ng??i d?ng Steam v? Steam Client. Kh?ch v?ng lai t?m ki?m, l?c game, xem chi ti?t v? ??ng k? t?i kho?n. Ng??i d?ng Steam ??ng nh?p, qu?n l? wishlist, gi? h?ng, thanh to?n, th? vi?n, review v? ho?n ti?n.</p>
-<p>Steam Client ???c t?ch th?nh actor ri?ng v? vi?c t?i, c?i ??t v? c?p nh?t game th??ng di?n ra qua ?ng d?ng client, kh?ng ch? qua website. V?i ph?a qu?n tr?, publisher qu?n l? trang game, gi?, media, DLC v? khuy?n m?i. Admin ki?m duy?t n?i dung, h? tr? t?i kho?n v? theo d?i giao d?ch.</p>
-<p>Quan h? include ???c d?ng khi m?t use case lu?n c?n d?ng use case kh?c, v? d? checkout bao g?m x? l? gi? h?ng. Quan h? extend ???c d?ng khi h?nh vi ph?t sinh theo ?i?u ki?n, v? d? vi?t review ch? h?p l? khi ng??i d?ng ?? s? h?u game trong th? vi?n.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Quy trình mua game">
-    <p class="kicker">Nội dung cụ thể: quy trình mua game</p>
-    <h2>Luồng mua game cần bảo đảm giao dịch đúng và cấp license đúng</h2>
-    <div class="timeline">
-      <div class="step"><b>01</b><span>Người dùng chọn game và thêm vào giỏ hàng.</span></div>
-      <div class="step"><b>02</b><span>Hệ thống lấy giỏ hàng và lưu snapshot giá.</span></div>
-      <div class="step"><b>03</b><span>Order Service tạo đơn hàng tạm.</span></div>
-      <div class="step"><b>04</b><span>Cổng thanh toán xử lý giao dịch.</span></div>
-      <div class="step"><b>05</b><span>Thanh toán thành công thì cấp license.</span></div>
-      <div class="step"><b>06</b><span>Game xuất hiện trong thư viện người dùng.</span></div>
-    </div>
-    <div class="image-frame" style="min-height:260px;margin-top:22px"><img src="./assets/uml/sequence_purchase.png" alt="Sequence mua game" style="max-height:240px"></div>
-    <div class="footer-note"><span>Quy tắc chính: không thanh toán thành công thì không cấp game</span><span class="slide-number" data-current="14" data-total="17"></span></div>
-    <aside class="notes"><p>Quy tr?nh mua game l? lu?ng nghi?p v? ti?u bi?u nh?t. Ng??i d?ng ch?n game, th?m v?o gi? h?ng v? checkout. H? th?ng l?y danh s?ch s?n ph?m trong gi? h?ng v? l?u snapshot gi?, v? gi? game c? th? thay ??i theo th?i ?i?m sale ho?c theo khu v?c.</p>
-<p>Order Service t?o ??n h?ng t?m v? g?i y?u c?u sang Payment Gateway. N?u thanh to?n th?t b?i, h? th?ng kh?ng c?p game m? ch? th?ng b?o l?i ?? ng??i d?ng th? l?i. N?u thanh to?n th?nh c?ng, Order Service g?i Library Service ?? t?o license cho t?ng game, sau ?? game xu?t hi?n trong th? vi?n ng??i d?ng.</p>
-<p>?i?m quan tr?ng l? <strong>to?n v?n giao d?ch</strong>. Trong h? th?ng b?n s?n ph?m s?, l?i nghi?m tr?ng nh?t l? ng??i d?ng b? tr? ti?n nh?ng kh?ng nh?n game, ho?c ch?a thanh to?n m? v?n ???c c?p game. Sequence diagram v? state order gi?p ki?m so?t th? t? x? l? v? tr?ng th?i c?a ??n h?ng.</p></aside>
-  </section>
-
-  <section class="slide" data-title="Kiến trúc">
-    <p class="kicker">Nội dung cụ thể: thiết kế hệ thống</p>
-    <h2>Kiến trúc được tách theo miền nghiệp vụ</h2>
+  <section class="slide" data-title="Đạt tổng quan">
+    <div class="speaker">Trình bày: <b>Đạt</b> · tổng quan đề tài</div>
+    <h2>Vì sao chọn Steam Store?</h2>
     <div class="split">
       <div>
         <div class="grid">
-          <div class="card"><h3>Client Layer</h3><p>Web Frontend và Steam Client là hai điểm tương tác chính của người dùng.</p></div>
-          <div class="card"><h3>API Gateway</h3><p>Là cửa vào chung, điều phối request đến các service phía sau.</p></div>
+          <div class="card"><h3>Đủ lớn để phân tích</h3><p>Có nhiều actor: khách vãng lai, người dùng Steam, Steam Client, publisher, admin và cổng thanh toán.</p></div>
+          <div class="card"><h3>Nghiệp vụ liên kết chặt</h3><p>Tìm kiếm → giỏ hàng → thanh toán → cấp license → thư viện → review/refund.</p></div>
+          <div class="card"><h3>Có rủi ro thực tế</h3><p>Sai lệch thanh toán, cấp nhầm license, review spam, tài khoản bị chiếm đoạt, refund thiếu thu hồi quyền.</p></div>
+        </div>
+      </div>
+      <div class="image-frame"><img src="./assets/uml/architecture.png" alt="Architecture tổng quan"></div>
+    </div>
+    <div class="why"><strong>Lý do chọn hướng tổng quan trước:</strong> nếu chưa xác định bức tranh lớn, các sơ đồ phía sau như use case, sequence, ERD sẽ dễ rời rạc.</div>
+    <div class="footer"><span>UML liên quan: Architecture diagram</span><span class="slide-number" data-current="3" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Nhóm chọn Steam Store vì đây là một hệ thống đủ lớn để áp dụng các kiến thức của môn kỹ thuật phần mềm. Hệ thống có nhiều vai trò khác nhau: khách vãng lai, người dùng Steam, Steam Client, nhà phát hành, quản trị viên và cổng thanh toán.</p>
+      <p>Điểm quan trọng là các nghiệp vụ trong Steam Store liên kết chặt chẽ với nhau. Người dùng tìm game, thêm vào giỏ hàng, thanh toán, sau đó hệ thống cấp license để game xuất hiện trong thư viện. Từ thư viện, người dùng có thể tải game, viết review hoặc yêu cầu hoàn tiền.</p>
+      <p>Nhóm bắt đầu bằng sơ đồ kiến trúc tổng quan để đặt bối cảnh cho toàn bộ bài. Sơ đồ này cho thấy hệ thống gồm client, API Gateway, các service nghiệp vụ, database, search index, CDN và cổng thanh toán. Khi có bức tranh tổng thể, các UML chi tiết phía sau sẽ có điểm tựa rõ ràng hơn.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Đạt khối lượng">
+    <div class="speaker">Trình bày: <b>Đạt</b> · khối lượng công việc</div>
+    <h2>Khối lượng công việc đã hoàn thành</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Yêu cầu hệ thống</h3><p>Mô tả bài toán, glossary, 15 yêu cầu chức năng, yêu cầu phi chức năng, phân quyền theo vai trò.</p></div>
+      <div class="card"><h3>Phân tích UML</h3><p>Use case user/admin, sequence, activity, state machine, BCE cho các nghiệp vụ chính.</p></div>
+      <div class="card"><h3>Thiết kế hệ thống</h3><p>Architecture, deployment, class design, ERD, danh sách bảng dữ liệu và phân tích rủi ro.</p></div>
+    </div>
+    <table style="margin-top:20px">
+      <tr><th>Nhóm sản phẩm</th><th>Vai trò trong báo cáo</th><th>Người phụ trách chính</th></tr>
+      <tr><td>Yêu cầu + phân quyền</td><td>Xác định hệ thống cần làm gì và ai được dùng chức năng nào</td><td>Khoa</td></tr>
+      <tr><td>Giao diện + hành trình</td><td>Gắn yêu cầu với trải nghiệm thực tế của người dùng</td><td>Dương</td></tr>
+      <tr><td>UML nghiệp vụ</td><td>Mô tả actor, luồng xử lý, rẽ nhánh và trạng thái</td><td>Khánh</td></tr>
+      <tr><td>Thiết kế kỹ thuật</td><td>Tổ chức service, lớp, dữ liệu và triển khai</td><td>Đô</td></tr>
+    </table>
+    <div class="footer"><span>Minh chứng: thư mục assets/uml và báo cáo PDF</span><span class="slide-number" data-current="4" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Khối lượng công việc của nhóm gồm ba lớp nội dung. Lớp đầu tiên là xác định yêu cầu hệ thống. Nhóm đã mô tả bài toán, xây dựng bảng thuật ngữ, xác định yêu cầu chức năng, yêu cầu phi chức năng và phân quyền theo vai trò.</p>
+      <p>Lớp thứ hai là phân tích UML. Nhóm có use case cho người dùng và quản trị, sequence diagram cho các luồng chính, activity diagram cho quy trình mua game và hoàn tiền, state diagram cho order và refund, cùng BCE để nối giao diện, điều khiển và dữ liệu.</p>
+      <p>Lớp thứ ba là thiết kế hệ thống. Nhóm đã có architecture diagram, deployment diagram, class design, ERD và danh sách bảng cơ sở dữ liệu. Cách chia này giúp từng thành viên có phần riêng nhưng vẫn nằm trong một luồng phân tích thống nhất.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Khoa yêu cầu">
+    <div class="speaker">Trình bày: <b>Khoa</b> · yêu cầu hệ thống</div>
+    <h2>Yêu cầu hệ thống được chia theo chức năng, chất lượng và quyền</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Chức năng người dùng</h3><p>Đăng ký, đăng nhập, Steam Guard, tìm kiếm, wishlist, giỏ hàng, checkout, thư viện, review, refund.</p></div>
+      <div class="card"><h3>Chức năng quản trị</h3><p>Publisher quản lý game, giá, media, DLC, khuyến mãi; admin kiểm duyệt, hỗ trợ tài khoản, theo dõi giao dịch.</p></div>
+      <div class="card"><h3>Phi chức năng</h3><p>Hiệu năng, mở rộng, bảo mật, sẵn sàng, toàn vẹn dữ liệu, khả dụng, bảo trì và đa khu vực.</p></div>
+    </div>
+    <div class="why"><strong>Lý do chọn hướng này:</strong> tách yêu cầu theo vai trò giúp tránh nhầm quyền giữa khách, người dùng, publisher, admin và hệ thống ngoài.</div>
+    <div class="footer"><span>Đầu ra của phần này: FR/NFR, actor, phân quyền, ma trận truy vết</span><span class="slide-number" data-current="5" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Phần yêu cầu hệ thống được chia thành ba nhóm. Nhóm thứ nhất là yêu cầu chức năng dành cho người dùng, gồm đăng ký, đăng nhập, Steam Guard, tìm kiếm game, wishlist, giỏ hàng, checkout, quản lý thư viện, review và hoàn tiền.</p>
+      <p>Nhóm thứ hai là chức năng quản trị. Nhà phát hành quản lý thông tin game, giá bán, media, DLC và khuyến mãi. Quản trị viên xử lý kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi giao dịch bất thường.</p>
+      <p>Nhóm thứ ba là yêu cầu phi chức năng. Với Steam Store, bảo mật tài khoản, hiệu năng tìm kiếm, khả năng mở rộng trong các đợt sale lớn và toàn vẹn giữa thanh toán với cấp license là các điểm rất quan trọng. Nhóm chọn tách yêu cầu theo vai trò vì mỗi actor có quyền thao tác khác nhau, đây là nền để xây dựng use case và phân quyền hệ thống.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Khoa phân quyền">
+    <div class="speaker">Trình bày: <b>Khoa</b> · actor và use case</div>
+    <h2>Actor và phân quyền chức năng</h2>
+    <div class="split">
+      <div class="image-frame"><img src="./assets/uml/use_case_user.png" alt="Use case người dùng"></div>
+      <div>
+        <ul class="compact">
+          <li><strong>Khách vãng lai:</strong> tìm kiếm, lọc game, xem chi tiết, đăng ký tài khoản.</li>
+          <li><strong>Người dùng Steam:</strong> wishlist, giỏ hàng, thanh toán, thư viện, review, hoàn tiền.</li>
+          <li><strong>Steam Client:</strong> tải, cài đặt, cập nhật game dựa trên license trong thư viện.</li>
+          <li><strong>Publisher/Admin:</strong> quản lý sản phẩm, kiểm duyệt, hỗ trợ tài khoản, theo dõi giao dịch.</li>
+        </ul>
+        <div class="why"><strong>Ý nghĩa của use case:</strong> xác định phạm vi hệ thống trước khi mô tả luồng xử lý chi tiết bằng sequence và activity.</div>
+      </div>
+    </div>
+    <div class="footer"><span>UML liên quan: Use Case User, Use Case Admin</span><span class="slide-number" data-current="6" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Use case diagram thể hiện actor nào tương tác với hệ thống và họ được sử dụng chức năng nào. Khách vãng lai có thể tìm kiếm, lọc game, xem chi tiết và đăng ký tài khoản. Đây là nhóm chưa đăng nhập nên không được mua game, review hoặc quản lý wishlist.</p>
+      <p>Người dùng Steam là actor chính của hệ thống. Sau khi đăng nhập, người dùng có thể quản lý wishlist, giỏ hàng, thanh toán, thư viện, viết review và yêu cầu hoàn tiền. Steam Client được tách thành actor riêng vì việc tải và cập nhật game diễn ra qua ứng dụng client dựa trên license trong thư viện.</p>
+      <p>Phía quản trị có publisher và admin. Publisher quản lý trang game, giá, media và khuyến mãi. Admin kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi giao dịch. Use case được dùng ở bước này vì nó giúp chốt phạm vi trước khi đi vào sequence, activity và thiết kế dữ liệu.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Dương giao diện">
+    <div class="speaker">Trình bày: <b>Dương</b> · giao diện chính</div>
+    <h2>Các giao diện chính của Steam Store</h2>
+    <div class="screen-grid">
+      <div class="screen-card"><div class="mock"></div><b>Trang chủ Store</b><p>Game nổi bật, sale, danh mục, tìm kiếm.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Tìm kiếm / lọc</b><p>Tag, giá, nền tảng, đánh giá, ngày phát hành.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Chi tiết game</b><p>Trailer, ảnh, giá, DLC, review, cấu hình.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Đăng nhập</b><p>Email, mật khẩu, Steam Guard.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Wishlist</b><p>Theo dõi game và thông báo giảm giá.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Giỏ hàng</b><p>Danh sách game, snapshot giá, tổng tiền.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Checkout</b><p>Phương thức thanh toán, xác nhận đơn hàng.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Thư viện</b><p>Game đã sở hữu, license, tải/cập nhật.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Review</b><p>Đánh giá game sau khi sở hữu.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Refund</b><p>Gửi yêu cầu hoàn tiền và xem trạng thái.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Publisher</b><p>Quản lý game, media, DLC, giá, sale.</p></div>
+      <div class="screen-card"><div class="mock"></div><b>Admin</b><p>Kiểm duyệt, hỗ trợ, theo dõi giao dịch.</p></div>
+    </div>
+    <div class="footer"><span>Giao diện là lớp Boundary trong mô hình BCE</span><span class="slide-number" data-current="7" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Phần giao diện được trình bày theo các màn hình chính của Steam Store. Người dùng bắt đầu từ trang chủ Store, nơi hiển thị game nổi bật, game đang sale, danh mục và thanh tìm kiếm. Sau đó người dùng đi tới trang tìm kiếm hoặc lọc game theo tag, giá, nền tảng, đánh giá và ngày phát hành.</p>
+      <p>Trang chi tiết game cung cấp trailer, hình ảnh, mô tả, giá, DLC, review và cấu hình yêu cầu. Khi quyết định mua, người dùng sử dụng wishlist, giỏ hàng và checkout. Sau khi thanh toán thành công, game xuất hiện trong thư viện.</p>
+      <p>Ngoài ra còn có review, refund, Publisher Dashboard và Admin Dashboard. Trong mô hình BCE, các màn hình này tương ứng với lớp Boundary, tức là lớp tiếp nhận tương tác từ người dùng trước khi chuyển sang Control xử lý nghiệp vụ.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Dương hành trình">
+    <div class="speaker">Trình bày: <b>Dương</b> · hành trình người dùng</div>
+    <h2>Hành trình mua game từ giao diện đến nghiệp vụ</h2>
+    <div class="flow">
+      <div class="step"><b>01</b><span>Trang chủ hoặc tìm kiếm để tìm game phù hợp.</span></div>
+      <div class="step"><b>02</b><span>Mở trang chi tiết để xem giá, media, review, cấu hình.</span></div>
+      <div class="step"><b>03</b><span>Thêm game vào wishlist hoặc giỏ hàng.</span></div>
+      <div class="step"><b>04</b><span>Checkout và chọn phương thức thanh toán.</span></div>
+      <div class="step"><b>05</b><span>Thanh toán thành công, hệ thống cấp license.</span></div>
+      <div class="step"><b>06</b><span>Game xuất hiện trong thư viện và tải qua Steam Client.</span></div>
+    </div>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card"><h3>Liên hệ use case</h3><p>Mỗi màn hình tương ứng với một hoặc nhiều chức năng trong use case người dùng.</p></div>
+      <div class="card"><h3>Liên hệ activity</h3><p>Hành trình giao diện phản ánh các bước trong activity mua game.</p></div>
+      <div class="card"><h3>Liên hệ dữ liệu</h3><p>Giỏ hàng, order, payment, license và library xuất hiện theo thứ tự nghiệp vụ.</p></div>
+    </div>
+    <div class="footer"><span>Giao diện giúp nối phần yêu cầu với luồng xử lý</span><span class="slide-number" data-current="8" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Hành trình người dùng được mô tả từ lúc bắt đầu tìm game đến khi game xuất hiện trong thư viện. Người dùng có thể bắt đầu ở trang chủ hoặc trang tìm kiếm. Khi tìm được game phù hợp, người dùng mở trang chi tiết để xem thông tin, giá, review và yêu cầu cấu hình.</p>
+      <p>Sau đó người dùng thêm game vào wishlist hoặc giỏ hàng. Nếu mua ngay, người dùng chuyển sang checkout, chọn phương thức thanh toán và xác nhận đơn hàng. Khi thanh toán thành công, hệ thống cấp license và game xuất hiện trong thư viện.</p>
+      <p>Hành trình này liên hệ trực tiếp với use case và activity diagram. Use case cho biết người dùng được làm gì, activity diagram cho biết quy trình rẽ nhánh như thế nào, còn ERD cho thấy dữ liệu giỏ hàng, order, payment, license và library được tạo ra theo thứ tự nào.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Khánh UML">
+    <div class="speaker">Trình bày: <b>Khánh</b> · phân tích UML nghiệp vụ</div>
+    <h2>Vì sao dùng nhiều loại UML?</h2>
+    <div class="grid g4">
+      <div class="card"><h3>Use case</h3><p>Trả lời câu hỏi: ai dùng hệ thống và dùng chức năng nào?</p></div>
+      <div class="card"><h3>Sequence</h3><p>Trả lời câu hỏi: các thành phần gọi nhau theo thứ tự nào?</p></div>
+      <div class="card"><h3>Activity</h3><p>Trả lời câu hỏi: quy trình rẽ nhánh ra sao khi thành công hoặc lỗi?</p></div>
+      <div class="card"><h3>State</h3><p>Trả lời câu hỏi: order/refund thay đổi trạng thái như thế nào?</p></div>
+    </div>
+    <div class="why"><strong>Lý do chọn hướng này:</strong> một nghiệp vụ phức tạp như mua game hoặc hoàn tiền không thể giải thích đầy đủ bằng một sơ đồ duy nhất.</div>
+    <table style="margin-top:18px">
+      <tr><th>Nghiệp vụ</th><th>UML sử dụng</th><th>Ý nghĩa</th></tr>
+      <tr><td>Mua game</td><td>Use case, Sequence, Activity, State Order</td><td>Kiểm soát thanh toán và cấp license.</td></tr>
+      <tr><td>Đăng nhập</td><td>Use case, Sequence Login</td><td>Mô tả xác thực tài khoản và Steam Guard.</td></tr>
+      <tr><td>Hoàn tiền</td><td>Activity Refund, State Refund</td><td>Mô tả duyệt tự động, duyệt thủ công và thu hồi license.</td></tr>
+    </table>
+    <div class="footer"><span>UML động mô tả hành vi và trạng thái của hệ thống</span><span class="slide-number" data-current="9" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Phần UML nghiệp vụ giải thích cách hệ thống hoạt động. Use case diagram cho biết actor nào dùng chức năng nào. Tuy nhiên use case chưa cho biết thứ tự xử lý bên trong, vì vậy nhóm dùng sequence diagram.</p>
+      <p>Sequence diagram mô tả các thành phần gọi nhau theo thời gian. Ví dụ trong luồng mua game, Web UI gọi Cart Service, Order Service, Payment Gateway và Library Service. Activity diagram mô tả quy trình có rẽ nhánh, chẳng hạn thanh toán thành công hoặc thất bại, refund được duyệt tự động hoặc cần admin xem xét.</p>
+      <p>State diagram được dùng cho order và refund vì hai đối tượng này có vòng đời rõ ràng. Nhóm dùng nhiều loại UML vì mỗi sơ đồ trả lời một câu hỏi khác nhau. Cách này giúp nghiệp vụ được phân tích đầy đủ hơn và tránh bỏ sót trạng thái lỗi.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Khánh mua game">
+    <div class="speaker">Trình bày: <b>Khánh</b> · quy trình mua game</div>
+    <h2>Quy trình mua game: thanh toán đúng thì mới cấp license</h2>
+    <div class="flow">
+      <div class="step"><b>01</b><span>Người dùng checkout từ giỏ hàng.</span></div>
+      <div class="step"><b>02</b><span>Cart Service trả danh sách game và snapshot giá.</span></div>
+      <div class="step"><b>03</b><span>Order Service tạo đơn hàng tạm.</span></div>
+      <div class="step"><b>04</b><span>Payment Gateway xử lý thanh toán.</span></div>
+      <div class="step"><b>05</b><span>Library Service tạo license.</span></div>
+      <div class="step"><b>06</b><span>Game được thêm vào thư viện.</span></div>
+    </div>
+    <div class="image-frame" style="min-height:270px;margin-top:18px"><img src="./assets/uml/sequence_purchase.png" alt="Sequence mua game" style="max-height:250px"></div>
+    <div class="footer"><span>UML liên quan: Sequence Purchase, Activity Purchase, State Order</span><span class="slide-number" data-current="10" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Quy trình mua game là luồng nghiệp vụ quan trọng nhất. Người dùng bắt đầu bằng checkout từ giỏ hàng. Hệ thống lấy danh sách game và lưu snapshot giá để bảo đảm lịch sử giao dịch không bị thay đổi nếu giá game thay đổi sau đó.</p>
+      <p>Order Service tạo đơn hàng tạm và gửi yêu cầu sang Payment Gateway. Nếu thanh toán thất bại, hệ thống không cấp game mà chỉ thông báo lỗi. Nếu thanh toán thành công, Order Service gọi Library Service để tạo license cho từng game, sau đó game xuất hiện trong thư viện.</p>
+      <p>Điểm quan trọng là toàn vẹn giao dịch. Hệ thống phải tránh hai lỗi: người dùng bị trừ tiền nhưng không nhận game, hoặc chưa thanh toán mà vẫn được cấp game. Vì vậy sequence purchase, activity purchase và state order được dùng để kiểm soát thứ tự xử lý và trạng thái đơn hàng.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Khánh luồng khác">
+    <div class="speaker">Trình bày: <b>Khánh</b> · đăng nhập, review, hoàn tiền</div>
+    <h2>Các luồng nghiệp vụ bổ sung</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Đăng nhập + Steam Guard</h3><p>Account Service kiểm tra tài khoản. Steam Guard xác thực bổ sung khi thiết bị hoặc vị trí đăng nhập cần kiểm tra.</p></div>
+      <div class="card"><h3>Viết review</h3><p>Review Service kiểm tra người dùng có license hợp lệ trong Library rồi mới cho lưu review.</p></div>
+      <div class="card"><h3>Hoàn tiền</h3><p>Refund kiểm tra điều kiện, duyệt tự động hoặc thủ công, sau đó hoàn tiền và thu hồi license.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="image-frame" style="min-height:280px"><img src="./assets/uml/state_refund.png" alt="State refund" style="max-height:260px"></div>
+      <div class="image-frame" style="min-height:280px"><img src="./assets/uml/activity_refund.png" alt="Activity refund" style="max-height:260px"></div>
+    </div>
+    <div class="footer"><span>UML liên quan: Sequence Login, Sequence Review, Activity Refund, State Refund</span><span class="slide-number" data-current="11" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Ngoài mua game, nhóm phân tích thêm các luồng quan trọng khác. Luồng đăng nhập có Steam Guard thể hiện yêu cầu bảo mật tài khoản. Account Service kiểm tra thông tin đăng nhập, sau đó Steam Guard xác thực bổ sung nếu thiết bị hoặc vị trí đăng nhập cần kiểm tra.</p>
+      <p>Luồng viết review thể hiện việc kiểm soát chất lượng đánh giá. Người dùng chỉ được review khi đã sở hữu game hoặc có license hợp lệ trong thư viện. Điều này giúp hạn chế review giả và spam.</p>
+      <p>Luồng hoàn tiền thể hiện vòng đời nghiệp vụ phức tạp. Refund có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin xem xét. Khi hoàn tiền được chấp nhận, hệ thống phải hoàn tiền và thu hồi license. Vì vậy nhóm dùng cả activity refund và state refund để mô tả rẽ nhánh và trạng thái.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Đô kiến trúc">
+    <div class="speaker">Trình bày: <b>Đô</b> · kiến trúc hệ thống</div>
+    <h2>Kiến trúc tách theo miền nghiệp vụ</h2>
+    <div class="split">
+      <div>
+        <div class="grid">
+          <div class="card"><h3>Client Layer</h3><p>Web Frontend và Steam Client là hai điểm tương tác chính với người dùng.</p></div>
+          <div class="card"><h3>API Gateway</h3><p>Cửa vào chung, định tuyến request và hỗ trợ kiểm soát xác thực.</p></div>
           <div class="card"><h3>Backend Services</h3><p>Account, Catalog, Cart, Order, Library, Review, Publisher, Notification.</p></div>
-          <div class="card"><h3>Infrastructure</h3><p>Database, Search Index, CDN, Event Queue và Payment Gateway.</p></div>
+          <div class="card"><h3>Infrastructure</h3><p>Database, Search Index, CDN, Event Queue, Payment Gateway.</p></div>
         </div>
       </div>
       <div class="image-frame"><img src="./assets/uml/deployment.png" alt="Deployment"></div>
     </div>
-    <div class="footer-note"><span>Mục tiêu: dễ mở rộng, dễ bảo trì, giảm ảnh hưởng khi một service lỗi</span><span class="slide-number" data-current="15" data-total="17"></span></div>
-    <aside class="notes"><p>Ki?n tr?c h? th?ng ???c t?ch theo c?c service nghi?p v?. Web Frontend v? Steam Client l? l?p client. API Gateway l? c?a v?o chung, th?c hi?n ??nh tuy?n request, h? tr? x?c th?c v? gi?m ph? thu?c tr?c ti?p gi?a client v?i c?c service b?n trong.</p>
-<p>C?c service ch?nh g?m Account Service cho ??ng nh?p v? Steam Guard, Catalog Service cho game v? t?m ki?m, Cart Service cho gi? h?ng, Order/Payment Service cho ??n h?ng v? thanh to?n, Library Service cho license, Review Service cho ??nh gi?, Publisher Service cho nh? ph?t h?nh v? Notification Service cho th?ng b?o.</p>
-<p>H??ng t?ch service gi?p h? th?ng d? m? r?ng v? b?o tr?. Trong ??t sale l?n, catalog v? search ch?u t?i cao n?n c?n cache, search index v? CDN. Order v? payment l?i c?n t?nh ch?nh x?c, retry v? idempotency. M?i mi?n nghi?p v? ???c t?i ?u theo nhu c?u ri?ng.</p></aside>
+    <div class="why"><strong>Lý do chọn hướng này:</strong> mỗi miền nghiệp vụ có yêu cầu tải, bảo mật và dữ liệu khác nhau, nên tách service giúp dễ mở rộng và bảo trì.</div>
+    <div class="footer"><span>UML liên quan: Architecture Diagram, Deployment Diagram</span><span class="slide-number" data-current="12" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Kiến trúc hệ thống được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này không gọi trực tiếp vào từng service, mà đi qua API Gateway. Gateway là cửa vào chung, giúp định tuyến request và hỗ trợ xác thực.</p>
+      <p>Các service phía sau gồm Account, Catalog, Cart, Order, Library, Review, Publisher và Notification. Mỗi service phụ trách một miền nghiệp vụ riêng. Catalog tập trung vào game và tìm kiếm. Order xử lý đơn hàng và thanh toán. Library quản lý license. Review xử lý đánh giá. Publisher phục vụ nhà phát hành.</p>
+      <p>Nhóm chọn hướng tách service vì Steam Store có nhiều nghiệp vụ với đặc điểm khác nhau. Trong đợt sale lớn, catalog và search cần mở rộng mạnh. Trong khi đó order và payment cần chính xác giao dịch. Tách theo miền nghiệp vụ giúp hệ thống dễ mở rộng, dễ bảo trì và giảm ảnh hưởng khi một service gặp lỗi.</p>
+    </aside>
   </section>
 
-  <section class="slide" data-title="Dữ liệu">
-    <p class="kicker">Nội dung cụ thể: thiết kế dữ liệu</p>
-    <h2>ERD thể hiện quan hệ giữa giao dịch, game và quyền sở hữu</h2>
+  <section class="slide" data-title="Đô dữ liệu">
+    <div class="speaker">Trình bày: <b>Đô</b> · thiết kế dữ liệu</div>
+    <h2>ERD: license là điểm nối giữa thanh toán và thư viện</h2>
     <div class="split">
       <div class="image-frame"><img src="./assets/uml/erd.png" alt="ERD Steam Store"></div>
       <div>
-        <ul class="compact-list">
-          <li><strong>User</strong> có order, wishlist, review và library.</li>
-          <li><strong>Game</strong> thuộc publisher và có review, wishlist item, cart item.</li>
-          <li><strong>Order</strong> liên kết payment và refund request.</li>
-          <li><strong>Library</strong> chứa license, license liên kết tới game.</li>
-          <li><strong>Refund</strong> cần cập nhật trạng thái đơn hàng và thu hồi license nếu được duyệt.</li>
+        <ul class="compact">
+          <li><strong>User</strong> có order, review, wishlist và library.</li>
+          <li><strong>Game</strong> thuộc publisher, xuất hiện trong cart item, wishlist item, review và license.</li>
+          <li><strong>Order</strong> liên kết với payment và refund request.</li>
+          <li><strong>Library</strong> chứa nhiều license, mỗi license gắn với một game.</li>
+          <li><strong>Refund</strong> cần cập nhật đơn hàng và thu hồi license nếu được duyệt.</li>
         </ul>
+        <div class="why"><strong>Lý do thiết kế license riêng:</strong> người dùng chỉ có quyền truy cập game khi payment thành công và license được cấp vào library.</div>
       </div>
     </div>
-    <div class="footer-note"><span>License là điểm nối giữa mua hàng và quyền truy cập game</span><span class="slide-number" data-current="16" data-total="17"></span></div>
-    <aside class="notes"><p>ERD th? hi?n c?c th?c th? ch?nh v? quan h? d? li?u trong h? th?ng. User c? nhi?u order, review, wishlist v? m?t library. Game thu?c publisher v? c? th? xu?t hi?n trong wishlist item, cart item, review v? license. Order li?n k?t v?i payment v? refund request.</p>
-<p>Quan h? gi?a Library, License v? Game l? ?i?m tr?ng t?m. Library l? th? vi?n c?a ng??i d?ng, c?n License l? quy?n truy c?p c? th? ??n m?t game. ?i?u n?y ph?n ?nh ??ng nghi?p v? Steam Store: sau khi mua th?nh c?ng, ng??i d?ng nh?n quy?n truy c?p s? thay v? nh?n m?t s?n ph?m v?t l?.</p>
-<p>ERD c?ng h? tr? x? l? refund. RefundRequest g?n v?i order v? user. Khi ho?n ti?n ???c duy?t, h? th?ng c?p nh?t tr?ng th?i refund, c?p nh?t order v? thu h?i license. Nh? ?? d? li?u c? th? truy v?t t? ng??i d?ng, ??n h?ng, thanh to?n ??n quy?n truy c?p game.</p></aside>
+    <div class="footer"><span>UML liên quan: ERD, Class Design, State Refund</span><span class="slide-number" data-current="13" data-total="15"></span></div>
+    <aside class="notes">
+      <p>ERD thể hiện các thực thể chính và quan hệ dữ liệu trong hệ thống. User có nhiều order, review, wishlist và một library. Game thuộc publisher và có thể xuất hiện trong wishlist item, cart item, review và license.</p>
+      <p>Điểm quan trọng là quan hệ giữa Library, License và Game. Library là thư viện của người dùng, còn License là quyền truy cập cụ thể đến một game. Điều này phản ánh đúng nghiệp vụ của Steam Store: sau khi thanh toán thành công, người dùng nhận quyền truy cập số thay vì nhận sản phẩm vật lý.</p>
+      <p>RefundRequest gắn với order và user. Khi hoàn tiền được duyệt, hệ thống cập nhật trạng thái refund, cập nhật order và thu hồi license. Nhờ đó dữ liệu có thể truy vết từ người dùng, đơn hàng, thanh toán đến quyền truy cập game.</p>
+    </aside>
+  </section>
+
+  <section class="slide" data-title="Đô BCE Class">
+    <div class="speaker">Trình bày: <b>Đô</b> · BCE và class design</div>
+    <h2>Từ giao diện đến lớp xử lý và dữ liệu</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Boundary</h3><p>StorePageBoundary, CartBoundary, LoginBoundary nhận thao tác từ người dùng.</p></div>
+      <div class="card"><h3>Control</h3><p>CatalogController, OrderController, AccountController, RefundController điều phối nghiệp vụ.</p></div>
+      <div class="card"><h3>Entity</h3><p>User, Game, Cart, Order, Payment, License, Review, RefundRequest lưu dữ liệu cốt lõi.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="image-frame" style="min-height:290px"><img src="./assets/uml/bce_analysis.png" alt="BCE" style="max-height:270px"></div>
+      <div class="image-frame" style="min-height:290px"><img src="./assets/uml/class_design.png" alt="Class design" style="max-height:270px"></div>
+    </div>
+    <div class="footer"><span>UML liên quan: BCE Analysis, Class Design</span><span class="slide-number" data-current="14" data-total="15"></span></div>
+    <aside class="notes">
+      <p>BCE giúp nối phần giao diện với phần thiết kế lớp. Boundary là lớp nhận tương tác từ người dùng, ví dụ StorePageBoundary, CartBoundary và LoginBoundary. Các lớp này không xử lý nghiệp vụ sâu mà chuyển yêu cầu sang lớp Control.</p>
+      <p>Control là lớp điều phối nghiệp vụ. CatalogController xử lý tìm kiếm và lọc game. OrderController xử lý tạo đơn hàng và xác nhận thanh toán. AccountController xử lý đăng nhập và Steam Guard. RefundController xử lý yêu cầu hoàn tiền.</p>
+      <p>Entity là các đối tượng dữ liệu cốt lõi như User, Game, Cart, Order, Payment, License, Review và RefundRequest. Class design tiếp tục làm rõ thuộc tính và phương thức của các lớp này. Nhóm chọn BCE vì nó giúp chuyển từ use case sang thiết kế lớp một cách rõ ràng: giao diện nhận yêu cầu, control xử lý, entity lưu dữ liệu.</p>
+    </aside>
   </section>
 
   <section class="slide" data-title="Kết luận">
-    <p class="kicker">Kết luận</p>
-    <h2>Nhóm đã hoàn thành mô hình phân tích và thiết kế cho Steam Store</h2>
+    <div class="speaker">Trình bày: <b>Đạt</b> · kết luận</div>
+    <h2>Kết luận và hướng phát triển</h2>
     <div class="grid g3">
-      <div class="card"><h3>Kết quả</h3><p>Báo cáo có yêu cầu, use case, UML, kiến trúc, class design, ERD và deployment.</p></div>
-      <div class="card"><h3>Điểm nhấn</h3><p>Tập trung vào bảo mật tài khoản, thanh toán đúng, cấp license đúng và hoàn tiền đúng.</p></div>
-      <div class="card"><h3>Hướng phát triển</h3><p>Bổ sung prototype giao diện, API chi tiết, test case và mô phỏng database.</p></div>
+      <div class="card"><h3>Kết quả đạt được</h3><p>Hoàn thành phân tích yêu cầu, phân quyền, giao diện chính, UML nghiệp vụ, kiến trúc, class, ERD và deployment.</p></div>
+      <div class="card"><h3>Điểm nhấn</h3><p>Các mô hình liên kết theo chuỗi: yêu cầu → use case → sequence/activity/state → class/ERD/deployment.</p></div>
+      <div class="card"><h3>Hướng phát triển</h3><p>Bổ sung prototype giao diện, đặc tả API, test case thanh toán/refund và mô phỏng database.</p></div>
     </div>
-    <p class="lede">Em xin cảm ơn thầy và các bạn đã lắng nghe. Nhóm em sẵn sàng nhận góp ý và trả lời câu hỏi.</p>
-    <div class="footer-note"><span>Q&A</span><span class="slide-number" data-current="17" data-total="17"></span></div>
-    <aside class="notes"><p>Nh?m ?? ho?n th?nh b? m? h?nh ph?n t?ch v? thi?t k? cho Steam Store. K?t qu? g?m m? t? b?i to?n, y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng, ph?n quy?n actor, use case diagram, sequence diagram, activity diagram, state diagram, BCE, class design, ERD v? deployment diagram.</p>
-<p>C?c m? h?nh kh?ng ??ng ri?ng l? m? li?n k?t theo m?t d?ng ph?n t?ch. Y?u c?u d?n ??n use case. Use case d?n ??n sequence v? activity. State diagram ki?m so?t v?ng ??i order v? refund. Class diagram v? ERD m? t? c?u tr?c l?p v? d? li?u. Deployment diagram th? hi?n c?ch h? th?ng ???c tri?n khai ? m?c h? t?ng.</p>
-<p>H??ng ph?t tri?n ti?p theo g?m x?y d?ng prototype giao di?n chi ti?t h?n, ??c t? API, b? sung test case cho c?c nghi?p v? thanh to?n v? ho?n ti?n, ??ng th?i m? ph?ng database. Nh?m em xin c?m ?n th?y v? c?c b?n ?? l?ng nghe, v? s?n s?ng nh?n c?u h?i ho?c g?p ?.</p></aside>
+    <div class="why"><strong>Thông điệp chính:</strong> với Steam Store, thiết kế đúng không chỉ là vẽ đủ sơ đồ, mà là bảo đảm thanh toán đúng, cấp license đúng, hoàn tiền đúng và dữ liệu truy vết được.</div>
+    <p class="lede">Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe.</p>
+    <div class="footer"><span>Q&A</span><span class="slide-number" data-current="15" data-total="15"></span></div>
+    <aside class="notes">
+      <p>Để kết luận, nhóm đã hoàn thành bộ mô hình phân tích và thiết kế cho Steam Store. Kết quả gồm mô tả bài toán, yêu cầu chức năng, yêu cầu phi chức năng, phân quyền actor, giao diện chính, use case diagram, sequence diagram, activity diagram, state diagram, BCE, class design, ERD và deployment diagram.</p>
+      <p>Điểm quan trọng là các mô hình không đứng riêng lẻ. Yêu cầu dẫn đến use case. Use case dẫn đến sequence và activity. State diagram kiểm soát vòng đời order và refund. BCE và class diagram mô tả cách tổ chức lớp. ERD mô tả dữ liệu. Deployment diagram mô tả triển khai hệ thống.</p>
+      <p>Hướng phát triển tiếp theo là xây dựng prototype giao diện chi tiết hơn, đặc tả API, bổ sung test case cho các nghiệp vụ nhạy cảm như thanh toán và hoàn tiền, đồng thời mô phỏng database. Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe, và sẵn sàng nhận câu hỏi hoặc góp ý.</p>
+    </aside>
   </section>
 
 </div>
-
 <script src="./vendor/html-ppt/assets/runtime.js"></script>
 </body>
 </html>

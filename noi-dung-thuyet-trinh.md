@@ -1,139 +1,123 @@
 # N?i dung thuy?t tr?nh Steam Store
 
-B?n n?y d?ng ?? t?p tr?nh b?y theo t?ng slide. N?i dung trong file c?ng ???c ??t trong notes c?a HTML slide.
+B?n n?y kh?p v?i 15 slide trong `index.html`. M?i m?c l? n?i dung c? th? ??c khi thuy?t tr?nh.
 
 ## Slide 1
 
-Em xin ch?o th?y v? c?c b?n. Nh?m em tr?nh b?y ?? t?i ph?n t?ch v? thi?t k? h? th?ng Steam Store. Steam Store l? n?n t?ng ph?n ph?i game tr?c tuy?n, nh?ng trong ph?m vi m?n k? thu?t ph?n m?m, nh?m xem Steam Store nh? m?t h? th?ng ph?n m?m c? nhi?u nghi?p v? li?n k?t v?i nhau.
+Em xin chào thầy và các bạn. Nhóm em trình bày đề tài phân tích và thiết kế hệ thống Steam Store. Trong bài này, nhóm không xem Steam Store chỉ là một trang bán game, mà xem nó như một hệ thống phần mềm có nhiều nghiệp vụ liên kết với nhau.
 
-H? th?ng c? ng??i d?ng t?m ki?m game, xem chi ti?t, th?m wishlist, mua game, thanh to?n, nh?n game trong th? vi?n, vi?t review v? y?u c?u ho?n ti?n. Ngo?i ng??i d?ng, h? th?ng c?n c? nh? ph?t h?nh qu?n l? s?n ph?m, qu?n tr? vi?n ki?m duy?t n?i dung v? c?ng thanh to?n x? l? giao d?ch.
+Hệ thống có người dùng tìm kiếm game, xem chi tiết, thêm vào wishlist, mua game, thanh toán, nhận game trong thư viện, viết review và yêu cầu hoàn tiền. Ngoài ra còn có nhà phát hành quản lý game, quản trị viên kiểm duyệt và cổng thanh toán xử lý giao dịch.
 
-H??ng ph?n t?ch c?a nh?m ?i t? t?ng quan ??n chi ti?t. Tr??c h?t l? x?c ??nh y?u c?u v? vai tr? ng??i d?ng. Sau ?? nh?m m? h?nh h?a b?ng use case, sequence, activity, state, BCE, class diagram, ERD v? deployment. M?i m? h?nh gi?i th?ch m?t g?c nh?n kh?c nhau c?a h? th?ng.
+Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách tổng quan và kết luận. Khoa phụ trách yêu cầu và phân quyền. Dương phụ trách giao diện và hành trình người dùng. Khánh phụ trách UML nghiệp vụ. Đô phụ trách kiến trúc, dữ liệu và thiết kế kỹ thuật.
 
 ## Slide 2
 
-B?i tr?nh b?y g?m s?u n?i dung ch?nh. N?i dung th? nh?t l? gi?i thi?u ch? ??, l?m r? Steam Store l? h? th?ng g? v? ph?m vi ph?n t?ch c?a nh?m. N?i dung th? hai l? c?c giao di?n ch?nh, gi?p h?nh dung ng??i d?ng v? c?c vai tr? kh?c thao t?c tr?n nh?ng m?n h?nh n?o.
+Đây là lộ trình trình bày của nhóm. Phần đầu do Đạt trình bày, tập trung vào lý do chọn đề tài, phạm vi hệ thống và khối lượng công việc nhóm đã hoàn thành.
 
-N?i dung th? ba l? kh?i l??ng c?ng vi?c ?? ho?n th?nh, g?m y?u c?u h? th?ng, b?ng ph?n t?ch v? c?c s? ?? UML. N?i dung th? t? l? ph?n c?ng nh?m, th? hi?n m?i th?nh vi?n ph? tr?ch m?t m?ng r? r?ng.
+Tiếp theo, Khoa trình bày yêu cầu hệ thống. Phần này trả lời câu hỏi hệ thống cần làm gì, có những actor nào và mỗi actor được sử dụng chức năng nào. Dương trình bày giao diện và hành trình người dùng để người nghe hình dung hệ thống dưới góc nhìn thực tế.
 
-N?i dung th? n?m l? ph?n theo t?ng th?nh vi?n. M?i m?ng ??u g?n v?i UML li?n quan v? l? do ch?n h??ng ph?n t?ch. Cu?i c?ng l? ph?n t?ng h?p c?c m? h?nh c? th?: y?u c?u, use case, quy tr?nh mua game, ki?n tr?c, d? li?u v? k?t lu?n.
+Sau đó Khánh trình bày các UML mô tả nghiệp vụ như use case, sequence, activity và state. Cuối cùng Đô trình bày thiết kế kỹ thuật gồm kiến trúc, BCE, class diagram, ERD và deployment. Cách đi này giúp bài thuyết trình liền mạch: từ yêu cầu đến hành vi, rồi đến cấu trúc hệ thống.
 
 ## Slide 3
 
-Steam Store l? m?t h? th?ng th??ng m?i s? d?nh cho game. ?i?m kh?c bi?t so v?i b?n h?ng th?ng th??ng l? s?n ph?m sau khi mua kh?ng ph?i h?ng v?t l?, m? l? quy?n truy c?p s?. Trong b?o c?o, quy?n truy c?p n?y ???c m? h?nh h?a b?ng license.
+Nhóm chọn Steam Store vì đây là một hệ thống đủ lớn để áp dụng các kiến thức của môn kỹ thuật phần mềm. Hệ thống có nhiều vai trò khác nhau: khách vãng lai, người dùng Steam, Steam Client, nhà phát hành, quản trị viên và cổng thanh toán.
 
-Khi ng??i d?ng thanh to?n th?nh c?ng, h? th?ng c?p license ?? game xu?t hi?n trong th? vi?n. Ngo?i mua game, Steam Store c?n h? tr? t?m ki?m theo tag, l?c theo gi? ho?c n?n t?ng, xem review, th?m wishlist, vi?t ??nh gi? v? ho?n ti?n.
+Điểm quan trọng là các nghiệp vụ trong Steam Store liên kết chặt chẽ với nhau. Người dùng tìm game, thêm vào giỏ hàng, thanh toán, sau đó hệ thống cấp license để game xuất hiện trong thư viện. Từ thư viện, người dùng có thể tải game, viết review hoặc yêu cầu hoàn tiền.
 
-??i v?i nh? ph?t h?nh, h? th?ng c? ch?c n?ng qu?n l? th?ng tin game, media, DLC, gi? v? khuy?n m?i. ??i v?i qu?n tr? vi?n, h? th?ng h? tr? ki?m duy?t n?i dung, h? tr? t?i kho?n v? theo d?i giao d?ch b?t th??ng. Ch? ?? n?y ph? h?p v? c? nhi?u actor, nhi?u lu?ng nghi?p v?, y?u c?u b?o m?t cao v? d? li?u li?n k?t ch?t ch?.
+Nhóm bắt đầu bằng sơ đồ kiến trúc tổng quan để đặt bối cảnh cho toàn bộ bài. Sơ đồ này cho thấy hệ thống gồm client, API Gateway, các service nghiệp vụ, database, search index, CDN và cổng thanh toán. Khi có bức tranh tổng thể, các UML chi tiết phía sau sẽ có điểm tựa rõ ràng hơn.
 
 ## Slide 4
 
-C?c giao di?n ch?nh ???c m? t? theo h?nh tr?nh s? d?ng h? th?ng. Ng??i d?ng b?t ??u ? trang ch? Store, n?i hi?n th? game n?i b?t, game ?ang sale, danh m?c v? thanh t?m ki?m. T? ??, ng??i d?ng chuy?n sang trang t?m ki?m ho?c l?c game theo tag, gi?, n?n t?ng, ??nh gi? v? ng?y ph?t h?nh.
+Khối lượng công việc của nhóm gồm ba lớp nội dung. Lớp đầu tiên là xác định yêu cầu hệ thống. Nhóm đã mô tả bài toán, xây dựng bảng thuật ngữ, xác định yêu cầu chức năng, yêu cầu phi chức năng và phân quyền theo vai trò.
 
-Trang chi ti?t game cung c?p trailer, h?nh ?nh, m? t?, gi?, DLC, review v? c?u h?nh y?u c?u. Khi quy?t ??nh mua, ng??i d?ng s? d?ng wishlist, gi? h?ng v? checkout. Sau thanh to?n th?nh c?ng, game xu?t hi?n trong th? vi?n.
+Lớp thứ hai là phân tích UML. Nhóm có use case cho người dùng và quản trị, sequence diagram cho các luồng chính, activity diagram cho quy trình mua game và hoàn tiền, state diagram cho order và refund, cùng BCE để nối giao diện, điều khiển và dữ liệu.
 
-Ngo?i ra c?n c? m?n h?nh review, refund, th?ng b?o v? l?ch s? giao d?ch. ? ph?a qu?n tr?, Publisher Dashboard ph?c v? nh? ph?t h?nh qu?n l? s?n ph?m, c?n Admin Dashboard ph?c v? ki?m duy?t, h? tr? t?i kho?n v? gi?m s?t giao d?ch. Ph?n giao di?n gi?p n?i y?u c?u nghi?p v? v?i c?c use case v? activity diagram.
+Lớp thứ ba là thiết kế hệ thống. Nhóm đã có architecture diagram, deployment diagram, class design, ERD và danh sách bảng cơ sở dữ liệu. Cách chia này giúp từng thành viên có phần riêng nhưng vẫn nằm trong một luồng phân tích thống nhất.
 
 ## Slide 5
 
-Kh?i l??ng c?ng vi?c c?a nh?m g?m ba l?p n?i dung. L?p th? nh?t l? x?c ??nh y?u c?u, bao g?m m? t? b?i to?n, b?ng thu?t ng?, y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng v? ph?n quy?n theo vai tr?.
+Phần yêu cầu hệ thống được chia thành ba nhóm. Nhóm thứ nhất là yêu cầu chức năng dành cho người dùng, gồm đăng ký, đăng nhập, Steam Guard, tìm kiếm game, wishlist, giỏ hàng, checkout, quản lý thư viện, review và hoàn tiền.
 
-L?p th? hai l? ph?n t?ch nghi?p v? b?ng UML. Nh?m x?y d?ng use case cho ng??i d?ng v? qu?n tr?, sequence diagram cho c?c lu?ng nh? mua game, ??ng nh?p, t?m ki?m, review v? c?p nh?t game t? nh? ph?t h?nh. Activity diagram ???c d?ng cho quy tr?nh mua game v? ho?n ti?n. State diagram ???c d?ng cho v?ng ??i order v? refund.
+Nhóm thứ hai là chức năng quản trị. Nhà phát hành quản lý thông tin game, giá bán, media, DLC và khuyến mãi. Quản trị viên xử lý kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi giao dịch bất thường.
 
-L?p th? ba l? thi?t k? h? th?ng, g?m architecture diagram, deployment diagram, BCE, class design v? ERD. C?c m? h?nh n?y t?o th?nh chu?i li?n k?t t? y?u c?u ban ??u ??n c?u tr?c k? thu?t v? d? li?u.
+Nhóm thứ ba là yêu cầu phi chức năng. Với Steam Store, bảo mật tài khoản, hiệu năng tìm kiếm, khả năng mở rộng trong các đợt sale lớn và toàn vẹn giữa thanh toán với cấp license là các điểm rất quan trọng. Nhóm chọn tách yêu cầu theo vai trò vì mỗi actor có quyền thao tác khác nhau, đây là nền để xây dựng use case và phân quyền hệ thống.
 
 ## Slide 6
 
-Nh?m ph?n c?ng theo t?ng m?ng c?ng vi?c. ??t l? tr??ng nh?m, ph? tr?ch ?i?u ph?i, t?ng h?p n?i dung, m? ??u v? k?t lu?n. Khoa ph? tr?ch ph?n t?ch y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng v? ph?n quy?n h? th?ng.
+Use case diagram thể hiện actor nào tương tác với hệ thống và họ được sử dụng chức năng nào. Khách vãng lai có thể tìm kiếm, lọc game, xem chi tiết và đăng ký tài khoản. Đây là nhóm chưa đăng nhập nên không được mua game, review hoặc quản lý wishlist.
 
-Kh?nh ph? tr?ch actor, use case v? c?c lu?ng nghi?p v? ch?nh. D??ng ph? tr?ch giao di?n v? tr?i nghi?m ng??i d?ng, t?p trung v?o c?c m?n h?nh nh? trang ch?, t?m ki?m, chi ti?t game, gi? h?ng, th? vi?n, review v? refund.
+Người dùng Steam là actor chính của hệ thống. Sau khi đăng nhập, người dùng có thể quản lý wishlist, giỏ hàng, thanh toán, thư viện, viết review và yêu cầu hoàn tiền. Steam Client được tách thành actor riêng vì việc tải và cập nhật game diễn ra qua ứng dụng client dựa trên license trong thư viện.
 
-?? ph? tr?ch ph?n k? thu?t g?m ki?n tr?c h? th?ng, BCE, class diagram, ERD v? database. C?ch ph?n c?ng n?y gi?p m?i th?nh vi?n c? m?t ph?m vi r? r?ng, ??ng th?i c?c ph?n v?n li?n k?t v?i nhau theo d?ng ph?n t?ch t? y?u c?u ??n thi?t k?.
+Phía quản trị có publisher và admin. Publisher quản lý trang game, giá, media và khuyến mãi. Admin kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi giao dịch. Use case được dùng ở bước này vì nó giúp chốt phạm vi trước khi đi vào sequence, activity và thiết kế dữ liệu.
 
 ## Slide 7
 
-Steam Store ???c ch?n v? ??y l? m?t h? th?ng ?? l?n ?? ph?n t?ch b?ng k? thu?t ph?n m?m. H? th?ng c? nhi?u actor nh? kh?ch v?ng lai, ng??i d?ng Steam, Steam Client, nh? ph?t h?nh, qu?n tr? vi?n v? c?ng thanh to?n. M?i actor c? m?c ti?u v? quy?n thao t?c kh?c nhau.
+Phần giao diện được trình bày theo các màn hình chính của Steam Store. Người dùng bắt đầu từ trang chủ Store, nơi hiển thị game nổi bật, game đang sale, danh mục và thanh tìm kiếm. Sau đó người dùng đi tới trang tìm kiếm hoặc lọc game theo tag, giá, nền tảng, đánh giá và ngày phát hành.
 
-S? ?? li?n quan ? ph?n t?ng quan l? architecture diagram. S? ?? n?y th? hi?n b?c tranh to?n h? th?ng: Web Frontend v? Steam Client ? ph?a ng??i d?ng, API Gateway ? gi?a, c?c service nghi?p v? ? ph?a sau, c?ng database, search index, CDN, event queue v? payment gateway.
+Trang chi tiết game cung cấp trailer, hình ảnh, mô tả, giá, DLC, review và cấu hình yêu cầu. Khi quyết định mua, người dùng sử dụng wishlist, giỏ hàng và checkout. Sau khi thanh toán thành công, game xuất hiện trong thư viện.
 
-H??ng ph?n t?ch b?t ??u t? t?ng quan v? Steam Store c? nhi?u nghi?p v? li?n k?t. Khi x?c ??nh tr??c ph?m vi v? ki?n tr?c m?c cao, c?c ph?n sau nh? y?u c?u, use case, sequence, ERD v? deployment c? c?ng m?t b?i c?nh chung, tr?nh t?nh tr?ng m?i s? ?? m? t? m?t h??ng r?i r?c.
+Ngoài ra còn có review, refund, Publisher Dashboard và Admin Dashboard. Trong mô hình BCE, các màn hình này tương ứng với lớp Boundary, tức là lớp tiếp nhận tương tác từ người dùng trước khi chuyển sang Control xử lý nghiệp vụ.
 
 ## Slide 8
 
-Ph?n y?u c?u h? th?ng ???c chia th?nh ba nh?m: y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng v? ph?n quy?n. Y?u c?u ch?c n?ng m? t? nh?ng vi?c h? th?ng th?c hi?n, ch?ng h?n ??ng k?, ??ng nh?p, Steam Guard, t?m ki?m game, wishlist, gi? h?ng, thanh to?n, th? vi?n, review v? ho?n ti?n.
+Hành trình người dùng được mô tả từ lúc bắt đầu tìm game đến khi game xuất hiện trong thư viện. Người dùng có thể bắt đầu ở trang chủ hoặc trang tìm kiếm. Khi tìm được game phù hợp, người dùng mở trang chi tiết để xem thông tin, giá, review và yêu cầu cấu hình.
 
-Y?u c?u phi ch?c n?ng m? t? ch?t l??ng c?a h? th?ng. V?i Steam Store, c?c ti?u ch? quan tr?ng g?m b?o m?t t?i kho?n, hi?u n?ng t?m ki?m, kh? n?ng m? r?ng trong c?c ??t sale l?n, ?? ?n ??nh c?a checkout v? t?nh to?n v?n gi?a thanh to?n v?i c?p license.
+Sau đó người dùng thêm game vào wishlist hoặc giỏ hàng. Nếu mua ngay, người dùng chuyển sang checkout, chọn phương thức thanh toán và xác nhận đơn hàng. Khi thanh toán thành công, hệ thống cấp license và game xuất hiện trong thư viện.
 
-Y?u c?u ???c t?ch theo vai tr? ?? l?m r? quy?n s? d?ng. Kh?ch v?ng lai ch? xem v? t?m ki?m. Ng??i d?ng Steam ???c mua, review v? ho?n ti?n. Publisher qu?n l? game. Admin ki?m duy?t v? h? tr?. C?ng thanh to?n x? l? giao d?ch. C?ch ph?n t?ch n?y l? c? s? ?? x?y d?ng use case user v? use case admin.
+Hành trình này liên hệ trực tiếp với use case và activity diagram. Use case cho biết người dùng được làm gì, activity diagram cho biết quy trình rẽ nhánh như thế nào, còn ERD cho thấy dữ liệu giỏ hàng, order, payment, license và library được tạo ra theo thứ tự nào.
 
 ## Slide 9
 
-Use case v? c?c UML ??ng m? t? c?ch nghi?p v? v?n h?nh trong h? th?ng. Use case diagram tr? l?i c?u h?i actor n?o t??ng t?c v?i h? th?ng v? h? s? d?ng ch?c n?ng n?o. V? d? ng??i d?ng Steam c? wishlist, gi? h?ng, thanh to?n, th? vi?n, review v? ho?n ti?n.
+Phần UML nghiệp vụ giải thích cách hệ thống hoạt động. Use case diagram cho biết actor nào dùng chức năng nào. Tuy nhiên use case chưa cho biết thứ tự xử lý bên trong, vì vậy nhóm dùng sequence diagram.
 
-Sequence diagram m? t? th? t? trao ??i gi?a c?c th?nh ph?n theo th?i gian. Trong lu?ng mua game, Web UI g?i Cart Service, Order Service, Payment Gateway v? Library Service. Nh? ??, th? t? x? l? thanh to?n v? c?p license ???c th? hi?n r?.
+Sequence diagram mô tả các thành phần gọi nhau theo thời gian. Ví dụ trong luồng mua game, Web UI gọi Cart Service, Order Service, Payment Gateway và Library Service. Activity diagram mô tả quy trình có rẽ nhánh, chẳng hạn thanh toán thành công hoặc thất bại, refund được duyệt tự động hoặc cần admin xem xét.
 
-Activity diagram m? t? quy tr?nh c? ?i?u ki?n r? nh?nh, c?n state diagram m? t? v?ng ??i tr?ng th?i c?a order v? refund. Nh?m d?ng nhi?u lo?i UML v? m?i lo?i gi?i th?ch m?t c?u h?i ri?ng: ai l?m g?, th? t? x? l? ra sao, quy tr?nh r? nh?nh th? n?o v? tr?ng th?i thay ??i nh? th? n?o.
+State diagram được dùng cho order và refund vì hai đối tượng này có vòng đời rõ ràng. Nhóm dùng nhiều loại UML vì mỗi sơ đồ trả lời một câu hỏi khác nhau. Cách này giúp nghiệp vụ được phân tích đầy đủ hơn và tránh bỏ sót trạng thái lỗi.
 
 ## Slide 10
 
-Giao di?n v? tr?i nghi?m ng??i d?ng ???c tr?nh b?y theo h?nh tr?nh s? d?ng th?c t?. Ng??i d?ng v?o trang ch? Store, t?m ki?m ho?c l?c game, m? trang chi ti?t, th?m v?o wishlist ho?c gi? h?ng, checkout, thanh to?n v? cu?i c?ng game xu?t hi?n trong th? vi?n.
+Quy trình mua game là luồng nghiệp vụ quan trọng nhất. Người dùng bắt đầu bằng checkout từ giỏ hàng. Hệ thống lấy danh sách game và lưu snapshot giá để bảo đảm lịch sử giao dịch không bị thay đổi nếu giá game thay đổi sau đó.
 
-M?i m?n h?nh ph?c v? m?t nghi?p v? c? th?. Trang t?m ki?m gi?p ng??i d?ng t?m game nhanh h?n. Trang chi ti?t h? tr? quy?t ??nh mua. Gi? h?ng v? checkout ph?c v? thanh to?n. Th? vi?n hi?n th? game ?? c? license. Review cho ph?p ??nh gi? sau khi s? h?u game. Refund h? tr? ho?n ti?n theo ?i?u ki?n.
+Order Service tạo đơn hàng tạm và gửi yêu cầu sang Payment Gateway. Nếu thanh toán thất bại, hệ thống không cấp game mà chỉ thông báo lỗi. Nếu thanh toán thành công, Order Service gọi Library Service để tạo license cho từng game, sau đó game xuất hiện trong thư viện.
 
-Trong m? h?nh BCE, c?c m?n h?nh giao di?n t??ng ?ng v?i l?p Boundary. Boundary ti?p nh?n t??ng t?c t? ng??i d?ng, Control x? l? nghi?p v?, c?n Entity l?u d? li?u c?t l?i. V? v?y ph?n giao di?n l? ?i?m b?t ??u c?a use case, activity diagram v? BCE.
+Điểm quan trọng là toàn vẹn giao dịch. Hệ thống phải tránh hai lỗi: người dùng bị trừ tiền nhưng không nhận game, hoặc chưa thanh toán mà vẫn được cấp game. Vì vậy sequence purchase, activity purchase và state order được dùng để kiểm soát thứ tự xử lý và trạng thái đơn hàng.
 
 ## Slide 11
 
-Thi?t k? k? thu?t b?t ??u t? ki?n tr?c h? th?ng. Nh?m ch?n ki?n tr?c t?ch theo mi?n nghi?p v? v? Steam Store c? nhi?u ch?c n?ng v?i ??c ?i?m kh?c nhau. Catalog c?n t?m ki?m nhanh, Order c?n x? l? giao d?ch ch?nh x?c, Library c?n qu?n l? license, Review c?n ki?m tra quy?n s? h?u v? ki?m duy?t n?i dung.
+Ngoài mua game, nhóm phân tích thêm các luồng quan trọng khác. Luồng đăng nhập có Steam Guard thể hiện yêu cầu bảo mật tài khoản. Account Service kiểm tra thông tin đăng nhập, sau đó Steam Guard xác thực bổ sung nếu thiết bị hoặc vị trí đăng nhập cần kiểm tra.
 
-Trong BCE diagram, h? th?ng ???c t?ch th?nh Boundary, Control v? Entity. Boundary nh?n thao t?c t? giao di?n. Control ?i?u ph?i nghi?p v?. Entity ??i di?n cho d? li?u c?t l?i nh? User, Game, Cart, Order, Payment, License, Review v? RefundRequest. Class diagram l?m r? th?m thu?c t?nh v? ph??ng th?c c?a c?c l?p n?y.
+Luồng viết review thể hiện việc kiểm soát chất lượng đánh giá. Người dùng chỉ được review khi đã sở hữu game hoặc có license hợp lệ trong thư viện. Điều này giúp hạn chế review giả và spam.
 
-Trong ERD, license l? ?i?m quan tr?ng. Ng??i d?ng kh?ng s? h?u game ch? v? c? order, m? c? quy?n truy c?p khi payment th?nh c?ng v? license ???c c?p v?o library. Thi?t k? n?y h? tr? x? l? ho?n ti?n, v? khi refund ???c duy?t, h? th?ng c? th? c?p nh?t order v? thu h?i license t??ng ?ng.
+Luồng hoàn tiền thể hiện vòng đời nghiệp vụ phức tạp. Refund có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin xem xét. Khi hoàn tiền được chấp nhận, hệ thống phải hoàn tiền và thu hồi license. Vì vậy nhóm dùng cả activity refund và state refund để mô tả rẽ nhánh và trạng thái.
 
 ## Slide 12
 
-Y?u c?u h? th?ng l? n?n t?ng ?? x?y d?ng c?c m? h?nh sau. Y?u c?u ch?c n?ng m? t? h? th?ng th?c hi?n nh?ng nghi?p v? n?o: ??ng nh?p, t?m ki?m, wishlist, thanh to?n, th? vi?n, review, refund, qu?n l? game c?a publisher v? ki?m duy?t c?a admin.
+Kiến trúc hệ thống được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này không gọi trực tiếp vào từng service, mà đi qua API Gateway. Gateway là cửa vào chung, giúp định tuyến request và hỗ trợ xác thực.
 
-Y?u c?u phi ch?c n?ng m? t? h? th?ng ph?i ??t ch?t l??ng ra sao. Trang t?m ki?m c?n ph?n h?i nhanh. Checkout c?n ?n ??nh. T?i kho?n c?n b?o m?t b?ng Steam Guard. D? li?u thanh to?n v? license c?n to?n v?n ?? tr?nh l?i ng??i d?ng tr? ti?n nh?ng kh?ng nh?n game, ho?c ch?a tr? ti?n nh?ng v?n c? game.
+Các service phía sau gồm Account, Catalog, Cart, Order, Library, Review, Publisher và Notification. Mỗi service phụ trách một miền nghiệp vụ riêng. Catalog tập trung vào game và tìm kiếm. Order xử lý đơn hàng và thanh toán. Library quản lý license. Review xử lý đánh giá. Publisher phục vụ nhà phát hành.
 
-Nh?m ph?n t?ch y?u c?u tr??c khi v? UML v? m?i m? h?nh ph?i truy v?t ???c v? m?t y?u c?u c? th?. V? d? y?u c?u thanh to?n d?n ??n use case mua game, sequence purchase, state order v? c?c b?ng orders, payments, licenses trong ERD.
+Nhóm chọn hướng tách service vì Steam Store có nhiều nghiệp vụ với đặc điểm khác nhau. Trong đợt sale lớn, catalog và search cần mở rộng mạnh. Trong khi đó order và payment cần chính xác giao dịch. Tách theo miền nghiệp vụ giúp hệ thống dễ mở rộng, dễ bảo trì và giảm ảnh hưởng khi một service gặp lỗi.
 
 ## Slide 13
 
-Use case diagram th? hi?n ph?m vi ch?c n?ng c?a h? th?ng. V?i ph?a ng??i d?ng, actor g?m kh?ch v?ng lai, ng??i d?ng Steam v? Steam Client. Kh?ch v?ng lai t?m ki?m, l?c game, xem chi ti?t v? ??ng k? t?i kho?n. Ng??i d?ng Steam ??ng nh?p, qu?n l? wishlist, gi? h?ng, thanh to?n, th? vi?n, review v? ho?n ti?n.
+ERD thể hiện các thực thể chính và quan hệ dữ liệu trong hệ thống. User có nhiều order, review, wishlist và một library. Game thuộc publisher và có thể xuất hiện trong wishlist item, cart item, review và license.
 
-Steam Client ???c t?ch th?nh actor ri?ng v? vi?c t?i, c?i ??t v? c?p nh?t game th??ng di?n ra qua ?ng d?ng client, kh?ng ch? qua website. V?i ph?a qu?n tr?, publisher qu?n l? trang game, gi?, media, DLC v? khuy?n m?i. Admin ki?m duy?t n?i dung, h? tr? t?i kho?n v? theo d?i giao d?ch.
+Điểm quan trọng là quan hệ giữa Library, License và Game. Library là thư viện của người dùng, còn License là quyền truy cập cụ thể đến một game. Điều này phản ánh đúng nghiệp vụ của Steam Store: sau khi thanh toán thành công, người dùng nhận quyền truy cập số thay vì nhận sản phẩm vật lý.
 
-Quan h? include ???c d?ng khi m?t use case lu?n c?n d?ng use case kh?c, v? d? checkout bao g?m x? l? gi? h?ng. Quan h? extend ???c d?ng khi h?nh vi ph?t sinh theo ?i?u ki?n, v? d? vi?t review ch? h?p l? khi ng??i d?ng ?? s? h?u game trong th? vi?n.
+RefundRequest gắn với order và user. Khi hoàn tiền được duyệt, hệ thống cập nhật trạng thái refund, cập nhật order và thu hồi license. Nhờ đó dữ liệu có thể truy vết từ người dùng, đơn hàng, thanh toán đến quyền truy cập game.
 
 ## Slide 14
 
-Quy tr?nh mua game l? lu?ng nghi?p v? ti?u bi?u nh?t. Ng??i d?ng ch?n game, th?m v?o gi? h?ng v? checkout. H? th?ng l?y danh s?ch s?n ph?m trong gi? h?ng v? l?u snapshot gi?, v? gi? game c? th? thay ??i theo th?i ?i?m sale ho?c theo khu v?c.
+BCE giúp nối phần giao diện với phần thiết kế lớp. Boundary là lớp nhận tương tác từ người dùng, ví dụ StorePageBoundary, CartBoundary và LoginBoundary. Các lớp này không xử lý nghiệp vụ sâu mà chuyển yêu cầu sang lớp Control.
 
-Order Service t?o ??n h?ng t?m v? g?i y?u c?u sang Payment Gateway. N?u thanh to?n th?t b?i, h? th?ng kh?ng c?p game m? ch? th?ng b?o l?i ?? ng??i d?ng th? l?i. N?u thanh to?n th?nh c?ng, Order Service g?i Library Service ?? t?o license cho t?ng game, sau ?? game xu?t hi?n trong th? vi?n ng??i d?ng.
+Control là lớp điều phối nghiệp vụ. CatalogController xử lý tìm kiếm và lọc game. OrderController xử lý tạo đơn hàng và xác nhận thanh toán. AccountController xử lý đăng nhập và Steam Guard. RefundController xử lý yêu cầu hoàn tiền.
 
-?i?m quan tr?ng l? to?n v?n giao d?ch. Trong h? th?ng b?n s?n ph?m s?, l?i nghi?m tr?ng nh?t l? ng??i d?ng b? tr? ti?n nh?ng kh?ng nh?n game, ho?c ch?a thanh to?n m? v?n ???c c?p game. Sequence diagram v? state order gi?p ki?m so?t th? t? x? l? v? tr?ng th?i c?a ??n h?ng.
+Entity là các đối tượng dữ liệu cốt lõi như User, Game, Cart, Order, Payment, License, Review và RefundRequest. Class design tiếp tục làm rõ thuộc tính và phương thức của các lớp này. Nhóm chọn BCE vì nó giúp chuyển từ use case sang thiết kế lớp một cách rõ ràng: giao diện nhận yêu cầu, control xử lý, entity lưu dữ liệu.
 
 ## Slide 15
 
-Ki?n tr?c h? th?ng ???c t?ch theo c?c service nghi?p v?. Web Frontend v? Steam Client l? l?p client. API Gateway l? c?a v?o chung, th?c hi?n ??nh tuy?n request, h? tr? x?c th?c v? gi?m ph? thu?c tr?c ti?p gi?a client v?i c?c service b?n trong.
+Để kết luận, nhóm đã hoàn thành bộ mô hình phân tích và thiết kế cho Steam Store. Kết quả gồm mô tả bài toán, yêu cầu chức năng, yêu cầu phi chức năng, phân quyền actor, giao diện chính, use case diagram, sequence diagram, activity diagram, state diagram, BCE, class design, ERD và deployment diagram.
 
-C?c service ch?nh g?m Account Service cho ??ng nh?p v? Steam Guard, Catalog Service cho game v? t?m ki?m, Cart Service cho gi? h?ng, Order/Payment Service cho ??n h?ng v? thanh to?n, Library Service cho license, Review Service cho ??nh gi?, Publisher Service cho nh? ph?t h?nh v? Notification Service cho th?ng b?o.
+Điểm quan trọng là các mô hình không đứng riêng lẻ. Yêu cầu dẫn đến use case. Use case dẫn đến sequence và activity. State diagram kiểm soát vòng đời order và refund. BCE và class diagram mô tả cách tổ chức lớp. ERD mô tả dữ liệu. Deployment diagram mô tả triển khai hệ thống.
 
-H??ng t?ch service gi?p h? th?ng d? m? r?ng v? b?o tr?. Trong ??t sale l?n, catalog v? search ch?u t?i cao n?n c?n cache, search index v? CDN. Order v? payment l?i c?n t?nh ch?nh x?c, retry v? idempotency. M?i mi?n nghi?p v? ???c t?i ?u theo nhu c?u ri?ng.
-
-## Slide 16
-
-ERD th? hi?n c?c th?c th? ch?nh v? quan h? d? li?u trong h? th?ng. User c? nhi?u order, review, wishlist v? m?t library. Game thu?c publisher v? c? th? xu?t hi?n trong wishlist item, cart item, review v? license. Order li?n k?t v?i payment v? refund request.
-
-Quan h? gi?a Library, License v? Game l? ?i?m tr?ng t?m. Library l? th? vi?n c?a ng??i d?ng, c?n License l? quy?n truy c?p c? th? ??n m?t game. ?i?u n?y ph?n ?nh ??ng nghi?p v? Steam Store: sau khi mua th?nh c?ng, ng??i d?ng nh?n quy?n truy c?p s? thay v? nh?n m?t s?n ph?m v?t l?.
-
-ERD c?ng h? tr? x? l? refund. RefundRequest g?n v?i order v? user. Khi ho?n ti?n ???c duy?t, h? th?ng c?p nh?t tr?ng th?i refund, c?p nh?t order v? thu h?i license. Nh? ?? d? li?u c? th? truy v?t t? ng??i d?ng, ??n h?ng, thanh to?n ??n quy?n truy c?p game.
-
-## Slide 17
-
-Nh?m ?? ho?n th?nh b? m? h?nh ph?n t?ch v? thi?t k? cho Steam Store. K?t qu? g?m m? t? b?i to?n, y?u c?u ch?c n?ng, y?u c?u phi ch?c n?ng, ph?n quy?n actor, use case diagram, sequence diagram, activity diagram, state diagram, BCE, class design, ERD v? deployment diagram.
-
-C?c m? h?nh kh?ng ??ng ri?ng l? m? li?n k?t theo m?t d?ng ph?n t?ch. Y?u c?u d?n ??n use case. Use case d?n ??n sequence v? activity. State diagram ki?m so?t v?ng ??i order v? refund. Class diagram v? ERD m? t? c?u tr?c l?p v? d? li?u. Deployment diagram th? hi?n c?ch h? th?ng ???c tri?n khai ? m?c h? t?ng.
-
-H??ng ph?t tri?n ti?p theo g?m x?y d?ng prototype giao di?n chi ti?t h?n, ??c t? API, b? sung test case cho c?c nghi?p v? thanh to?n v? ho?n ti?n, ??ng th?i m? ph?ng database. Nh?m em xin c?m ?n th?y v? c?c b?n ?? l?ng nghe, v? s?n s?ng nh?n c?u h?i ho?c g?p ?.
+Hướng phát triển tiếp theo là xây dựng prototype giao diện chi tiết hơn, đặc tả API, bổ sung test case cho các nghiệp vụ nhạy cảm như thanh toán và hoàn tiền, đồng thời mô phỏng database. Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe, và sẵn sàng nhận câu hỏi hoặc góp ý.

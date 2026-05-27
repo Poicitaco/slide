@@ -8,7 +8,7 @@ Em xin chào thầy và các bạn. Nhóm em trình bày đề tài phân tích 
 
 Hệ thống có người dùng tìm kiếm game, xem chi tiết, thêm vào wishlist, mua game, thanh toán, nhận game trong thư viện, viết review và yêu cầu hoàn tiền. Ngoài ra còn có nhà phát hành quản lý game, quản trị viên kiểm duyệt và cổng thanh toán xử lý giao dịch.
 
-Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách tổng quan, architecture và deployment mức cao. Khoa phụ trách yêu cầu, phân quyền và use case. Dương phụ trách giao diện, hành trình người dùng, activity và boundary. Khánh phụ trách sequence, activity và state cho các luồng nghiệp vụ. Đô phụ trách BCE, class design, ERD và deployment chi tiết.
+Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách tổng quan, architecture, deployment và phần kết nối kỹ thuật chung. Khoa phụ trách yêu cầu, phân quyền và use case. Dương phụ trách giao diện, hành trình người dùng, activity và boundary. Khánh phụ trách sequence, activity và state cho các luồng nghiệp vụ. Đô phụ trách BCE, class design và ERD.
 
 ## Slide 2
 
@@ -16,7 +16,7 @@ Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ 
 
 Tiếp theo, Khoa trình bày yêu cầu hệ thống. Phần này trả lời câu hỏi hệ thống cần làm gì, có những actor nào và mỗi actor được sử dụng chức năng nào. Dương trình bày giao diện và hành trình người dùng để người nghe hình dung hệ thống dưới góc nhìn thực tế.
 
-Sau đó Khánh trình bày các UML mô tả luồng nghiệp vụ như sequence, activity và state. Cuối cùng Đô trình bày thiết kế kỹ thuật gồm BCE, class diagram, ERD và deployment. Như vậy cả 5 thành viên đều có phần UML: Đạt với kiến trúc tổng quan, Khoa với use case, Dương với activity và boundary, Khánh với UML động, Đô với UML thiết kế.
+Sau đó Khánh trình bày các UML mô tả luồng nghiệp vụ như sequence, activity và state. Đạt nhận thêm phần kiến trúc và deployment để giảm tải cho Đô. Đô tập trung vào BCE, class diagram và ERD. Như vậy cả 5 thành viên đều có phần UML, nhưng phần nặng về tổng quan kỹ thuật được trưởng nhóm hỗ trợ.
 
 ## Slide 3
 
@@ -38,11 +38,11 @@ Lớp thứ ba là thiết kế hệ thống. Nhóm đã có architecture diagra
 
 Đây là bảng phân chia công việc chi tiết của nhóm. Điểm quan trọng là mỗi thành viên đều có phần chức năng và UML tương ứng, không dồn toàn bộ UML cho một người.
 
-Đạt phụ trách tổng quan hệ thống, phạm vi và tiến độ, đồng thời phân tích architecture tổng quan và deployment mức cao để giải thích hệ thống gồm những thành phần nào. Khoa phụ trách yêu cầu, actor và phân quyền, nên UML chính là use case user, use case admin và ma trận truy vết từ yêu cầu sang mô hình.
+Đạt phụ trách tổng quan hệ thống, phạm vi và tiến độ, đồng thời nhận thêm architecture tổng quan và deployment để giải thích hệ thống gồm những thành phần nào. Khoa phụ trách yêu cầu, actor và phân quyền, nên UML chính là use case user, use case admin và ma trận truy vết từ yêu cầu sang mô hình.
 
 Dương phụ trách giao diện và hành trình người dùng. Phần UML gắn với Dương là activity purchase và boundary trong BCE, vì các màn hình chính là nơi người dùng bắt đầu tương tác với use case. Khánh phụ trách các luồng nghiệp vụ nên phân tích sequence, activity và state cho mua game, đăng nhập, review và hoàn tiền.
 
-Đô phụ trách thiết kế kỹ thuật nên phân tích BCE, class design, ERD và deployment. Tiến độ các phần đều hoàn thành ở mức 100 phần trăm: báo cáo đã có nội dung, sơ đồ UML đã xuất ảnh, slide đã được dựng và nội dung thuyết trình đã được chuẩn bị theo từng slide.
+Đô tập trung vào thiết kế lớp và dữ liệu nên phân tích BCE, class design và ERD. Phần deployment được chuyển sang Đạt để giảm tải cho Đô. Tiến độ các phần đều hoàn thành ở mức 100 phần trăm: báo cáo đã có nội dung, sơ đồ UML đã xuất ảnh, slide đã được dựng và nội dung thuyết trình đã được chuẩn bị theo từng slide.
 
 ## Slide 6
 
@@ -102,7 +102,7 @@ Luồng hoàn tiền thể hiện vòng đời nghiệp vụ phức tạp. Refun
 
 ## Slide 13
 
-Kiến trúc hệ thống được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này không gọi trực tiếp vào từng service, mà đi qua API Gateway. Gateway là cửa vào chung, giúp định tuyến request và hỗ trợ xác thực.
+Phần kiến trúc hệ thống do Đạt trình bày để giảm tải cho Đô và để trưởng nhóm kết nối phần nghiệp vụ với phần kỹ thuật. Kiến trúc được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này không gọi trực tiếp vào từng service, mà đi qua API Gateway.
 
 Các service phía sau gồm Account, Catalog, Cart, Order, Library, Review, Publisher và Notification. Mỗi service phụ trách một miền nghiệp vụ riêng. Catalog tập trung vào game và tìm kiếm. Order xử lý đơn hàng và thanh toán. Library quản lý license. Review xử lý đánh giá. Publisher phục vụ nhà phát hành.
 

@@ -204,6 +204,56 @@
     max-width: 100%;
     max-height: 385px;
     object-fit: contain;
+    cursor: zoom-in;
+  }
+
+  .zoom-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    background: rgba(8, 14, 22, 0.86);
+    z-index: 9999;
+  }
+
+  .zoom-modal.is-open {
+    display: flex;
+  }
+
+  .zoom-modal img {
+    max-width: 96vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.45);
+    cursor: zoom-out;
+  }
+
+  .zoom-modal .zoom-caption {
+    position: fixed;
+    left: 34px;
+    bottom: 22px;
+    color: white;
+    font-size: 15px;
+    opacity: 0.9;
+  }
+
+  .zoom-modal .zoom-close {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    color: white;
+    background: rgba(255,255,255,0.12);
+    font-size: 28px;
+    line-height: 36px;
+    cursor: pointer;
   }
 
   .steam-deck .flow {
@@ -344,7 +394,7 @@
     <aside class="notes">
       <p>Em xin chào thầy và các bạn. Nhóm em trình bày đề tài phân tích và thiết kế hệ thống Steam Store. Trong bài này, nhóm không xem Steam Store chỉ là một trang bán game, mà xem nó như một hệ thống phần mềm có nhiều nghiệp vụ liên kết với nhau.</p>
       <p>Hệ thống có người dùng tìm kiếm game, xem chi tiết, thêm vào wishlist, mua game, thanh toán, nhận game trong thư viện, viết review và yêu cầu hoàn tiền. Ngoài ra còn có nhà phát hành quản lý game, quản trị viên kiểm duyệt và cổng thanh toán xử lý giao dịch.</p>
-      <p>Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách tổng quan, architecture và deployment mức cao. Khoa phụ trách yêu cầu, phân quyền và use case. Dương phụ trách giao diện, hành trình người dùng, activity và boundary. Khánh phụ trách sequence, activity và state cho các luồng nghiệp vụ. Đô phụ trách BCE, class design, ERD và deployment chi tiết.</p>
+      <p>Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách tổng quan, architecture, deployment và phần kết nối kỹ thuật chung. Khoa phụ trách yêu cầu, phân quyền và use case. Dương phụ trách giao diện, hành trình người dùng, activity và boundary. Khánh phụ trách sequence, activity và state cho các luồng nghiệp vụ. Đô phụ trách BCE, class design và ERD.</p>
     </aside>
   </section>
 
@@ -353,18 +403,18 @@
     <h2>Nội dung trình bày và người phụ trách</h2>
     <table>
       <tr><th>Phần</th><th>Người trình bày</th><th>Nội dung chính</th><th>Sơ đồ / minh chứng</th></tr>
-      <tr><td>1</td><td>Đạt</td><td>Giới thiệu chủ đề, phạm vi, khối lượng công việc</td><td>Architecture tổng quan, bảng khối lượng</td></tr>
+      <tr><td>1</td><td>Đạt</td><td>Giới thiệu chủ đề, phạm vi, khối lượng, kiến trúc</td><td>Architecture, Deployment, bảng tiến độ</td></tr>
       <tr><td>2</td><td>Khoa</td><td>Yêu cầu chức năng, phi chức năng, phân quyền actor</td><td>Use case user/admin, ma trận truy vết</td></tr>
       <tr><td>3</td><td>Dương</td><td>Giao diện chính và hành trình người dùng</td><td>Boundary trong BCE, activity mua game</td></tr>
       <tr><td>4</td><td>Khánh</td><td>Use case, sequence, activity, state cho nghiệp vụ</td><td>Sequence purchase, state order/refund</td></tr>
-      <tr><td>5</td><td>Đô</td><td>Kiến trúc, class/BCE, ERD, deployment</td><td>Architecture, deployment, class, ERD</td></tr>
+      <tr><td>5</td><td>Đô</td><td>Thiết kế lớp và dữ liệu</td><td>BCE, Class Design, ERD</td></tr>
     </table>
     <div class="why"><strong>Cách đi của bài:</strong> từ người dùng và yêu cầu nghiệp vụ → UML mô tả hành vi → thiết kế kiến trúc và dữ liệu.</div>
     <div class="footer"><span>Mỗi thành viên đều có chức năng phụ trách, UML liên quan và tiến độ hoàn thành</span><span class="slide-number" data-current="2" data-total="16"></span></div>
     <aside class="notes">
       <p>Đây là lộ trình trình bày của nhóm. Phần đầu do Đạt trình bày, tập trung vào lý do chọn đề tài, phạm vi hệ thống và khối lượng công việc nhóm đã hoàn thành.</p>
       <p>Tiếp theo, Khoa trình bày yêu cầu hệ thống. Phần này trả lời câu hỏi hệ thống cần làm gì, có những actor nào và mỗi actor được sử dụng chức năng nào. Dương trình bày giao diện và hành trình người dùng để người nghe hình dung hệ thống dưới góc nhìn thực tế.</p>
-      <p>Sau đó Khánh trình bày các UML mô tả luồng nghiệp vụ như sequence, activity và state. Cuối cùng Đô trình bày thiết kế kỹ thuật gồm BCE, class diagram, ERD và deployment. Như vậy cả 5 thành viên đều có phần UML: Đạt với kiến trúc tổng quan, Khoa với use case, Dương với activity và boundary, Khánh với UML động, Đô với UML thiết kế.</p>
+      <p>Sau đó Khánh trình bày các UML mô tả luồng nghiệp vụ như sequence, activity và state. Đạt nhận thêm phần kiến trúc và deployment để giảm tải cho Đô. Đô tập trung vào BCE, class diagram và ERD. Như vậy cả 5 thành viên đều có phần UML, nhưng phần nặng về tổng quan kỹ thuật được trưởng nhóm hỗ trợ.</p>
     </aside>
   </section>
 
@@ -403,7 +453,8 @@
       <tr><td>Yêu cầu + phân quyền</td><td>Xác định hệ thống cần làm gì và ai được dùng chức năng nào</td><td>Khoa</td></tr>
       <tr><td>Giao diện + hành trình</td><td>Gắn yêu cầu với trải nghiệm thực tế của người dùng</td><td>Dương</td></tr>
       <tr><td>UML nghiệp vụ</td><td>Mô tả actor, luồng xử lý, rẽ nhánh và trạng thái</td><td>Khánh</td></tr>
-      <tr><td>Thiết kế kỹ thuật</td><td>Tổ chức service, lớp, dữ liệu và triển khai</td><td>Đô</td></tr>
+      <tr><td>Kiến trúc + triển khai</td><td>Tổ chức service, API Gateway, deployment và hạ tầng</td><td>Đạt</td></tr>
+      <tr><td>Thiết kế lớp + dữ liệu</td><td>Tổ chức BCE, class, ERD và quan hệ license</td><td>Đô</td></tr>
     </table>
     <div class="footer"><span>Minh chứng: thư mục assets/uml và báo cáo PDF</span><span class="slide-number" data-current="4" data-total="16"></span></div>
     <aside class="notes">
@@ -420,19 +471,19 @@
     <h2>Bảng phân chia công việc chi tiết và tiến độ</h2>
     <table>
       <tr><th>Thành viên</th><th>Chức năng phụ trách</th><th>UML phân tích</th><th>Sản phẩm đầu ra</th><th>Tiến độ</th></tr>
-      <tr><td><strong>Đạt</strong></td><td>Tổng quan hệ thống, phạm vi, rủi ro, tổng hợp báo cáo</td><td>Architecture tổng quan, Deployment mức cao</td><td>Slide mở đầu, bảng tiến độ, kết luận, liên kết các phần</td><td>100%</td></tr>
+      <tr><td><strong>Đạt</strong></td><td>Tổng quan hệ thống, phạm vi, rủi ro, kiến trúc, triển khai</td><td>Architecture tổng quan, Deployment, liên kết các UML</td><td>Slide mở đầu, bảng tiến độ, kiến trúc, kết luận</td><td>100%</td></tr>
       <tr><td><strong>Khoa</strong></td><td>Yêu cầu hệ thống, actor, phân quyền chức năng</td><td>Use Case User, Use Case Admin, ma trận truy vết FR-UML</td><td>Bảng FR/NFR, bảng actor, phân quyền, use case scope</td><td>100%</td></tr>
       <tr><td><strong>Dương</strong></td><td>Giao diện, hành trình người dùng, màn hình theo nghiệp vụ</td><td>Activity Purchase, BCE Boundary, liên hệ màn hình với use case</td><td>Danh sách màn hình, user journey, mô tả boundary/UI</td><td>100%</td></tr>
       <tr><td><strong>Khánh</strong></td><td>Mua game, đăng nhập, review, hoàn tiền</td><td>Sequence Purchase/Login/Review, Activity Refund, State Order/Refund</td><td>Mô tả luồng xử lý, nhánh lỗi, trạng thái nghiệp vụ</td><td>100%</td></tr>
-      <tr><td><strong>Đô</strong></td><td>Service, lớp, dữ liệu, triển khai</td><td>BCE, Class Design, ERD, Deployment</td><td>Subsystem, class, database, quan hệ license/order/payment</td><td>100%</td></tr>
+      <tr><td><strong>Đô</strong></td><td>Lớp xử lý, dữ liệu, quan hệ nghiệp vụ cốt lõi</td><td>BCE, Class Design, ERD</td><td>Class, database, quan hệ license/order/payment/refund</td><td>100%</td></tr>
     </table>
     <div class="why"><strong>Nguyên tắc phân công:</strong> mỗi thành viên không chỉ trình bày nội dung mình làm, mà còn phân tích UML gắn với chức năng phụ trách.</div>
     <div class="footer"><span>Tiến độ chung: báo cáo, UML, slide và nội dung thuyết trình đã hoàn thành</span><span class="slide-number" data-current="5" data-total="16"></span></div>
     <aside class="notes">
       <p>Đây là bảng phân chia công việc chi tiết của nhóm. Điểm quan trọng là mỗi thành viên đều có phần chức năng và UML tương ứng, không dồn toàn bộ UML cho một người.</p>
-      <p>Đạt phụ trách tổng quan hệ thống, phạm vi và tiến độ, đồng thời phân tích architecture tổng quan và deployment mức cao để giải thích hệ thống gồm những thành phần nào. Khoa phụ trách yêu cầu, actor và phân quyền, nên UML chính là use case user, use case admin và ma trận truy vết từ yêu cầu sang mô hình.</p>
+      <p>Đạt phụ trách tổng quan hệ thống, phạm vi và tiến độ, đồng thời nhận thêm architecture tổng quan và deployment để giải thích hệ thống gồm những thành phần nào. Khoa phụ trách yêu cầu, actor và phân quyền, nên UML chính là use case user, use case admin và ma trận truy vết từ yêu cầu sang mô hình.</p>
       <p>Dương phụ trách giao diện và hành trình người dùng. Phần UML gắn với Dương là activity purchase và boundary trong BCE, vì các màn hình chính là nơi người dùng bắt đầu tương tác với use case. Khánh phụ trách các luồng nghiệp vụ nên phân tích sequence, activity và state cho mua game, đăng nhập, review và hoàn tiền.</p>
-      <p>Đô phụ trách thiết kế kỹ thuật nên phân tích BCE, class design, ERD và deployment. Tiến độ các phần đều hoàn thành ở mức 100 phần trăm: báo cáo đã có nội dung, sơ đồ UML đã xuất ảnh, slide đã được dựng và nội dung thuyết trình đã được chuẩn bị theo từng slide.</p>
+      <p>Đô tập trung vào thiết kế lớp và dữ liệu nên phân tích BCE, class design và ERD. Phần deployment được chuyển sang Đạt để giảm tải cho Đô. Tiến độ các phần đều hoàn thành ở mức 100 phần trăm: báo cáo đã có nội dung, sơ đồ UML đã xuất ảnh, slide đã được dựng và nội dung thuyết trình đã được chuẩn bị theo từng slide.</p>
     </aside>
   </section>
   <section class="slide" data-title="Khoa yêu cầu">
@@ -588,8 +639,8 @@
     </aside>
   </section>
 
-  <section class="slide" data-title="Đô kiến trúc">
-    <div class="speaker">Trình bày: <b>Đô</b> · kiến trúc hệ thống</div>
+  <section class="slide" data-title="Đạt kiến trúc">
+    <div class="speaker">Trình bày: <b>Đạt</b> · kiến trúc hệ thống</div>
     <h2>Kiến trúc tách theo miền nghiệp vụ</h2>
     <div class="split">
       <div>
@@ -605,7 +656,7 @@
     <div class="why"><strong>Lý do chọn hướng này:</strong> mỗi miền nghiệp vụ có yêu cầu tải, bảo mật và dữ liệu khác nhau, nên tách service giúp dễ mở rộng và bảo trì.</div>
     <div class="footer"><span>UML liên quan: Architecture Diagram, Deployment Diagram</span><span class="slide-number" data-current="13" data-total="16"></span></div>
     <aside class="notes">
-      <p>Kiến trúc hệ thống được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này không gọi trực tiếp vào từng service, mà đi qua API Gateway. Gateway là cửa vào chung, giúp định tuyến request và hỗ trợ xác thực.</p>
+      <p>Phần kiến trúc hệ thống do Đạt trình bày để giảm tải cho Đô và để trưởng nhóm kết nối phần nghiệp vụ với phần kỹ thuật. Kiến trúc được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này không gọi trực tiếp vào từng service, mà đi qua API Gateway.</p>
       <p>Các service phía sau gồm Account, Catalog, Cart, Order, Library, Review, Publisher và Notification. Mỗi service phụ trách một miền nghiệp vụ riêng. Catalog tập trung vào game và tìm kiếm. Order xử lý đơn hàng và thanh toán. Library quản lý license. Review xử lý đánh giá. Publisher phục vụ nhà phát hành.</p>
       <p>Nhóm chọn hướng tách service vì Steam Store có nhiều nghiệp vụ với đặc điểm khác nhau. Trong đợt sale lớn, catalog và search cần mở rộng mạnh. Trong khi đó order và payment cần chính xác giao dịch. Tách theo miền nghiệp vụ giúp hệ thống dễ mở rộng, dễ bảo trì và giảm ảnh hưởng khi một service gặp lỗi.</p>
     </aside>
@@ -674,6 +725,51 @@
   </section>
 
 </div>
+<div class="zoom-modal" id="zoom-modal" aria-hidden="true">
+  <button class="zoom-close" type="button" aria-label="Đóng ảnh phóng to">×</button>
+  <img src="" alt="">
+  <div class="zoom-caption"></div>
+</div>
+<script>
+  (function () {
+    const modal = document.getElementById('zoom-modal');
+    const modalImg = modal.querySelector('img');
+    const caption = modal.querySelector('.zoom-caption');
+    const closeBtn = modal.querySelector('.zoom-close');
+
+    function openZoom(img) {
+      modalImg.src = img.currentSrc || img.src;
+      modalImg.alt = img.alt || 'Sơ đồ UML';
+      caption.textContent = img.alt || 'Sơ đồ UML';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeZoom() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+    }
+
+    document.querySelectorAll('.image-frame img').forEach((img) => {
+      img.title = 'Click để phóng to sơ đồ';
+      img.addEventListener('click', (event) => {
+        event.stopPropagation();
+        openZoom(img);
+      });
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal || event.target === modalImg) closeZoom();
+    });
+    closeBtn.addEventListener('click', closeZoom);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeZoom();
+      }
+    });
+  })();
+</script>
 <script src="./vendor/html-ppt/assets/runtime.js"></script>
 </body>
 </html>

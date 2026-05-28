@@ -1,8 +1,8 @@
-# Nội dung thuyết trình Steam Store
+# N?i dung thuy?t tr?nh Steam Store
 
-Bản này khớp với 16 slide trong `index.html`. Mỗi slide có lời trình bày, điểm cần nhấn và kiến thức phòng khi thầy hỏi.
+B?n n?y kh?p v?i 19 slide trong `index.html`. M?i slide c? l?i tr?nh b?y, ?i?m c?n nh?n v? ki?n th?c ph?ng khi th?y h?i.
 
-## Slide 1: Slide 1 - Mở đầu - Đạt
+## Slide 1: Slide 1 - Mở đầu · Đạt
 
 ### Lời trình bày
 
@@ -15,15 +15,14 @@ Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ 
 Mục tiêu của nhóm là trình bày không chỉ đã vẽ những sơ đồ nào, mà còn giải thích vì sao nhóm chọn các sơ đồ đó, mỗi sơ đồ trả lời câu hỏi gì và liên hệ như thế nào với nghiệp vụ của Steam Store.
 
 ### Điểm cần nhấn trên slide
-- Nhấn mạnh đề tài là phân tích và thiết kế, không phải xây website chạy thật.
-- Giải thích khái niệm license ngay từ đầu để các phần payment, library, refund phía sau dễ hiểu.
-- Nói rõ mỗi thành viên đều có phần UML riêng.
+
+- Nhấn mạnh đề tài là phân tích và thiết kế, không phải xây website chạy thật.- Giải thích khái niệm license ngay từ đầu để các phần payment, library, refund phía sau dễ hiểu.- Nói rõ mỗi thành viên đều có phần UML riêng.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Vì sao chọn Steam Store?** Vì hệ thống có đủ actor, nghiệp vụ giao dịch, dữ liệu quyền sở hữu số, review, refund và yêu cầu bảo mật, phù hợp để áp dụng nhiều loại UML.
-- **Có cần demo website thật không?** Không bắt buộc. Đây là báo cáo phân tích thiết kế, trọng tâm là mô hình nghiệp vụ và thiết kế hệ thống.
 
-## Slide 2: Slide 2 - Lộ trình - Đạt
+- **Vì sao chọn Steam Store?** Vì hệ thống có đủ actor, nghiệp vụ giao dịch, dữ liệu quyền sở hữu số, review, refund và yêu cầu bảo mật, phù hợp để áp dụng nhiều loại UML.- **Có cần demo website thật không?** Không bắt buộc. Đây là báo cáo phân tích thiết kế, trọng tâm là mô hình nghiệp vụ và thiết kế hệ thống.
+
+## Slide 2: Slide 2 - Lộ trình · Đạt
 
 ### Lời trình bày
 
@@ -36,14 +35,14 @@ Phần tiếp theo do Khánh trình bày, tập trung vào UML nghiệp vụ nh�
 Cách chia này đi theo đúng quy trình phân tích thiết kế: từ yêu cầu, đến giao diện và hành vi nghiệp vụ, sau đó mới đến kiến trúc, lớp và dữ liệu.
 
 ### Điểm cần nhấn trên slide
-- Khi nói slide này, chỉ vào từng dòng trong bảng để lớp biết ai sẽ nói phần nào.
-- Làm rõ Đạt nhận phần kiến trúc/deployment để giảm tải cho Đô.
+
+- Khi nói slide này, chỉ vào từng dòng trong bảng để lớp biết ai sẽ nói phần nào.- Làm rõ Đạt nhận phần kiến trúc/deployment để giảm tải cho Đô.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Vì sao không để một người nói hết UML?** Vì mỗi UML gắn với một nhóm chức năng khác nhau. Chia theo chức năng giúp từng thành viên hiểu phần mình phụ trách.
-- **Thứ tự trình bày có quan trọng không?** Có. Nếu nói dữ liệu trước khi nói yêu cầu/use case thì người nghe khó hiểu vì chưa biết dữ liệu phục vụ nghiệp vụ nào.
 
-## Slide 3: Slide 3 - Tổng quan đề tài - Đạt
+- **Vì sao không để một người nói hết UML?** Vì mỗi UML gắn với một nhóm chức năng khác nhau. Chia theo chức năng giúp từng thành viên hiểu phần mình phụ trách.- **Thứ tự trình bày có quan trọng không?** Có. Nếu nói dữ liệu trước khi nói yêu cầu/use case thì người nghe khó hiểu vì chưa biết dữ liệu phục vụ nghiệp vụ nào.
+
+## Slide 3: Slide 3 - Tổng quan đề tài · Đạt
 
 ### Lời trình bày
 
@@ -56,14 +55,14 @@ Nhóm bắt đầu bằng sơ đồ kiến trúc tổng quan vì đây là cách
 Khi có bức tranh lớn này, các sơ đồ chi tiết như use case, sequence, ERD và deployment sẽ dễ hiểu hơn. Mỗi sơ đồ phía sau đều có vị trí trong kiến trúc tổng thể này.
 
 ### Điểm cần nhấn trên slide
-- Click vào ảnh architecture nếu cần phóng to.
-- Chỉ vào API Gateway và các service để nói hệ thống được chia theo miền nghiệp vụ.
+
+- Click vào ảnh architecture nếu cần phóng to.- Chỉ vào API Gateway và các service để nói hệ thống được chia theo miền nghiệp vụ.
 
 ### Kiến thức phòng khi thầy hỏi
-- **API Gateway là gì?** Là cửa vào chung cho client, nhận request rồi định tuyến đến service phù hợp; có thể xử lý xác thực, logging, rate limit.
-- **Vì sao có Steam Client riêng?** Vì tải/cập nhật game không chỉ diễn ra trên web mà qua ứng dụng client, dựa trên license trong thư viện.
 
-## Slide 4: Slide 4 - Khối lượng công việc - Đạt
+- **API Gateway là gì?** Là cửa vào chung cho client, nhận request rồi định tuyến đến service phù hợp; có thể xử lý xác thực, logging, rate limit.- **Vì sao có Steam Client riêng?** Vì tải/cập nhật game không chỉ diễn ra trên web mà qua ứng dụng client, dựa trên license trong thư viện.
+
+## Slide 4: Slide 4 - Khối lượng công việc · Đạt
 
 ### Lời trình bày
 
@@ -76,14 +75,14 @@ Nhóm thứ ba là thiết kế hệ thống, gồm kiến trúc, deployment, cl
 Điểm cần nhấn mạnh là các sản phẩm không tách rời. Yêu cầu dẫn đến use case. Use case dẫn đến sequence và activity. Class và ERD được xây dựa trên các thực thể xuất hiện trong nghiệp vụ.
 
 ### Điểm cần nhấn trên slide
-- Nói rõ đây là phần tổng hợp công việc đã đạt được.
-- Bảng dưới cho thấy mảng nào gắn với thành viên nào.
+
+- Nói rõ đây là phần tổng hợp công việc đã đạt được.- Bảng dưới cho thấy mảng nào gắn với thành viên nào.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Báo cáo đã đủ UML chưa?** Đủ các nhóm chính: use case, sequence, activity, state, BCE/class, ERD, deployment. Mỗi loại phục vụ một mục đích khác nhau.
-- **Tại sao cần ma trận truy vết?** Để chứng minh yêu cầu không bị bỏ sót và mỗi mô hình đều xuất phát từ yêu cầu cụ thể.
 
-## Slide 5: Slide 5 - Phân công chi tiết - Đạt
+- **Báo cáo đã đủ UML chưa?** Đủ các nhóm chính: use case, sequence, activity, state, BCE/class, ERD, deployment. Mỗi loại phục vụ một mục đích khác nhau.- **Tại sao cần ma trận truy vết?** Để chứng minh yêu cầu không bị bỏ sót và mỗi mô hình đều xuất phát từ yêu cầu cụ thể.
+
+## Slide 5: Slide 5 - Phân công chi tiết · Đạt
 
 ### Lời trình bày
 
@@ -96,14 +95,14 @@ Dương phụ trách giao diện và hành trình người dùng, nên phần UM
 Đô phụ trách thiết kế lớp và dữ liệu, nên tập trung vào BCE, class design và ERD. Tất cả các đầu việc đều đã hoàn thành ở mức 100 phần trăm, bao gồm báo cáo, UML, slide và nội dung thuyết trình.
 
 ### Điểm cần nhấn trên slide
-- Nếu thầy hỏi ai làm gì, đọc đúng bảng này.
-- Nói rõ Đô đã được giảm phần kiến trúc/deployment; Đạt nhận phần đó.
+
+- Nếu thầy hỏi ai làm gì, đọc đúng bảng này.- Nói rõ Đô đã được giảm phần kiến trúc/deployment; Đạt nhận phần đó.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Dương có phân tích UML không?** Có. Dương liên hệ giao diện với activity purchase và Boundary trong BCE.
-- **Đô có bị nặng không?** Không. Phần kiến trúc/deployment đã chuyển sang Đạt; Đô tập trung vào BCE, Class Design và ERD.
 
-## Slide 6: Slide 6 - Yêu cầu hệ thống - Khoa
+- **Dương có phân tích UML không?** Có. Dương liên hệ giao diện với activity purchase và Boundary trong BCE.- **Đô có bị nặng không?** Không. Phần kiến trúc/deployment đã chuyển sang Đạt; Đô tập trung vào BCE, Class Design và ERD.
+
+## Slide 6: Slide 6 - Yêu cầu hệ thống · Khoa
 
 ### Lời trình bày
 
@@ -116,14 +115,14 @@ Nhóm thứ ba là yêu cầu phi chức năng. Với Steam Store, các yếu t�
 Nhóm chọn cách phân tích yêu cầu theo vai trò vì mỗi actor có quyền khác nhau. Cách này giúp tránh nhầm lẫn giữa khách vãng lai, người dùng đã đăng nhập, publisher, admin và hệ thống ngoài.
 
 ### Điểm cần nhấn trên slide
-- Giải thích khác nhau giữa yêu cầu chức năng và phi chức năng.
-- Nhấn mạnh bảo mật và toàn vẹn dữ liệu vì đây là điểm dễ bị hỏi.
+
+- Giải thích khác nhau giữa yêu cầu chức năng và phi chức năng.- Nhấn mạnh bảo mật và toàn vẹn dữ liệu vì đây là điểm dễ bị hỏi.
 
 ### Kiến thức phòng khi thầy hỏi
-- **FR và NFR khác gì?** FR là chức năng hệ thống phải làm; NFR là chất lượng hệ thống phải đạt, như bảo mật, hiệu năng, mở rộng.
-- **Yêu cầu quan trọng nhất là gì?** Thanh toán thành công phải cấp đúng license; thanh toán thất bại không được cấp game.
 
-## Slide 7: Slide 7 - Actor và Use Case - Khoa
+- **FR và NFR khác gì?** FR là chức năng hệ thống phải làm; NFR là chất lượng hệ thống phải đạt, như bảo mật, hiệu năng, mở rộng.- **Yêu cầu quan trọng nhất là gì?** Thanh toán thành công phải cấp đúng license; thanh toán thất bại không được cấp game.
+
+## Slide 7: Slide 7 - Actor và Use Case · Khoa
 
 ### Lời trình bày
 
@@ -136,14 +135,68 @@ Người dùng Steam là actor chính. Sau khi đăng nhập, người dùng có
 Khi nhìn vào use case, có thể trả lời hai câu hỏi: ai dùng hệ thống và họ dùng chức năng nào. Sau khi trả lời được hai câu hỏi đó, nhóm mới đi tiếp sang sequence, activity và thiết kế dữ liệu.
 
 ### Điểm cần nhấn trên slide
-- Click phóng to use case khi cần giải thích.
-- Chỉ rõ khách vãng lai khác người dùng đã đăng nhập ở quyền mua/review/refund.
+
+- Click phóng to use case khi cần giải thích.- Chỉ rõ khách vãng lai khác người dùng đã đăng nhập ở quyền mua/review/refund.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Include và extend là gì?** Include là chức năng luôn được dùng kèm; extend là hành vi mở rộng chỉ xảy ra trong điều kiện nhất định.
-- **Vì sao Steam Client là actor?** Vì client tương tác với hệ thống để tải/cập nhật game dựa trên license, không phải chỉ là giao diện web.
 
-## Slide 8: Slide 8 - Giao diện chính - Dương
+- **Include và extend là gì?** Include là chức năng luôn được dùng kèm; extend là hành vi mở rộng chỉ xảy ra trong điều kiện nhất định.- **Vì sao Steam Client là actor?** Vì client tương tác với hệ thống để tải/cập nhật game dựa trên license, không phải chỉ là giao diện web.
+
+## Slide 8: Slide 8 - Use case tài khoản và catalog · Khoa
+
+### Lời trình bày
+
+Slide này bổ sung các use case chi tiết cho nhóm tài khoản, bảo mật và catalog game. Đây là nhóm chức năng đầu vào của hệ thống, vì trước khi mua game, người dùng cần tìm được game, xem được thông tin và trong nhiều trường hợp cần đăng nhập.
+
+Use case đăng ký dành cho khách vãng lai. Người dùng nhập email, mật khẩu và khu vực, sau đó hệ thống kiểm tra hợp lệ và tạo tài khoản. Use case đăng nhập có thêm Steam Guard để bảo vệ tài khoản khi phát hiện thiết bị hoặc vị trí cần xác thực bổ sung.
+
+Use case tìm kiếm và lọc game dùng Catalog Service kết hợp Search Index để trả kết quả nhanh. Use case xem chi tiết game hiển thị mô tả, media, giá, DLC, review và cấu hình. Nhóm tách riêng nhóm use case này vì đây là các chức năng nền, được sử dụng trước các nghiệp vụ giỏ hàng và thanh toán.
+
+### Điểm cần nhấn trên slide
+
+- Nhóm này gồm các chức năng đầu vào: đăng ký, đăng nhập, tìm kiếm, xem chi tiết.- Steam Guard là điểm bảo mật quan trọng.- Search Index giúp tìm kiếm nhanh trong catalog lớn.
+
+### Kiến thức phòng khi thầy hỏi
+
+- **Vì sao đăng nhập cần Steam Guard?** Vì tài khoản Steam chứa thư viện game và lịch sử giao dịch, nên đăng nhập từ thiết bị/vị trí lạ cần xác thực bổ sung.- **Search Index khác database thường ở điểm nào?** Search Index tối ưu cho tìm kiếm từ khóa, lọc và sắp xếp nhanh; database chính tối ưu lưu dữ liệu nghiệp vụ.
+
+## Slide 9: Slide 9 - Use case mua game và thư viện · Khánh
+
+### Lời trình bày
+
+Slide này mô tả nhóm use case quan trọng nhất: từ wishlist, giỏ hàng, thanh toán đến thư viện. Wishlist giúp người dùng theo dõi game quan tâm và nhận thông báo khi có giảm giá. Giỏ hàng là nơi lưu tạm các game trước khi checkout.
+
+Use case thanh toán là nghiệp vụ nhạy cảm nhất. Hệ thống tạo order, gửi yêu cầu sang cổng thanh toán, nhận kết quả, rồi mới cấp license. Nếu payment thất bại hoặc timeout, hệ thống không được cấp game vào thư viện.
+
+Use case quản lý thư viện dựa trên license. Steam Client đọc thư viện để tải, cài đặt hoặc cập nhật game. Điểm cốt lõi là order không đồng nghĩa với quyền sở hữu; license mới là quyền truy cập game sau khi thanh toán thành công.
+
+### Điểm cần nhấn trên slide
+
+- Thanh toán và cấp license phải theo đúng thứ tự.- Snapshot giá cần lưu trong cart/order để tránh sai lịch sử giao dịch.- Steam Client dùng license trong thư viện để tải/cập nhật game.
+
+### Kiến thức phòng khi thầy hỏi
+
+- **Vì sao cần license?** Vì order chỉ ghi nhận giao dịch, còn license biểu diễn quyền truy cập game trong thư viện.- **Nếu payment timeout thì xử lý thế nào?** Không cấp license ngay; hệ thống cần kiểm tra lại trạng thái giao dịch hoặc retry có kiểm soát/idempotency.
+
+## Slide 10: Slide 10 - Use case review, refund, publisher/admin · Khánh và Đô
+
+### Lời trình bày
+
+Slide này bổ sung các use case sau khi người dùng đã tương tác sâu với hệ thống. Use case viết review yêu cầu người dùng phải có license hợp lệ. Điều này giúp hạn chế review giả, spam hoặc đánh giá từ tài khoản chưa sở hữu game.
+
+Use case hoàn tiền kiểm tra order, chính sách hoàn tiền, thời điểm mua và các điều kiện như playtime. Nếu refund được duyệt, hệ thống không chỉ hoàn tiền mà còn phải thu hồi license để người dùng không tiếp tục truy cập game đã hoàn.
+
+Ở phía publisher, nhà phát hành quản lý trang game, media, DLC, giá và khuyến mãi. Ở phía admin, quản trị viên kiểm duyệt nội dung, hỗ trợ tài khoản và xử lý giao dịch bất thường. Những chức năng này giúp hệ thống vận hành ổn định sau khi quá trình mua bán diễn ra.
+
+### Điểm cần nhấn trên slide
+
+- Review phải kiểm tra license để tránh review giả.- Refund phải đi kèm thu hồi license.- Publisher và admin cần log thao tác vì có quyền ảnh hưởng nội dung/giao dịch.
+
+### Kiến thức phòng khi thầy hỏi
+
+- **Vì sao refund phải thu hồi license?** Vì nếu người dùng đã nhận tiền hoàn mà vẫn giữ license thì hệ thống mất toàn vẹn quyền sở hữu số.- **Vì sao publisher update cần kiểm duyệt?** Vì thay đổi media, mô tả hoặc giá có thể ảnh hưởng trực tiếp đến người mua và chính sách nội dung của store.
+
+## Slide 11: Slide 11 - Giao diện chính · Dương
 
 ### Lời trình bày
 
@@ -156,14 +209,14 @@ Nếu quan tâm, người dùng có thể thêm game vào wishlist hoặc giỏ 
 Ngoài ra còn có màn hình review, refund, Publisher Dashboard và Admin Dashboard. Về mặt UML, các màn hình này tương ứng với lớp Boundary trong mô hình BCE. Boundary là nơi tiếp nhận tương tác từ người dùng trước khi chuyển sang lớp Control xử lý nghiệp vụ.
 
 ### Điểm cần nhấn trên slide
-- Không cần mở web Steam thật. Chỉ cần trình bày theo các màn hình trên slide.
-- Nhấn mạnh giao diện là Boundary, không phải phần xử lý nghiệp vụ chính.
+
+- Không cần mở web Steam thật. Chỉ cần trình bày theo các màn hình trên slide.- Nhấn mạnh giao diện là Boundary, không phải phần xử lý nghiệp vụ chính.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Có cần demo web thật không?** Không. Phần này mô tả giao diện cần có trong thiết kế hệ thống, không phải demo sản phẩm chạy thật.
-- **Boundary trong BCE là gì?** Là lớp giao tiếp với người dùng hoặc hệ thống ngoài, ví dụ màn hình login, cart, checkout.
 
-## Slide 9: Slide 9 - Hành trình người dùng - Dương
+- **Có cần demo web thật không?** Không. Phần này mô tả giao diện cần có trong thiết kế hệ thống, không phải demo sản phẩm chạy thật.- **Boundary trong BCE là gì?** Là lớp giao tiếp với người dùng hoặc hệ thống ngoài, ví dụ màn hình login, cart, checkout.
+
+## Slide 12: Slide 12 - Hành trình người dùng · Dương
 
 ### Lời trình bày
 
@@ -176,14 +229,14 @@ Hành trình này liên hệ trực tiếp với ba nhóm mô hình. Use case ch
 Vì vậy phần giao diện không tách rời phần kỹ thuật, mà là điểm bắt đầu của toàn bộ chuỗi nghiệp vụ.
 
 ### Điểm cần nhấn trên slide
-- Nói theo 6 bước trên slide, không lan sang phần kỹ thuật quá sâu.
-- Chốt bằng câu: giao diện dẫn sang activity và dữ liệu.
+
+- Nói theo 6 bước trên slide, không lan sang phần kỹ thuật quá sâu.- Chốt bằng câu: giao diện dẫn sang activity và dữ liệu.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Vì sao phải lưu snapshot giá?** Để lịch sử đơn hàng không bị thay đổi nếu giá game thay đổi sau khi người dùng mua.
-- **Hành trình này liên quan ERD thế nào?** Mỗi bước tạo hoặc dùng dữ liệu: cart item, order, payment, license, library.
 
-## Slide 10: Slide 10 - UML nghiệp vụ - Khánh
+- **Vì sao phải lưu snapshot giá?** Để lịch sử đơn hàng không bị thay đổi nếu giá game thay đổi sau khi người dùng mua.- **Hành trình này liên quan ERD thế nào?** Mỗi bước tạo hoặc dùng dữ liệu: cart item, order, payment, license, library.
+
+## Slide 13: Slide 13 - UML nghiệp vụ · Khánh
 
 ### Lời trình bày
 
@@ -196,14 +249,14 @@ State diagram mô tả vòng đời trạng thái của các đối tượng nh�
 Nhóm chọn cách kết hợp nhiều UML để nhìn nghiệp vụ từ nhiều góc. Use case giúp xác định phạm vi. Sequence giúp kiểm soát thứ tự xử lý. Activity giúp thấy rẽ nhánh. State giúp tránh bỏ sót trạng thái.
 
 ### Điểm cần nhấn trên slide
-- Không cần giải thích tất cả UML quá dài; tập trung từng loại trả lời câu hỏi gì.
-- Nhấn mạnh lý do dùng nhiều UML là để tránh bỏ sót nghiệp vụ.
+
+- Không cần giải thích tất cả UML quá dài; tập trung từng loại trả lời câu hỏi gì.- Nhấn mạnh lý do dùng nhiều UML là để tránh bỏ sót nghiệp vụ.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Sequence khác activity thế nào?** Sequence nhấn mạnh thứ tự gọi giữa đối tượng/service; activity nhấn mạnh luồng công việc và rẽ nhánh.
-- **State diagram dùng khi nào?** Khi đối tượng có vòng đời trạng thái rõ, ví dụ order hoặc refund.
 
-## Slide 11: Slide 11 - Quy trình mua game - Khánh
+- **Sequence khác activity thế nào?** Sequence nhấn mạnh thứ tự gọi giữa đối tượng/service; activity nhấn mạnh luồng công việc và rẽ nhánh.- **State diagram dùng khi nào?** Khi đối tượng có vòng đời trạng thái rõ, ví dụ order hoặc refund.
+
+## Slide 14: Slide 14 - Quy trình mua game · Khánh
 
 ### Lời trình bày
 
@@ -216,14 +269,14 @@ Sau đó Order Service tạo đơn hàng tạm và gửi yêu cầu sang Payment
 Điểm cốt lõi của luồng này là toàn vẹn giao dịch. Hệ thống phải tránh hai lỗi nghiêm trọng: người dùng bị trừ tiền nhưng không nhận game, hoặc chưa thanh toán mà vẫn có game trong thư viện. Vì vậy nhóm dùng sequence purchase, activity purchase và state order để kiểm soát thứ tự xử lý và trạng thái đơn hàng.
 
 ### Điểm cần nhấn trên slide
-- Click phóng to sequence purchase nếu cần chỉ rõ Order Service, Payment Gateway, Library Service.
-- Nhấn mạnh quy tắc: chưa thanh toán thành công thì chưa cấp license.
+
+- Click phóng to sequence purchase nếu cần chỉ rõ Order Service, Payment Gateway, Library Service.- Nhấn mạnh quy tắc: chưa thanh toán thành công thì chưa cấp license.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Idempotency là gì?** Là cơ chế để một yêu cầu lặp lại nhiều lần vẫn chỉ tạo một kết quả, tránh thanh toán/cấp license trùng.
-- **Vì sao không cấp license trước rồi thanh toán sau?** Vì sẽ tạo rủi ro người dùng có game khi giao dịch chưa thành công.
 
-## Slide 12: Slide 12 - Đăng nhập, review, refund - Khánh
+- **Idempotency là gì?** Là cơ chế để một yêu cầu lặp lại nhiều lần vẫn chỉ tạo một kết quả, tránh thanh toán/cấp license trùng.- **Vì sao không cấp license trước rồi thanh toán sau?** Vì sẽ tạo rủi ro người dùng có game khi giao dịch chưa thành công.
+
+## Slide 15: Slide 15 - Đăng nhập, review, refund · Khánh
 
 ### Lời trình bày
 
@@ -236,14 +289,14 @@ Luồng review thể hiện việc kiểm soát đánh giá: người dùng ch�
 Luồng hoàn tiền phức tạp hơn vì có nhiều trạng thái. Refund có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin duyệt thủ công. Nếu hoàn tiền được chấp nhận, hệ thống phải gọi cổng thanh toán và thu hồi license. Vì vậy nhóm dùng cả activity refund và state refund để mô tả đầy đủ quy trình và vòng đời trạng thái.
 
 ### Điểm cần nhấn trên slide
-- Click phóng to state refund hoặc activity refund để nói về các trạng thái.
-- Nhấn mạnh refund phải đi kèm thu hồi license.
+
+- Click phóng to state refund hoặc activity refund để nói về các trạng thái.- Nhấn mạnh refund phải đi kèm thu hồi license.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Vì sao review phải kiểm tra library?** Để bảo đảm chỉ người có quyền sở hữu/truy cập game mới được review.
-- **Refund thất bại thì sao?** State refund có nhánh Failed và có thể quay lại ManualReview để xử lý lại.
 
-## Slide 13: Slide 13 - Kiến trúc hệ thống - Đạt
+- **Vì sao review phải kiểm tra library?** Để bảo đảm chỉ người có quyền sở hữu/truy cập game mới được review.- **Refund thất bại thì sao?** State refund có nhánh Failed và có thể quay lại ManualReview để xử lý lại.
+
+## Slide 16: Slide 16 - Kiến trúc hệ thống · Đạt
 
 ### Lời trình bày
 
@@ -256,14 +309,14 @@ Lý do chọn hướng tách service là vì từng miền có yêu cầu khác 
 Deployment diagram cho thấy hệ thống còn cần database, search index, CDN, event queue và cổng thanh toán để vận hành ở quy mô lớn. Đây là thiết kế phù hợp với hệ thống có nhiều nội dung media, nhiều giao dịch và nhiều người dùng đồng thời.
 
 ### Điểm cần nhấn trên slide
-- Click phóng to deployment để nhìn rõ Browser, Steam Client, API Gateway, DB, Search Index, Queue, Payment Gateway.
-- Nói rõ tách service là lựa chọn thiết kế, không nhất thiết nhóm phải xây microservice thật.
+
+- Click phóng to deployment để nhìn rõ Browser, Steam Client, API Gateway, DB, Search Index, Queue, Payment Gateway.- Nói rõ tách service là lựa chọn thiết kế, không nhất thiết nhóm phải xây microservice thật.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Microservice có bắt buộc không?** Không. Đây là mô hình thiết kế phù hợp với hệ thống lớn; triển khai thật có thể bắt đầu bằng modular monolith rồi tách service sau.
-- **CDN dùng để làm gì?** Phục vụ static assets, media, ảnh/trailer game nhanh hơn và giảm tải backend.
 
-## Slide 14: Slide 14 - ERD - Đô
+- **Microservice có bắt buộc không?** Không. Đây là mô hình thiết kế phù hợp với hệ thống lớn; triển khai thật có thể bắt đầu bằng modular monolith rồi tách service sau.- **CDN dùng để làm gì?** Phục vụ static assets, media, ảnh/trailer game nhanh hơn và giảm tải backend.
+
+## Slide 17: Slide 17 - ERD · Đô
 
 ### Lời trình bày
 
@@ -276,14 +329,14 @@ Thiết kế này cũng hỗ trợ hoàn tiền. RefundRequest gắn với order
 Nhờ đó dữ liệu có thể truy vết từ người dùng, đơn hàng, thanh toán đến quyền truy cập game. Đây là điểm quan trọng trong hệ thống bán sản phẩm số, vì quyền truy cập phải đi đúng với trạng thái thanh toán.
 
 ### Điểm cần nhấn trên slide
-- Click phóng to ERD để chỉ User, Order, Payment, Library, License, Game, RefundRequest.
-- Nói rõ license là thực thể trung tâm giữa payment và library.
+
+- Click phóng to ERD để chỉ User, Order, Payment, Library, License, Game, RefundRequest.- Nói rõ license là thực thể trung tâm giữa payment và library.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Vì sao cần bảng licenses?** Vì order chỉ ghi nhận giao dịch; license mới biểu diễn quyền truy cập game trong thư viện.
-- **Refund liên quan ERD thế nào?** RefundRequest gắn với order/user; khi duyệt phải cập nhật refund/order và thu hồi license.
 
-## Slide 15: Slide 15 - BCE và Class Design - Đô
+- **Vì sao cần bảng licenses?** Vì order chỉ ghi nhận giao dịch; license mới biểu diễn quyền truy cập game trong thư viện.- **Refund liên quan ERD thế nào?** RefundRequest gắn với order/user; khi duyệt phải cập nhật refund/order và thu hồi license.
+
+## Slide 18: Slide 18 - BCE và Class Design · Đô
 
 ### Lời trình bày
 
@@ -296,14 +349,14 @@ Entity là các đối tượng dữ liệu cốt lõi như User, Game, Cart, Or
 Nhóm chọn BCE vì nó giúp tổ chức hệ thống rõ ràng: giao diện nhận yêu cầu, control xử lý nghiệp vụ, entity lưu dữ liệu. Cách này cũng giúp việc chuyển sang thiết kế code sau này dễ hơn, vì mỗi lớp có trách nhiệm rõ ràng.
 
 ### Điểm cần nhấn trên slide
-- Click phóng to BCE hoặc class design nếu cần.
-- Chốt bằng mô hình 3 lớp: Boundary - Control - Entity.
+
+- Click phóng to BCE hoặc class design nếu cần.- Chốt bằng mô hình 3 lớp: Boundary - Control - Entity.
 
 ### Kiến thức phòng khi thầy hỏi
-- **BCE khác MVC không?** BCE là mô hình phân tích hướng đối tượng; Boundary gần View/API, Control gần Controller/Service, Entity gần Model/Domain.
-- **Vì sao không để Boundary xử lý nghiệp vụ?** Để tránh giao diện phụ thuộc nghiệp vụ sâu; nghiệp vụ nên nằm ở Control/Service để dễ bảo trì.
 
-## Slide 16: Slide 16 - Kết luận - Đạt
+- **BCE khác MVC không?** BCE là mô hình phân tích hướng đối tượng; Boundary gần View/API, Control gần Controller/Service, Entity gần Model/Domain.- **Vì sao không để Boundary xử lý nghiệp vụ?** Để tránh giao diện phụ thuộc nghiệp vụ sâu; nghiệp vụ nên nằm ở Control/Service để dễ bảo trì.
+
+## Slide 19: Slide 19 - Kết luận · Đạt
 
 ### Lời trình bày
 
@@ -316,9 +369,9 @@ Thông điệp chính của nhóm là: với Steam Store, thiết kế đúng kh
 Hướng phát triển tiếp theo là xây dựng prototype giao diện chi tiết hơn, đặc tả API, bổ sung test case cho thanh toán và hoàn tiền, đồng thời mô phỏng database. Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe, và sẵn sàng nhận câu hỏi hoặc góp ý.
 
 ### Điểm cần nhấn trên slide
-- Kết luận ngắn, không mở thêm ý mới quá nhiều.
-- Nếu còn thời gian, nhắc lại license là điểm cốt lõi của hệ thống.
+
+- Kết luận ngắn, không mở thêm ý mới quá nhiều.- Nếu còn thời gian, nhắc lại license là điểm cốt lõi của hệ thống.
 
 ### Kiến thức phòng khi thầy hỏi
-- **Điểm mạnh nhất của báo cáo là gì?** Các UML liên kết được với nhau, không vẽ rời rạc; nghiệp vụ thanh toán-license-refund được kiểm soát rõ.
-- **Hướng phát triển thực tế là gì?** Prototype UI, API spec, test case, mô phỏng database và có thể triển khai bản demo nhỏ.
+
+- **Điểm mạnh nhất của báo cáo là gì?** Các UML liên kết được với nhau, không vẽ rời rạc; nghiệp vụ thanh toán-license-refund được kiểm soát rõ.- **Hướng phát triển thực tế là gì?** Prototype UI, API spec, test case, mô phỏng database và có thể triển khai bản demo nhỏ.

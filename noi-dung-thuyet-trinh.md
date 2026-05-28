@@ -1,6 +1,6 @@
-# N?i dung thuy?t tr?nh Steam Store
+# Nội dung thuyết trình Steam Store
 
-B?n n?y kh?p v?i 21 slide trong `index.html`. M?i slide c? l?i tr?nh b?y, ?i?m c?n nh?n v? ki?n th?c ph?ng khi th?y h?i.
+Bản này khớp với 22 slide trong `index.html`. Mỗi slide có lời trình bày, điểm cần nhấn và kiến thức phòng khi thầy hỏi.
 
 ## Slide 1: Slide 1 - Mở đầu · Đạt
 
@@ -142,7 +142,25 @@ Khi nhìn vào use case, có thể trả lời hai câu hỏi: ai dùng hệ th�
 
 - **Include và extend là gì?** Include là chức năng luôn được dùng kèm; extend là hành vi mở rộng chỉ xảy ra trong điều kiện nhất định.- **Vì sao Steam Client là actor?** Vì client tương tác với hệ thống để tải/cập nhật game dựa trên license, không phải chỉ là giao diện web.
 
-## Slide 8: Slide 8 - Phân tích Use Case người dùng · Khoa
+## Slide 8: Slide 8 - Tổng hợp hình Use Case · Khoa
+
+### Lời trình bày
+
+Slide này đặt toàn bộ hình use case của hệ thống lên cùng một màn hình. Bên trái là use case dành cho phía người dùng Steam Store. Bên phải là use case dành cho phía quản trị, nhà phát hành và hệ thống tích hợp như cổng thanh toán.
+
+Nhóm tách thành hai hình vì phạm vi quyền của hai nhóm actor khác nhau. Nhóm người dùng tập trung vào đăng ký, đăng nhập, tìm kiếm, mua game, thư viện, review và hoàn tiền. Nhóm quản trị tập trung vào quản lý trang game, khuyến mãi, media, kiểm duyệt, hỗ trợ tài khoản, theo dõi giao dịch và xử lý thanh toán.
+
+Khi trình bày, có thể click vào từng ảnh để phóng to. Sau slide tổng hợp này, nhóm đi vào từng hình chi tiết để phân tích actor, chức năng và quan hệ include/extend.
+
+### Điểm cần nhấn trên slide
+
+- Cả hai ảnh use case đều xuất hiện trên slide này.- Ảnh trái là nhóm người dùng; ảnh phải là nhóm quản trị và tích hợp.- Click ảnh để phóng to khi cần đọc rõ tên use case.
+
+### Kiến thức phòng khi thầy hỏi
+
+- **Vì sao tách thành hai hình?** Vì use case người dùng và use case quản trị có actor, quyền hạn và nghiệp vụ khác nhau; tách hình giúp sơ đồ dễ đọc hơn.- **Hai hình có liên hệ với nhau không?** Có. Ví dụ người dùng yêu cầu hoàn tiền, admin duyệt hoàn tiền, còn cổng thanh toán xử lý giao dịch refund.
+
+## Slide 9: Slide 9 - Phân tích Use Case người dùng · Khoa
 
 ### Lời trình bày
 
@@ -162,7 +180,7 @@ Trên hình có các quan hệ include và extend. Tìm kiếm include xem chi t
 
 - **Vì sao Review extend Library?** Vì review không phải lúc nào cũng xảy ra; nó chỉ phát sinh khi người dùng đã có game trong thư viện hoặc có license hợp lệ.- **Vì sao Checkout include Library?** Vì sau khi thanh toán thành công, hệ thống phải cập nhật thư viện bằng cách cấp license cho game đã mua.
 
-## Slide 9: Slide 9 - Phân tích Use Case quản trị · Khoa và Đô
+## Slide 10: Slide 10 - Phân tích Use Case quản trị · Khoa và Đô
 
 ### Lời trình bày
 
@@ -182,7 +200,7 @@ Cổng thanh toán là actor hệ thống ngoài. Nó xử lý giao dịch payme
 
 - **Vì sao publisher không được sửa mọi thứ tự do?** Vì thay đổi media, giá hoặc mô tả có thể ảnh hưởng người mua, nên cần log và có thể cần kiểm duyệt.- **Vì sao fraud monitoring là extend?** Vì kiểm tra gian lận không phải luồng bắt buộc của mọi payment, mà chỉ mở rộng khi giao dịch có dấu hiệu bất thường.
 
-## Slide 10: Slide 10 - Use case tài khoản và catalog · Khoa
+## Slide 11: Slide 11 - Use case tài khoản và catalog · Khoa
 
 ### Lời trình bày
 
@@ -200,7 +218,7 @@ Use case tìm kiếm và lọc game dùng Catalog Service kết hợp Search Ind
 
 - **Vì sao đăng nhập cần Steam Guard?** Vì tài khoản Steam chứa thư viện game và lịch sử giao dịch, nên đăng nhập từ thiết bị/vị trí lạ cần xác thực bổ sung.- **Search Index khác database thường ở điểm nào?** Search Index tối ưu cho tìm kiếm từ khóa, lọc và sắp xếp nhanh; database chính tối ưu lưu dữ liệu nghiệp vụ.
 
-## Slide 11: Slide 11 - Use case mua game và thư viện · Khánh
+## Slide 12: Slide 12 - Use case mua game và thư viện · Khánh
 
 ### Lời trình bày
 
@@ -218,7 +236,7 @@ Use case quản lý thư viện dựa trên license. Steam Client đọc thư vi
 
 - **Vì sao cần license?** Vì order chỉ ghi nhận giao dịch, còn license biểu diễn quyền truy cập game trong thư viện.- **Nếu payment timeout thì xử lý thế nào?** Không cấp license ngay; hệ thống cần kiểm tra lại trạng thái giao dịch hoặc retry có kiểm soát/idempotency.
 
-## Slide 12: Slide 12 - Use case review, refund, publisher/admin · Khánh và Đô
+## Slide 13: Slide 13 - Use case review, refund, publisher/admin · Khánh và Đô
 
 ### Lời trình bày
 
@@ -236,7 +254,7 @@ Use case hoàn tiền kiểm tra order, chính sách hoàn tiền, thời điể
 
 - **Vì sao refund phải thu hồi license?** Vì nếu người dùng đã nhận tiền hoàn mà vẫn giữ license thì hệ thống mất toàn vẹn quyền sở hữu số.- **Vì sao publisher update cần kiểm duyệt?** Vì thay đổi media, mô tả hoặc giá có thể ảnh hưởng trực tiếp đến người mua và chính sách nội dung của store.
 
-## Slide 13: Slide 13 - Giao diện chính · Dương
+## Slide 14: Slide 14 - Giao diện chính · Dương
 
 ### Lời trình bày
 
@@ -256,7 +274,7 @@ Ngoài ra còn có màn hình review, refund, Publisher Dashboard và Admin Dash
 
 - **Có cần demo web thật không?** Không. Phần này mô tả giao diện cần có trong thiết kế hệ thống, không phải demo sản phẩm chạy thật.- **Boundary trong BCE là gì?** Là lớp giao tiếp với người dùng hoặc hệ thống ngoài, ví dụ màn hình login, cart, checkout.
 
-## Slide 14: Slide 14 - Hành trình người dùng · Dương
+## Slide 15: Slide 15 - Hành trình người dùng · Dương
 
 ### Lời trình bày
 
@@ -276,7 +294,7 @@ Vì vậy phần giao diện không tách rời phần kỹ thuật, mà là đi
 
 - **Vì sao phải lưu snapshot giá?** Để lịch sử đơn hàng không bị thay đổi nếu giá game thay đổi sau khi người dùng mua.- **Hành trình này liên quan ERD thế nào?** Mỗi bước tạo hoặc dùng dữ liệu: cart item, order, payment, license, library.
 
-## Slide 15: Slide 15 - UML nghiệp vụ · Khánh
+## Slide 16: Slide 16 - UML nghiệp vụ · Khánh
 
 ### Lời trình bày
 
@@ -296,7 +314,7 @@ Nhóm chọn cách kết hợp nhiều UML để nhìn nghiệp vụ từ nhiề
 
 - **Sequence khác activity thế nào?** Sequence nhấn mạnh thứ tự gọi giữa đối tượng/service; activity nhấn mạnh luồng công việc và rẽ nhánh.- **State diagram dùng khi nào?** Khi đối tượng có vòng đời trạng thái rõ, ví dụ order hoặc refund.
 
-## Slide 16: Slide 16 - Quy trình mua game · Khánh
+## Slide 17: Slide 17 - Quy trình mua game · Khánh
 
 ### Lời trình bày
 
@@ -316,7 +334,7 @@ Sau đó Order Service tạo đơn hàng tạm và gửi yêu cầu sang Payment
 
 - **Idempotency là gì?** Là cơ chế để một yêu cầu lặp lại nhiều lần vẫn chỉ tạo một kết quả, tránh thanh toán/cấp license trùng.- **Vì sao không cấp license trước rồi thanh toán sau?** Vì sẽ tạo rủi ro người dùng có game khi giao dịch chưa thành công.
 
-## Slide 17: Slide 17 - Đăng nhập, review, refund · Khánh
+## Slide 18: Slide 18 - Đăng nhập, review, refund · Khánh
 
 ### Lời trình bày
 
@@ -336,7 +354,7 @@ Luồng hoàn tiền phức tạp hơn vì có nhiều trạng thái. Refund có
 
 - **Vì sao review phải kiểm tra library?** Để bảo đảm chỉ người có quyền sở hữu/truy cập game mới được review.- **Refund thất bại thì sao?** State refund có nhánh Failed và có thể quay lại ManualReview để xử lý lại.
 
-## Slide 18: Slide 18 - Kiến trúc hệ thống · Đạt
+## Slide 19: Slide 19 - Kiến trúc hệ thống · Đạt
 
 ### Lời trình bày
 
@@ -356,7 +374,7 @@ Deployment diagram cho thấy hệ thống còn cần database, search index, CD
 
 - **Microservice có bắt buộc không?** Không. Đây là mô hình thiết kế phù hợp với hệ thống lớn; triển khai thật có thể bắt đầu bằng modular monolith rồi tách service sau.- **CDN dùng để làm gì?** Phục vụ static assets, media, ảnh/trailer game nhanh hơn và giảm tải backend.
 
-## Slide 19: Slide 19 - ERD · Đô
+## Slide 20: Slide 20 - ERD · Đô
 
 ### Lời trình bày
 
@@ -376,7 +394,7 @@ Nhờ đó dữ liệu có thể truy vết từ người dùng, đơn hàng, th
 
 - **Vì sao cần bảng licenses?** Vì order chỉ ghi nhận giao dịch; license mới biểu diễn quyền truy cập game trong thư viện.- **Refund liên quan ERD thế nào?** RefundRequest gắn với order/user; khi duyệt phải cập nhật refund/order và thu hồi license.
 
-## Slide 20: Slide 20 - BCE và Class Design · Đô
+## Slide 21: Slide 21 - BCE và Class Design · Đô
 
 ### Lời trình bày
 
@@ -396,7 +414,7 @@ Nhóm chọn BCE vì nó giúp tổ chức hệ thống rõ ràng: giao diện n
 
 - **BCE khác MVC không?** BCE là mô hình phân tích hướng đối tượng; Boundary gần View/API, Control gần Controller/Service, Entity gần Model/Domain.- **Vì sao không để Boundary xử lý nghiệp vụ?** Để tránh giao diện phụ thuộc nghiệp vụ sâu; nghiệp vụ nên nằm ở Control/Service để dễ bảo trì.
 
-## Slide 21: Slide 21 - Kết luận · Đạt
+## Slide 22: Slide 22 - Kết luận · Đạt
 
 ### Lời trình bày
 

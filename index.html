@@ -368,6 +368,38 @@
     line-height: 1.38;
   }
 
+  .steam-deck .uml-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .steam-deck .uml-thumb {
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+  }
+
+  .steam-deck .uml-thumb b {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text-1);
+    font-size: 12.5px;
+  }
+
+  .steam-deck .uml-thumb .image-frame {
+    min-height: 92px;
+    padding: 4px;
+    box-shadow: none;
+  }
+
+  .steam-deck .uml-thumb .image-frame img {
+    max-height: 84px;
+  }
+
   .steam-deck .notes { display: none; }
 </style>
 </head>
@@ -693,6 +725,12 @@
       <tr><td><strong>UC-03 Tìm kiếm / lọc game</strong></td><td>Khách, người dùng</td><td>Catalog đã có dữ liệu</td><td>Nhập từ khóa/bộ lọc → truy vấn Search Index → trả danh sách game</td><td>Không có kết quả, bộ lọc sai, game bị ẩn theo khu vực</td></tr>
       <tr><td><strong>UC-04 Xem chi tiết game</strong></td><td>Khách, người dùng</td><td>Game còn hiển thị</td><td>Mở trang game → xem mô tả, giá, media, DLC, review, cấu hình</td><td>Game bị gỡ, nội dung bị giới hạn khu vực</td></tr>
     </table>
+    <div class="uml-strip">
+      <div class="uml-thumb"><b>Use Case User</b><div class="image-frame"><img src="./assets/uml/use_case_user.png" alt="Use Case User cho tài khoản và catalog"></div></div>
+      <div class="uml-thumb"><b>Sequence Login</b><div class="image-frame"><img src="./assets/uml/sequence_login.png" alt="Sequence Login và Steam Guard"></div></div>
+      <div class="uml-thumb"><b>Sequence Search</b><div class="image-frame"><img src="./assets/uml/sequence_search.png" alt="Sequence Search và Catalog"></div></div>
+      <div class="uml-thumb"><b>Architecture</b><div class="image-frame"><img src="./assets/uml/architecture.png" alt="Architecture liên quan Account và Catalog"></div></div>
+    </div>
     <div class="why"><strong>Lý do tách nhóm use case này:</strong> tài khoản và catalog là điểm vào của hệ thống. Nếu đăng nhập, tìm kiếm và xem chi tiết không rõ, các nghiệp vụ mua game phía sau không có nền.</div>
     <div class="footer"><span>UML liên quan: Use Case User, Sequence Login, Sequence Search</span><span class="slide-number" data-current="12" data-total="23"></span></div>
     <aside class="notes"><h3>Slide 12 - Use case tài khoản và catalog · Khoa</h3>
@@ -716,6 +754,12 @@
       <tr><td><strong>UC-07 Thanh toán mua game</strong></td><td>Người dùng, cổng thanh toán</td><td>Giỏ hàng hợp lệ</td><td>Tạo order → gửi payment → nhận kết quả → cấp license</td><td>Payment fail, timeout, giao dịch trùng, không cấp license nếu chưa trả tiền</td></tr>
       <tr><td><strong>UC-08 Quản lý thư viện</strong></td><td>Người dùng, Steam Client</td><td>License hợp lệ</td><td>Hiển thị game đã sở hữu → tải/cập nhật qua client</td><td>License bị thu hồi, client mất kết nối</td></tr>
     </table>
+    <div class="uml-strip">
+      <div class="uml-thumb"><b>Sequence Purchase</b><div class="image-frame"><img src="./assets/uml/sequence_purchase.png" alt="Sequence Purchase cho thanh toán"></div></div>
+      <div class="uml-thumb"><b>Activity Purchase</b><div class="image-frame"><img src="./assets/uml/activity_purchase.png" alt="Activity Purchase cho mua game"></div></div>
+      <div class="uml-thumb"><b>State Order</b><div class="image-frame"><img src="./assets/uml/state_order.png" alt="State Order cho vòng đời đơn hàng"></div></div>
+      <div class="uml-thumb"><b>ERD License</b><div class="image-frame"><img src="./assets/uml/erd.png" alt="ERD liên quan license và thư viện"></div></div>
+    </div>
     <div class="why"><strong>Quy tắc nghiệp vụ chính:</strong> game chỉ xuất hiện trong thư viện khi thanh toán thành công và license được cấp hợp lệ.</div>
     <div class="footer"><span>UML liên quan: Sequence Purchase, Activity Purchase, State Order, ERD License</span><span class="slide-number" data-current="13" data-total="23"></span></div>
     <aside class="notes"><h3>Slide 13 - Use case mua game và thư viện · Khánh</h3>
@@ -739,6 +783,12 @@
       <tr><td><strong>UC-11 Quản lý trang game</strong></td><td>Publisher</td><td>Publisher được xác minh</td><td>Cập nhật mô tả, media, DLC, giá, khuyến mãi → gửi duyệt/xuất bản</td><td>Media sai định dạng, nội dung vi phạm, không có quyền quản lý</td></tr>
       <tr><td><strong>UC-12 Kiểm duyệt và hỗ trợ</strong></td><td>Admin</td><td>Admin có quyền</td><td>Xem báo cáo → kiểm duyệt review/nội dung → hỗ trợ tài khoản/giao dịch</td><td>Thiếu quyền, thao tác cần log để truy vết</td></tr>
     </table>
+    <div class="uml-strip">
+      <div class="uml-thumb"><b>Sequence Review</b><div class="image-frame"><img src="./assets/uml/sequence_review.png" alt="Sequence Review kiểm tra license"></div></div>
+      <div class="uml-thumb"><b>Activity Refund</b><div class="image-frame"><img src="./assets/uml/activity_refund.png" alt="Activity Refund hoàn tiền"></div></div>
+      <div class="uml-thumb"><b>State Refund</b><div class="image-frame"><img src="./assets/uml/state_refund.png" alt="State Refund vòng đời hoàn tiền"></div></div>
+      <div class="uml-thumb"><b>Use Case Admin</b><div class="image-frame"><img src="./assets/uml/use_case_admin.png" alt="Use Case Admin và Publisher"></div></div>
+    </div>
     <div class="why"><strong>Lý do cần nhóm use case này:</strong> đây là các chức năng kiểm soát chất lượng, quyền sở hữu và vận hành hệ thống sau khi người dùng đã mua game.</div>
     <div class="footer"><span>UML liên quan: Sequence Review, Activity Refund, State Refund, Use Case Admin</span><span class="slide-number" data-current="14" data-total="23"></span></div>
     <aside class="notes"><h3>Slide 14 - Use case review, refund, publisher/admin · Khánh và Đô</h3>

@@ -1,6 +1,6 @@
-# Nội dung thuyết trình Steam Store
+# N?i dung thuy?t tr?nh Steam Store
 
-Bản này khớp với 23 slide trong `index.html`. Mỗi slide có lời trình bày, điểm cần nhấn và kiến thức phòng khi thầy hỏi.
+B?n n?y kh?p v?i 23 slide trong `index.html`. M?i slide c? l?i tr?nh b?y, ?i?m c?n nh?n v? ki?n th?c ph?ng khi th?y h?i.
 
 ## Slide 1: Slide 1 - Mở đầu · Đạt
 

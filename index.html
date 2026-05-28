@@ -391,9 +391,16 @@
       </div>
     </div>
     <div class="footer"><span>Steam Store analysis</span><span class="slide-number" data-current="1" data-total="16"></span></div>
-    <aside class="notes"><p>Em xin chào thầy và các bạn. Nhóm em xin trình bày đề tài <strong>phân tích và thiết kế hệ thống Steam Store</strong>. Trong bài này, nhóm không tiếp cận Steam Store như một website bán game đơn giản, mà xem đây là một hệ thống phần mềm hoàn chỉnh, có nhiều nhóm người dùng, nhiều nghiệp vụ liên kết và nhiều yêu cầu kỹ thuật quan trọng.</p>
+    <aside class="notes"><h3>Slide 1 - Mở đầu · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Em xin chào thầy và các bạn. Nhóm em xin trình bày đề tài phân tích và thiết kế hệ thống Steam Store. Trong bài này, nhóm không tiếp cận Steam Store như một website bán game đơn giản, mà xem đây là một hệ thống phần mềm hoàn chỉnh, có nhiều nhóm người dùng, nhiều nghiệp vụ liên kết và nhiều yêu cầu kỹ thuật quan trọng.</p>
 <p>Điểm đặc biệt của Steam Store là sản phẩm được mua không phải hàng hóa vật lý, mà là quyền truy cập số. Vì vậy hệ thống phải xử lý chính xác từ khâu tìm kiếm game, thêm vào giỏ hàng, thanh toán, cấp license, đưa game vào thư viện, cho đến review và hoàn tiền.</p>
-<p>Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách mở đầu, tổng quan, kiến trúc và kết luận. Khoa phụ trách yêu cầu và use case. Dương phụ trách giao diện và hành trình người dùng. Khánh phụ trách các luồng nghiệp vụ bằng UML động. Đô phụ trách thiết kế lớp và dữ liệu. Mục tiêu của nhóm là trình bày không chỉ “đã vẽ sơ đồ gì”, mà còn giải thích vì sao chọn cách phân tích đó.</p></aside>
+<p>Bài trình bày được chia theo vai trò của 5 thành viên. Đạt phụ trách mở đầu, tổng quan, kiến trúc và kết luận. Khoa phụ trách yêu cầu và use case. Dương phụ trách giao diện và hành trình người dùng. Khánh phụ trách các luồng nghiệp vụ bằng UML động. Đô phụ trách thiết kế lớp và dữ liệu.</p>
+<p>Mục tiêu của nhóm là trình bày không chỉ đã vẽ những sơ đồ nào, mà còn giải thích vì sao nhóm chọn các sơ đồ đó, mỗi sơ đồ trả lời câu hỏi gì và liên hệ như thế nào với nghiệp vụ của Steam Store.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Nhấn mạnh đề tài là phân tích và thiết kế, không phải xây website chạy thật.</li><li>Giải thích khái niệm license ngay từ đầu để các phần payment, library, refund phía sau dễ hiểu.</li><li>Nói rõ mỗi thành viên đều có phần UML riêng.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Vì sao chọn Steam Store?</strong> Vì hệ thống có đủ actor, nghiệp vụ giao dịch, dữ liệu quyền sở hữu số, review, refund và yêu cầu bảo mật, phù hợp để áp dụng nhiều loại UML.</li><li><strong>Có cần demo website thật không?</strong> Không bắt buộc. Đây là báo cáo phân tích thiết kế, trọng tâm là mô hình nghiệp vụ và thiết kế hệ thống.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Lộ trình">
@@ -409,9 +416,16 @@
     </table>
     <div class="why"><strong>Cách đi của bài:</strong> từ người dùng và yêu cầu nghiệp vụ → UML mô tả hành vi → thiết kế kiến trúc và dữ liệu.</div>
     <div class="footer"><span>Mỗi thành viên đều có chức năng phụ trách, UML liên quan và tiến độ hoàn thành</span><span class="slide-number" data-current="2" data-total="16"></span></div>
-    <aside class="notes"><p>Trước khi đi vào chi tiết, nhóm xin trình bày lộ trình của bài. Phần đầu do Đạt trình bày, tập trung vào bức tranh tổng quan: Steam Store là hệ thống gì, phạm vi phân tích của nhóm đến đâu, nhóm đã hoàn thành những sản phẩm nào và tiến độ ra sao.</p>
-<p>Tiếp theo, Khoa trình bày yêu cầu hệ thống và use case. Đây là phần nền tảng, vì mọi mô hình phía sau đều phải xuất phát từ yêu cầu và actor. Sau đó, Dương trình bày các giao diện chính và hành trình người dùng, giúp người nghe hình dung hệ thống hoạt động dưới góc nhìn thực tế.</p>
-<p>Phần tiếp theo do Khánh trình bày, tập trung vào UML nghiệp vụ như sequence, activity và state diagram. Những sơ đồ này giúp làm rõ thứ tự xử lý, nhánh điều kiện và trạng thái của các nghiệp vụ quan trọng. Cuối cùng, Đô trình bày thiết kế dữ liệu và lớp, còn Đạt kết luận lại bằng các điểm chính và hướng phát triển. Cách chia này giúp bài nói đi từ yêu cầu, sang hành vi, rồi đến cấu trúc hệ thống.</p></aside>
+    <aside class="notes"><h3>Slide 2 - Lộ trình · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Trước khi đi vào chi tiết, nhóm trình bày lộ trình của bài để thầy và các bạn dễ theo dõi. Phần đầu do Đạt trình bày, tập trung vào bức tranh tổng quan: Steam Store là hệ thống gì, phạm vi phân tích của nhóm đến đâu, nhóm đã hoàn thành những sản phẩm nào và tiến độ ra sao.</p>
+<p>Tiếp theo, Khoa trình bày yêu cầu hệ thống và use case. Đây là phần nền tảng, vì mọi mô hình phía sau đều phải xuất phát từ yêu cầu và actor. Sau đó, Dương trình bày các giao diện chính và hành trình người dùng, giúp người nghe hình dung hệ thống dưới góc nhìn thực tế.</p>
+<p>Phần tiếp theo do Khánh trình bày, tập trung vào UML nghiệp vụ như sequence, activity và state diagram. Những sơ đồ này giúp làm rõ thứ tự xử lý, nhánh điều kiện và trạng thái của các nghiệp vụ quan trọng. Cuối cùng, Đô trình bày thiết kế dữ liệu và lớp, còn Đạt kết luận bằng các điểm chính và hướng phát triển.</p>
+<p>Cách chia này đi theo đúng quy trình phân tích thiết kế: từ yêu cầu, đến giao diện và hành vi nghiệp vụ, sau đó mới đến kiến trúc, lớp và dữ liệu.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Khi nói slide này, chỉ vào từng dòng trong bảng để lớp biết ai sẽ nói phần nào.</li><li>Làm rõ Đạt nhận phần kiến trúc/deployment để giảm tải cho Đô.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Vì sao không để một người nói hết UML?</strong> Vì mỗi UML gắn với một nhóm chức năng khác nhau. Chia theo chức năng giúp từng thành viên hiểu phần mình phụ trách.</li><li><strong>Thứ tự trình bày có quan trọng không?</strong> Có. Nếu nói dữ liệu trước khi nói yêu cầu/use case thì người nghe khó hiểu vì chưa biết dữ liệu phục vụ nghiệp vụ nào.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Đạt tổng quan">
@@ -429,9 +443,16 @@
     </div>
     <div class="why"><strong>Lý do chọn hướng tổng quan trước:</strong> nếu chưa xác định bức tranh lớn, các sơ đồ phía sau như use case, sequence, ERD sẽ dễ rời rạc.</div>
     <div class="footer"><span>UML liên quan: Architecture diagram</span><span class="slide-number" data-current="3" data-total="16"></span></div>
-    <aside class="notes"><p>Nhóm chọn Steam Store vì đây là một ví dụ phù hợp để phân tích trong môn kỹ thuật phần mềm. Hệ thống có nhiều actor khác nhau, gồm khách vãng lai, người dùng Steam, Steam Client, nhà phát hành, quản trị viên và cổng thanh toán. Mỗi actor có mục tiêu sử dụng và quyền thao tác khác nhau.</p>
+    <aside class="notes"><h3>Slide 3 - Tổng quan đề tài · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Nhóm chọn Steam Store vì đây là một ví dụ phù hợp để phân tích trong môn kỹ thuật phần mềm. Hệ thống có nhiều actor khác nhau, gồm khách vãng lai, người dùng Steam, Steam Client, nhà phát hành, quản trị viên và cổng thanh toán.</p>
 <p>Ở mức nghiệp vụ, Steam Store có chuỗi xử lý rất rõ: người dùng tìm game, xem chi tiết, thêm vào giỏ hàng, thanh toán, sau đó hệ thống cấp license để game xuất hiện trong thư viện. Từ thư viện, người dùng có thể tải game, viết review hoặc gửi yêu cầu hoàn tiền.</p>
-<p>Nhóm bắt đầu bằng sơ đồ kiến trúc tổng quan vì đây là cách nhanh nhất để đặt bối cảnh cho toàn bộ bài. Sơ đồ cho thấy hệ thống không chỉ có giao diện web, mà còn có Steam Client, API Gateway, các service nghiệp vụ, cơ sở dữ liệu, search index, CDN và cổng thanh toán. Khi có bức tranh lớn này, các sơ đồ chi tiết như use case, sequence, ERD và deployment sẽ dễ hiểu hơn.</p></aside>
+<p>Nhóm bắt đầu bằng sơ đồ kiến trúc tổng quan vì đây là cách nhanh nhất để đặt bối cảnh cho toàn bộ bài. Sơ đồ cho thấy hệ thống không chỉ có giao diện web, mà còn có Steam Client, API Gateway, các service nghiệp vụ, cơ sở dữ liệu, search index, CDN và cổng thanh toán.</p>
+<p>Khi có bức tranh lớn này, các sơ đồ chi tiết như use case, sequence, ERD và deployment sẽ dễ hiểu hơn. Mỗi sơ đồ phía sau đều có vị trí trong kiến trúc tổng thể này.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click vào ảnh architecture nếu cần phóng to.</li><li>Chỉ vào API Gateway và các service để nói hệ thống được chia theo miền nghiệp vụ.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>API Gateway là gì?</strong> Là cửa vào chung cho client, nhận request rồi định tuyến đến service phù hợp; có thể xử lý xác thực, logging, rate limit.</li><li><strong>Vì sao có Steam Client riêng?</strong> Vì tải/cập nhật game không chỉ diễn ra trên web mà qua ứng dụng client, dựa trên license trong thư viện.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Đạt khối lượng">
@@ -451,9 +472,16 @@
       <tr><td>Thiết kế lớp + dữ liệu</td><td>Tổ chức BCE, class, ERD và quan hệ license</td><td>Đô</td></tr>
     </table>
     <div class="footer"><span>Minh chứng: thư mục assets/uml và báo cáo PDF</span><span class="slide-number" data-current="4" data-total="16"></span></div>
-    <aside class="notes"><p>Về khối lượng công việc, nhóm đã hoàn thành ba nhóm sản phẩm chính. Nhóm thứ nhất là phân tích yêu cầu, bao gồm mô tả bài toán, bảng thuật ngữ, yêu cầu chức năng, yêu cầu phi chức năng và phân quyền theo vai trò.</p>
+    <aside class="notes"><h3>Slide 4 - Khối lượng công việc · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Về khối lượng công việc, nhóm đã hoàn thành ba nhóm sản phẩm chính. Nhóm thứ nhất là phân tích yêu cầu, bao gồm mô tả bài toán, bảng thuật ngữ, yêu cầu chức năng, yêu cầu phi chức năng và phân quyền theo vai trò.</p>
 <p>Nhóm thứ hai là mô hình hóa nghiệp vụ bằng UML. Cụ thể, nhóm có use case cho người dùng và quản trị, sequence diagram cho các luồng quan trọng, activity diagram cho mua game và hoàn tiền, state diagram cho vòng đời order và refund, cùng BCE để liên kết giao diện, xử lý nghiệp vụ và dữ liệu.</p>
-<p>Nhóm thứ ba là thiết kế hệ thống, gồm kiến trúc, deployment, class design, ERD và danh sách bảng dữ liệu. Cách chia này giúp báo cáo không chỉ dừng ở việc mô tả chức năng, mà còn đi được đến cấu trúc triển khai. Các phần trong báo cáo cũng được phân công theo năng lực từng thành viên, nhưng vẫn bảo đảm mỗi bạn có phần UML liên quan đến chức năng mình phụ trách.</p></aside>
+<p>Nhóm thứ ba là thiết kế hệ thống, gồm kiến trúc, deployment, class design, ERD và danh sách bảng dữ liệu. Cách chia này giúp báo cáo không chỉ dừng ở việc mô tả chức năng, mà còn đi đến cấu trúc triển khai.</p>
+<p>Điểm cần nhấn mạnh là các sản phẩm không tách rời. Yêu cầu dẫn đến use case. Use case dẫn đến sequence và activity. Class và ERD được xây dựa trên các thực thể xuất hiện trong nghiệp vụ.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Nói rõ đây là phần tổng hợp công việc đã đạt được.</li><li>Bảng dưới cho thấy mảng nào gắn với thành viên nào.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Báo cáo đã đủ UML chưa?</strong> Đủ các nhóm chính: use case, sequence, activity, state, BCE/class, ERD, deployment. Mỗi loại phục vụ một mục đích khác nhau.</li><li><strong>Tại sao cần ma trận truy vết?</strong> Để chứng minh yêu cầu không bị bỏ sót và mỗi mô hình đều xuất phát từ yêu cầu cụ thể.</li></ul></aside>
   </section>
 
 
@@ -471,9 +499,16 @@
     </table>
     <div class="why"><strong>Nguyên tắc phân công:</strong> mỗi thành viên không chỉ trình bày nội dung mình làm, mà còn phân tích UML gắn với chức năng phụ trách.</div>
     <div class="footer"><span>Tiến độ chung: báo cáo, UML, slide và nội dung thuyết trình đã hoàn thành</span><span class="slide-number" data-current="5" data-total="16"></span></div>
-    <aside class="notes"><p>Slide này thể hiện bảng phân chia công việc chi tiết và tiến độ hoàn thành. Điểm nhóm muốn nhấn mạnh là mỗi thành viên không chỉ phụ trách một đoạn nội dung, mà còn phải phân tích UML gắn trực tiếp với chức năng của mình.</p>
+    <aside class="notes"><h3>Slide 5 - Phân công chi tiết · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Slide này thể hiện bảng phân chia công việc chi tiết và tiến độ hoàn thành. Điểm nhóm muốn nhấn mạnh là mỗi thành viên không chỉ phụ trách một đoạn nội dung, mà còn phải phân tích UML gắn trực tiếp với chức năng của mình.</p>
 <p>Đạt là trưởng nhóm, phụ trách tổng quan hệ thống, phạm vi, tiến độ và phần kiến trúc triển khai. Vì vậy UML chính của Đạt là architecture diagram và deployment diagram. Khoa phụ trách yêu cầu, actor và phân quyền, nên UML chính là use case user, use case admin và ma trận truy vết từ yêu cầu sang mô hình.</p>
-<p>Dương phụ trách giao diện và hành trình người dùng, nên phần UML liên quan là activity purchase và boundary trong mô hình BCE. Khánh phụ trách các luồng nghiệp vụ như mua game, đăng nhập, review và hoàn tiền, nên tập trung vào sequence, activity và state diagram. Đô phụ trách thiết kế lớp và dữ liệu, nên tập trung vào BCE, class design và ERD. Tất cả các đầu việc đều đã hoàn thành ở mức 100 phần trăm, bao gồm báo cáo, UML, slide và nội dung thuyết trình.</p></aside>
+<p>Dương phụ trách giao diện và hành trình người dùng, nên phần UML liên quan là activity purchase và boundary trong mô hình BCE. Khánh phụ trách các luồng nghiệp vụ như mua game, đăng nhập, review và hoàn tiền, nên tập trung vào sequence, activity và state diagram.</p>
+<p>Đô phụ trách thiết kế lớp và dữ liệu, nên tập trung vào BCE, class design và ERD. Tất cả các đầu việc đều đã hoàn thành ở mức 100 phần trăm, bao gồm báo cáo, UML, slide và nội dung thuyết trình.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Nếu thầy hỏi ai làm gì, đọc đúng bảng này.</li><li>Nói rõ Đô đã được giảm phần kiến trúc/deployment; Đạt nhận phần đó.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Dương có phân tích UML không?</strong> Có. Dương liên hệ giao diện với activity purchase và Boundary trong BCE.</li><li><strong>Đô có bị nặng không?</strong> Không. Phần kiến trúc/deployment đã chuyển sang Đạt; Đô tập trung vào BCE, Class Design và ERD.</li></ul></aside>
   </section>
   <section class="slide" data-title="Khoa yêu cầu">
     <div class="speaker">Trình bày: <b>Khoa</b> · yêu cầu hệ thống</div>
@@ -485,9 +520,16 @@
     </div>
     <div class="why"><strong>Lý do chọn hướng này:</strong> tách yêu cầu theo vai trò giúp tránh nhầm quyền giữa khách, người dùng, publisher, admin và hệ thống ngoài.</div>
     <div class="footer"><span>Đầu ra của phần này: FR/NFR, actor, phân quyền, ma trận truy vết</span><span class="slide-number" data-current="6" data-total="16"></span></div>
-    <aside class="notes"><p>Phần yêu cầu hệ thống được chia thành ba nhóm. Nhóm thứ nhất là yêu cầu chức năng dành cho người dùng, gồm đăng ký tài khoản, đăng nhập, xác thực Steam Guard, tìm kiếm game, quản lý wishlist, giỏ hàng, checkout, thư viện, review và hoàn tiền.</p>
+    <aside class="notes"><h3>Slide 6 - Yêu cầu hệ thống · Khoa</h3>
+<h4>Lời trình bày</h4>
+<p>Phần yêu cầu hệ thống được chia thành ba nhóm. Nhóm thứ nhất là yêu cầu chức năng dành cho người dùng, gồm đăng ký tài khoản, đăng nhập, xác thực Steam Guard, tìm kiếm game, quản lý wishlist, giỏ hàng, checkout, thư viện, review và hoàn tiền.</p>
 <p>Nhóm thứ hai là yêu cầu dành cho phía quản trị và nhà phát hành. Publisher cần quản lý thông tin game, giá bán, media, DLC và khuyến mãi. Admin cần kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi các giao dịch bất thường.</p>
-<p>Nhóm thứ ba là yêu cầu phi chức năng. Với Steam Store, các yếu tố quan trọng gồm hiệu năng tìm kiếm, khả năng mở rộng trong các đợt sale lớn, bảo mật tài khoản, tính sẵn sàng của checkout và toàn vẹn dữ liệu giữa thanh toán với cấp license. Nhóm chọn cách phân tích yêu cầu theo vai trò vì mỗi actor có quyền khác nhau. Cách này giúp tránh nhầm lẫn giữa khách vãng lai, người dùng đã đăng nhập, publisher, admin và hệ thống ngoài.</p></aside>
+<p>Nhóm thứ ba là yêu cầu phi chức năng. Với Steam Store, các yếu tố quan trọng gồm hiệu năng tìm kiếm, khả năng mở rộng trong các đợt sale lớn, bảo mật tài khoản, tính sẵn sàng của checkout và toàn vẹn dữ liệu giữa thanh toán với cấp license.</p>
+<p>Nhóm chọn cách phân tích yêu cầu theo vai trò vì mỗi actor có quyền khác nhau. Cách này giúp tránh nhầm lẫn giữa khách vãng lai, người dùng đã đăng nhập, publisher, admin và hệ thống ngoài.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Giải thích khác nhau giữa yêu cầu chức năng và phi chức năng.</li><li>Nhấn mạnh bảo mật và toàn vẹn dữ liệu vì đây là điểm dễ bị hỏi.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>FR và NFR khác gì?</strong> FR là chức năng hệ thống phải làm; NFR là chất lượng hệ thống phải đạt, như bảo mật, hiệu năng, mở rộng.</li><li><strong>Yêu cầu quan trọng nhất là gì?</strong> Thanh toán thành công phải cấp đúng license; thanh toán thất bại không được cấp game.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Khoa phân quyền">
@@ -506,9 +548,16 @@
       </div>
     </div>
     <div class="footer"><span>UML liên quan: Use Case User, Use Case Admin</span><span class="slide-number" data-current="7" data-total="16"></span></div>
-    <aside class="notes"><p>Use case diagram giúp xác định phạm vi chức năng của hệ thống. Ở phía người dùng, nhóm chia actor thành khách vãng lai, người dùng Steam và Steam Client. Khách vãng lai có thể tìm kiếm, lọc game, xem chi tiết và đăng ký tài khoản, nhưng chưa được mua game hoặc viết review.</p>
+    <aside class="notes"><h3>Slide 7 - Actor và Use Case · Khoa</h3>
+<h4>Lời trình bày</h4>
+<p>Use case diagram giúp xác định phạm vi chức năng của hệ thống. Ở phía người dùng, nhóm chia actor thành khách vãng lai, người dùng Steam và Steam Client. Khách vãng lai có thể tìm kiếm, lọc game, xem chi tiết và đăng ký tài khoản, nhưng chưa được mua game hoặc viết review.</p>
 <p>Người dùng Steam là actor chính. Sau khi đăng nhập, người dùng có thể quản lý wishlist, thêm game vào giỏ hàng, thanh toán, quản lý thư viện, viết review và yêu cầu hoàn tiền. Steam Client được tách thành actor riêng vì việc tải, cài đặt và cập nhật game thường diễn ra qua ứng dụng client, dựa trên license trong thư viện.</p>
-<p>Ở phía quản trị, publisher quản lý trang game, media, DLC, giá bán và khuyến mãi. Admin phụ trách kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi giao dịch. Nhóm chọn use case ở bước này vì use case là cầu nối giữa yêu cầu và các sơ đồ động phía sau. Khi thầy nhìn use case, có thể thấy rõ hệ thống có những chức năng nào và ai là người sử dụng chức năng đó.</p></aside>
+<p>Ở phía quản trị, publisher quản lý trang game, media, DLC, giá bán và khuyến mãi. Admin phụ trách kiểm duyệt nội dung, hỗ trợ tài khoản và theo dõi giao dịch. Nhóm chọn use case ở bước này vì use case là cầu nối giữa yêu cầu và các sơ đồ động phía sau.</p>
+<p>Khi nhìn vào use case, có thể trả lời hai câu hỏi: ai dùng hệ thống và họ dùng chức năng nào. Sau khi trả lời được hai câu hỏi đó, nhóm mới đi tiếp sang sequence, activity và thiết kế dữ liệu.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click phóng to use case khi cần giải thích.</li><li>Chỉ rõ khách vãng lai khác người dùng đã đăng nhập ở quyền mua/review/refund.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Include và extend là gì?</strong> Include là chức năng luôn được dùng kèm; extend là hành vi mở rộng chỉ xảy ra trong điều kiện nhất định.</li><li><strong>Vì sao Steam Client là actor?</strong> Vì client tương tác với hệ thống để tải/cập nhật game dựa trên license, không phải chỉ là giao diện web.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Dương giao diện">
@@ -529,9 +578,16 @@
       <div class="screen-card"><div class="mock"></div><b>Admin</b><p>Kiểm duyệt, hỗ trợ, theo dõi giao dịch.</p></div>
     </div>
     <div class="footer"><span>Giao diện là lớp Boundary trong mô hình BCE</span><span class="slide-number" data-current="8" data-total="16"></span></div>
-    <aside class="notes"><p>Phần giao diện được trình bày theo các màn hình chính mà người dùng hoặc quản trị viên sẽ nhìn thấy. Với người dùng, hành trình bắt đầu từ trang chủ Store, nơi có game nổi bật, game đang sale, danh mục và thanh tìm kiếm. Sau đó người dùng chuyển sang trang tìm kiếm hoặc lọc game theo tag, giá, nền tảng, đánh giá và ngày phát hành.</p>
-<p>Trang chi tiết game cung cấp trailer, hình ảnh, mô tả, giá, DLC, review và cấu hình yêu cầu. Nếu quan tâm, người dùng có thể thêm game vào wishlist hoặc giỏ hàng. Khi mua, người dùng đi qua checkout, chọn phương thức thanh toán và xác nhận đơn hàng. Sau khi thanh toán thành công, game xuất hiện trong thư viện.</p>
-<p>Ngoài ra còn có màn hình review, refund, Publisher Dashboard và Admin Dashboard. Về mặt UML, các màn hình này tương ứng với lớp Boundary trong mô hình BCE. Boundary là nơi tiếp nhận tương tác từ người dùng trước khi chuyển sang lớp Control xử lý nghiệp vụ.</p></aside>
+    <aside class="notes"><h3>Slide 8 - Giao diện chính · Dương</h3>
+<h4>Lời trình bày</h4>
+<p>Phần giao diện được trình bày theo các màn hình chính mà người dùng hoặc quản trị viên sẽ nhìn thấy. Với người dùng, hành trình bắt đầu từ trang chủ Store, nơi có game nổi bật, game đang sale, danh mục và thanh tìm kiếm.</p>
+<p>Sau đó người dùng chuyển sang trang tìm kiếm hoặc lọc game theo tag, giá, nền tảng, đánh giá và ngày phát hành. Trang chi tiết game cung cấp trailer, hình ảnh, mô tả, giá, DLC, review và cấu hình yêu cầu.</p>
+<p>Nếu quan tâm, người dùng có thể thêm game vào wishlist hoặc giỏ hàng. Khi mua, người dùng đi qua checkout, chọn phương thức thanh toán và xác nhận đơn hàng. Sau khi thanh toán thành công, game xuất hiện trong thư viện.</p>
+<p>Ngoài ra còn có màn hình review, refund, Publisher Dashboard và Admin Dashboard. Về mặt UML, các màn hình này tương ứng với lớp Boundary trong mô hình BCE. Boundary là nơi tiếp nhận tương tác từ người dùng trước khi chuyển sang lớp Control xử lý nghiệp vụ.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Không cần mở web Steam thật. Chỉ cần trình bày theo các màn hình trên slide.</li><li>Nhấn mạnh giao diện là Boundary, không phải phần xử lý nghiệp vụ chính.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Có cần demo web thật không?</strong> Không. Phần này mô tả giao diện cần có trong thiết kế hệ thống, không phải demo sản phẩm chạy thật.</li><li><strong>Boundary trong BCE là gì?</strong> Là lớp giao tiếp với người dùng hoặc hệ thống ngoài, ví dụ màn hình login, cart, checkout.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Dương hành trình">
@@ -551,9 +607,16 @@
       <div class="card"><h3>Liên hệ dữ liệu</h3><p>Giỏ hàng, order, payment, license và library xuất hiện theo thứ tự nghiệp vụ.</p></div>
     </div>
     <div class="footer"><span>Giao diện giúp nối phần yêu cầu với luồng xử lý</span><span class="slide-number" data-current="9" data-total="16"></span></div>
-    <aside class="notes"><p>Hành trình mua game giúp nối phần giao diện với nghiệp vụ phía sau. Bước đầu tiên, người dùng vào trang chủ hoặc trang tìm kiếm để tìm game phù hợp. Sau đó người dùng mở trang chi tiết để xem thông tin, giá, review và yêu cầu cấu hình.</p>
+    <aside class="notes"><h3>Slide 9 - Hành trình người dùng · Dương</h3>
+<h4>Lời trình bày</h4>
+<p>Hành trình mua game giúp nối phần giao diện với nghiệp vụ phía sau. Bước đầu tiên, người dùng vào trang chủ hoặc trang tìm kiếm để tìm game phù hợp. Sau đó người dùng mở trang chi tiết để xem thông tin, giá, review và yêu cầu cấu hình.</p>
 <p>Nếu muốn mua, người dùng thêm game vào giỏ hàng và chuyển sang checkout. Ở bước checkout, hệ thống cần hiển thị danh sách game, giá tại thời điểm mua và tổng tiền. Khi thanh toán thành công, hệ thống cấp license và game xuất hiện trong thư viện người dùng.</p>
-<p>Hành trình này liên hệ trực tiếp với ba nhóm mô hình. Use case cho biết người dùng được thực hiện chức năng nào. Activity diagram mô tả quy trình và các nhánh thành công hoặc thất bại. ERD cho thấy dữ liệu được tạo ra theo thứ tự: cart item, order, payment, license và library. Vì vậy phần giao diện không tách rời phần kỹ thuật, mà là điểm bắt đầu của toàn bộ chuỗi nghiệp vụ.</p></aside>
+<p>Hành trình này liên hệ trực tiếp với ba nhóm mô hình. Use case cho biết người dùng được thực hiện chức năng nào. Activity diagram mô tả quy trình và các nhánh thành công hoặc thất bại. ERD cho thấy dữ liệu được tạo ra theo thứ tự: cart item, order, payment, license và library.</p>
+<p>Vì vậy phần giao diện không tách rời phần kỹ thuật, mà là điểm bắt đầu của toàn bộ chuỗi nghiệp vụ.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Nói theo 6 bước trên slide, không lan sang phần kỹ thuật quá sâu.</li><li>Chốt bằng câu: giao diện dẫn sang activity và dữ liệu.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Vì sao phải lưu snapshot giá?</strong> Để lịch sử đơn hàng không bị thay đổi nếu giá game thay đổi sau khi người dùng mua.</li><li><strong>Hành trình này liên quan ERD thế nào?</strong> Mỗi bước tạo hoặc dùng dữ liệu: cart item, order, payment, license, library.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Khánh UML">
@@ -573,9 +636,16 @@
       <tr><td>Hoàn tiền</td><td>Activity Refund, State Refund</td><td>Mô tả duyệt tự động, duyệt thủ công và thu hồi license.</td></tr>
     </table>
     <div class="footer"><span>UML động mô tả hành vi và trạng thái của hệ thống</span><span class="slide-number" data-current="10" data-total="16"></span></div>
-    <aside class="notes"><p>Ở phần UML nghiệp vụ, nhóm dùng nhiều loại sơ đồ vì một nghiệp vụ phức tạp không thể mô tả đầy đủ bằng một sơ đồ duy nhất. Use case trả lời câu hỏi ai sử dụng hệ thống và sử dụng chức năng nào. Sequence diagram trả lời câu hỏi các thành phần gọi nhau theo thứ tự nào.</p>
-<p>Activity diagram tập trung vào quy trình và các nhánh điều kiện. Ví dụ khi mua game, thanh toán có thể thành công hoặc thất bại. Khi hoàn tiền, yêu cầu có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin xem xét. State diagram mô tả vòng đời trạng thái của các đối tượng như order và refund.</p>
-<p>Nhóm chọn cách kết hợp nhiều UML để nhìn nghiệp vụ từ nhiều góc. Use case giúp xác định phạm vi. Sequence giúp kiểm soát thứ tự xử lý. Activity giúp thấy rẽ nhánh. State giúp tránh bỏ sót trạng thái. Đây là cách phân tích phù hợp với các nghiệp vụ nhạy cảm như thanh toán và hoàn tiền.</p></aside>
+    <aside class="notes"><h3>Slide 10 - UML nghiệp vụ · Khánh</h3>
+<h4>Lời trình bày</h4>
+<p>Ở phần UML nghiệp vụ, nhóm dùng nhiều loại sơ đồ vì một nghiệp vụ phức tạp không thể mô tả đầy đủ bằng một sơ đồ duy nhất. Use case trả lời câu hỏi ai sử dụng hệ thống và sử dụng chức năng nào. Sequence diagram trả lời câu hỏi các thành phần gọi nhau theo thứ tự nào.</p>
+<p>Activity diagram tập trung vào quy trình và các nhánh điều kiện. Ví dụ khi mua game, thanh toán có thể thành công hoặc thất bại. Khi hoàn tiền, yêu cầu có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin xem xét.</p>
+<p>State diagram mô tả vòng đời trạng thái của các đối tượng như order và refund. Nhóm dùng state diagram cho hai đối tượng này vì chúng có nhiều trạng thái trung gian và có thể đi qua nhánh lỗi.</p>
+<p>Nhóm chọn cách kết hợp nhiều UML để nhìn nghiệp vụ từ nhiều góc. Use case giúp xác định phạm vi. Sequence giúp kiểm soát thứ tự xử lý. Activity giúp thấy rẽ nhánh. State giúp tránh bỏ sót trạng thái.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Không cần giải thích tất cả UML quá dài; tập trung từng loại trả lời câu hỏi gì.</li><li>Nhấn mạnh lý do dùng nhiều UML là để tránh bỏ sót nghiệp vụ.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Sequence khác activity thế nào?</strong> Sequence nhấn mạnh thứ tự gọi giữa đối tượng/service; activity nhấn mạnh luồng công việc và rẽ nhánh.</li><li><strong>State diagram dùng khi nào?</strong> Khi đối tượng có vòng đời trạng thái rõ, ví dụ order hoặc refund.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Khánh mua game">
@@ -591,9 +661,16 @@
     </div>
     <div class="image-frame" style="min-height:270px;margin-top:18px"><img src="./assets/uml/sequence_purchase.png" alt="Sequence mua game" style="max-height:250px"></div>
     <div class="footer"><span>UML liên quan: Sequence Purchase, Activity Purchase, State Order</span><span class="slide-number" data-current="11" data-total="16"></span></div>
-    <aside class="notes"><p>Quy trình mua game là luồng nghiệp vụ tiêu biểu nhất của Steam Store. Người dùng bắt đầu bằng việc checkout từ giỏ hàng. Cart Service trả danh sách game trong giỏ và giá tại thời điểm mua. Việc lưu snapshot giá rất quan trọng vì giá game có thể thay đổi do sale hoặc theo khu vực.</p>
+    <aside class="notes"><h3>Slide 11 - Quy trình mua game · Khánh</h3>
+<h4>Lời trình bày</h4>
+<p>Quy trình mua game là luồng nghiệp vụ tiêu biểu nhất của Steam Store. Người dùng bắt đầu bằng việc checkout từ giỏ hàng. Cart Service trả danh sách game trong giỏ và giá tại thời điểm mua.</p>
+<p>Việc lưu snapshot giá rất quan trọng vì giá game có thể thay đổi do sale hoặc theo khu vực. Nếu không lưu snapshot, lịch sử đơn hàng có thể bị sai khi giá game thay đổi sau khi người dùng đã mua.</p>
 <p>Sau đó Order Service tạo đơn hàng tạm và gửi yêu cầu sang Payment Gateway. Nếu thanh toán thất bại, hệ thống không được cấp game mà chỉ thông báo lỗi để người dùng thử lại. Nếu thanh toán thành công, Order Service gọi Library Service để tạo license cho từng game, rồi game xuất hiện trong thư viện.</p>
-<p>Điểm cốt lõi của luồng này là toàn vẹn giao dịch. Hệ thống phải tránh hai lỗi nghiêm trọng: người dùng bị trừ tiền nhưng không nhận game, hoặc chưa thanh toán mà vẫn có game trong thư viện. Vì vậy nhóm dùng sequence purchase để mô tả thứ tự gọi service, activity purchase để mô tả nhánh thành công/thất bại và state order để kiểm soát trạng thái đơn hàng.</p></aside>
+<p>Điểm cốt lõi của luồng này là toàn vẹn giao dịch. Hệ thống phải tránh hai lỗi nghiêm trọng: người dùng bị trừ tiền nhưng không nhận game, hoặc chưa thanh toán mà vẫn có game trong thư viện. Vì vậy nhóm dùng sequence purchase, activity purchase và state order để kiểm soát thứ tự xử lý và trạng thái đơn hàng.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click phóng to sequence purchase nếu cần chỉ rõ Order Service, Payment Gateway, Library Service.</li><li>Nhấn mạnh quy tắc: chưa thanh toán thành công thì chưa cấp license.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Idempotency là gì?</strong> Là cơ chế để một yêu cầu lặp lại nhiều lần vẫn chỉ tạo một kết quả, tránh thanh toán/cấp license trùng.</li><li><strong>Vì sao không cấp license trước rồi thanh toán sau?</strong> Vì sẽ tạo rủi ro người dùng có game khi giao dịch chưa thành công.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Khánh luồng khác">
@@ -609,9 +686,16 @@
       <div class="image-frame" style="min-height:280px"><img src="./assets/uml/activity_refund.png" alt="Activity refund" style="max-height:260px"></div>
     </div>
     <div class="footer"><span>UML liên quan: Sequence Login, Sequence Review, Activity Refund, State Refund</span><span class="slide-number" data-current="12" data-total="16"></span></div>
-    <aside class="notes"><p>Ngoài mua game, nhóm phân tích thêm các luồng đăng nhập, review và hoàn tiền vì đây là các nghiệp vụ ảnh hưởng trực tiếp đến bảo mật, chất lượng nội dung và quyền sở hữu số.</p>
-<p>Luồng đăng nhập có Steam Guard thể hiện yêu cầu bảo mật tài khoản. Account Service kiểm tra thông tin đăng nhập, sau đó Steam Guard xác thực bổ sung nếu thiết bị hoặc vị trí đăng nhập cần kiểm tra. Luồng review thể hiện việc kiểm soát đánh giá: người dùng chỉ được review khi có license hợp lệ trong thư viện, giúp hạn chế review giả.</p>
-<p>Luồng hoàn tiền phức tạp hơn vì có nhiều trạng thái. Refund có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin duyệt thủ công. Nếu hoàn tiền được chấp nhận, hệ thống phải gọi cổng thanh toán và thu hồi license. Vì vậy nhóm dùng cả activity refund và state refund để mô tả đầy đủ quy trình và vòng đời trạng thái.</p></aside>
+    <aside class="notes"><h3>Slide 12 - Đăng nhập, review, refund · Khánh</h3>
+<h4>Lời trình bày</h4>
+<p>Ngoài mua game, nhóm phân tích thêm các luồng đăng nhập, review và hoàn tiền vì đây là các nghiệp vụ ảnh hưởng trực tiếp đến bảo mật, chất lượng nội dung và quyền sở hữu số.</p>
+<p>Luồng đăng nhập có Steam Guard thể hiện yêu cầu bảo mật tài khoản. Account Service kiểm tra thông tin đăng nhập, sau đó Steam Guard xác thực bổ sung nếu thiết bị hoặc vị trí đăng nhập cần kiểm tra.</p>
+<p>Luồng review thể hiện việc kiểm soát đánh giá: người dùng chỉ được review khi có license hợp lệ trong thư viện, giúp hạn chế review giả. Đây là lý do Review Service phải kiểm tra với Library Service trước khi lưu review.</p>
+<p>Luồng hoàn tiền phức tạp hơn vì có nhiều trạng thái. Refund có thể bị từ chối, được duyệt tự động hoặc chuyển sang admin duyệt thủ công. Nếu hoàn tiền được chấp nhận, hệ thống phải gọi cổng thanh toán và thu hồi license. Vì vậy nhóm dùng cả activity refund và state refund để mô tả đầy đủ quy trình và vòng đời trạng thái.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click phóng to state refund hoặc activity refund để nói về các trạng thái.</li><li>Nhấn mạnh refund phải đi kèm thu hồi license.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Vì sao review phải kiểm tra library?</strong> Để bảo đảm chỉ người có quyền sở hữu/truy cập game mới được review.</li><li><strong>Refund thất bại thì sao?</strong> State refund có nhánh Failed và có thể quay lại ManualReview để xử lý lại.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Đạt kiến trúc">
@@ -630,9 +714,16 @@
     </div>
     <div class="why"><strong>Lý do chọn hướng này:</strong> mỗi miền nghiệp vụ có yêu cầu tải, bảo mật và dữ liệu khác nhau, nên tách service giúp dễ mở rộng và bảo trì.</div>
     <div class="footer"><span>UML liên quan: Architecture Diagram, Deployment Diagram</span><span class="slide-number" data-current="13" data-total="16"></span></div>
-    <aside class="notes"><p>Phần kiến trúc hệ thống do Đạt trình bày để giảm tải cho Đô và để trưởng nhóm kết nối phần nghiệp vụ với phần kỹ thuật. Kiến trúc được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này đi qua API Gateway thay vì gọi trực tiếp từng service.</p>
+    <aside class="notes"><h3>Slide 13 - Kiến trúc hệ thống · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Phần kiến trúc hệ thống do Đạt trình bày để giảm tải cho Đô và để trưởng nhóm kết nối phần nghiệp vụ với phần kỹ thuật. Kiến trúc được tách theo miền nghiệp vụ. Phía ngoài là Web Frontend và Steam Client. Hai thành phần này đi qua API Gateway thay vì gọi trực tiếp từng service.</p>
 <p>API Gateway đóng vai trò cửa vào chung, giúp định tuyến request, hỗ trợ xác thực và che bớt độ phức tạp của backend. Các service phía sau gồm Account, Catalog, Cart, Order, Library, Review, Publisher và Notification. Mỗi service phụ trách một miền nghiệp vụ riêng.</p>
-<p>Lý do chọn hướng tách service là vì từng miền có yêu cầu khác nhau. Catalog cần tìm kiếm nhanh và cache tốt. Order và Payment cần độ chính xác cao. Library cần quản lý license ổn định. Review cần kiểm tra quyền sở hữu và kiểm duyệt nội dung. Deployment diagram cho thấy hệ thống còn cần database, search index, CDN, event queue và cổng thanh toán để vận hành ở quy mô lớn.</p></aside>
+<p>Lý do chọn hướng tách service là vì từng miền có yêu cầu khác nhau. Catalog cần tìm kiếm nhanh và cache tốt. Order và Payment cần độ chính xác cao. Library cần quản lý license ổn định. Review cần kiểm tra quyền sở hữu và kiểm duyệt nội dung.</p>
+<p>Deployment diagram cho thấy hệ thống còn cần database, search index, CDN, event queue và cổng thanh toán để vận hành ở quy mô lớn. Đây là thiết kế phù hợp với hệ thống có nhiều nội dung media, nhiều giao dịch và nhiều người dùng đồng thời.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click phóng to deployment để nhìn rõ Browser, Steam Client, API Gateway, DB, Search Index, Queue, Payment Gateway.</li><li>Nói rõ tách service là lựa chọn thiết kế, không nhất thiết nhóm phải xây microservice thật.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Microservice có bắt buộc không?</strong> Không. Đây là mô hình thiết kế phù hợp với hệ thống lớn; triển khai thật có thể bắt đầu bằng modular monolith rồi tách service sau.</li><li><strong>CDN dùng để làm gì?</strong> Phục vụ static assets, media, ảnh/trailer game nhanh hơn và giảm tải backend.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Đô dữ liệu">
@@ -652,9 +743,16 @@
       </div>
     </div>
     <div class="footer"><span>UML liên quan: ERD, Class Design, State Refund</span><span class="slide-number" data-current="14" data-total="16"></span></div>
-    <aside class="notes"><p>Phần dữ liệu tập trung vào ERD. ERD thể hiện các thực thể chính và quan hệ giữa chúng. User có thể có nhiều order, review, wishlist và một library. Game thuộc publisher và có thể xuất hiện trong wishlist item, cart item, review và license.</p>
+    <aside class="notes"><h3>Slide 14 - ERD · Đô</h3>
+<h4>Lời trình bày</h4>
+<p>Phần dữ liệu tập trung vào ERD. ERD thể hiện các thực thể chính và quan hệ giữa chúng. User có thể có nhiều order, review, wishlist và một library. Game thuộc publisher và có thể xuất hiện trong wishlist item, cart item, review và license.</p>
 <p>Điểm quan trọng nhất là quan hệ giữa Library, License và Game. Library là thư viện của người dùng, còn License là quyền truy cập cụ thể đến một game. Người dùng không sở hữu game chỉ vì có order. Người dùng chỉ có quyền truy cập khi payment thành công và license được cấp vào library.</p>
-<p>Thiết kế này cũng hỗ trợ hoàn tiền. RefundRequest gắn với order và user. Nếu hoàn tiền được duyệt, hệ thống cập nhật trạng thái refund, cập nhật order và thu hồi license tương ứng. Nhờ đó dữ liệu có thể truy vết từ người dùng, đơn hàng, thanh toán đến quyền truy cập game.</p></aside>
+<p>Thiết kế này cũng hỗ trợ hoàn tiền. RefundRequest gắn với order và user. Nếu hoàn tiền được duyệt, hệ thống cập nhật trạng thái refund, cập nhật order và thu hồi license tương ứng.</p>
+<p>Nhờ đó dữ liệu có thể truy vết từ người dùng, đơn hàng, thanh toán đến quyền truy cập game. Đây là điểm quan trọng trong hệ thống bán sản phẩm số, vì quyền truy cập phải đi đúng với trạng thái thanh toán.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click phóng to ERD để chỉ User, Order, Payment, Library, License, Game, RefundRequest.</li><li>Nói rõ license là thực thể trung tâm giữa payment và library.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Vì sao cần bảng licenses?</strong> Vì order chỉ ghi nhận giao dịch; license mới biểu diễn quyền truy cập game trong thư viện.</li><li><strong>Refund liên quan ERD thế nào?</strong> RefundRequest gắn với order/user; khi duyệt phải cập nhật refund/order và thu hồi license.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Đô BCE Class">
@@ -670,9 +768,16 @@
       <div class="image-frame" style="min-height:290px"><img src="./assets/uml/class_design.png" alt="Class design" style="max-height:270px"></div>
     </div>
     <div class="footer"><span>UML liên quan: BCE Analysis, Class Design</span><span class="slide-number" data-current="15" data-total="16"></span></div>
-    <aside class="notes"><p>BCE và class design giúp chuyển từ phân tích nghiệp vụ sang thiết kế lớp. Trong BCE, Boundary là lớp giao tiếp với người dùng, ví dụ StorePageBoundary, CartBoundary và LoginBoundary. Boundary không xử lý nghiệp vụ sâu mà chuyển yêu cầu sang lớp Control.</p>
+    <aside class="notes"><h3>Slide 15 - BCE và Class Design · Đô</h3>
+<h4>Lời trình bày</h4>
+<p>BCE và class design giúp chuyển từ phân tích nghiệp vụ sang thiết kế lớp. Trong BCE, Boundary là lớp giao tiếp với người dùng, ví dụ StorePageBoundary, CartBoundary và LoginBoundary. Boundary không xử lý nghiệp vụ sâu mà chuyển yêu cầu sang lớp Control.</p>
 <p>Control là lớp điều phối nghiệp vụ. CatalogController xử lý tìm kiếm và lọc game. OrderController xử lý tạo đơn hàng và xác nhận thanh toán. AccountController xử lý đăng nhập và Steam Guard. RefundController xử lý yêu cầu hoàn tiền.</p>
-<p>Entity là các đối tượng dữ liệu cốt lõi như User, Game, Cart, Order, Payment, License, Review và RefundRequest. Class design làm rõ thuộc tính và phương thức của các lớp này. Nhóm chọn BCE vì nó giúp tổ chức hệ thống rõ ràng: giao diện nhận yêu cầu, control xử lý nghiệp vụ, entity lưu dữ liệu. Cách này cũng giúp việc chuyển sang thiết kế code sau này dễ hơn.</p></aside>
+<p>Entity là các đối tượng dữ liệu cốt lõi như User, Game, Cart, Order, Payment, License, Review và RefundRequest. Class design làm rõ thuộc tính và phương thức của các lớp này.</p>
+<p>Nhóm chọn BCE vì nó giúp tổ chức hệ thống rõ ràng: giao diện nhận yêu cầu, control xử lý nghiệp vụ, entity lưu dữ liệu. Cách này cũng giúp việc chuyển sang thiết kế code sau này dễ hơn, vì mỗi lớp có trách nhiệm rõ ràng.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Click phóng to BCE hoặc class design nếu cần.</li><li>Chốt bằng mô hình 3 lớp: Boundary - Control - Entity.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>BCE khác MVC không?</strong> BCE là mô hình phân tích hướng đối tượng; Boundary gần View/API, Control gần Controller/Service, Entity gần Model/Domain.</li><li><strong>Vì sao không để Boundary xử lý nghiệp vụ?</strong> Để tránh giao diện phụ thuộc nghiệp vụ sâu; nghiệp vụ nên nằm ở Control/Service để dễ bảo trì.</li></ul></aside>
   </section>
 
   <section class="slide" data-title="Kết luận">
@@ -686,9 +791,16 @@
     <div class="why"><strong>Thông điệp chính:</strong> với Steam Store, thiết kế đúng không chỉ là vẽ đủ sơ đồ, mà là bảo đảm thanh toán đúng, cấp license đúng, hoàn tiền đúng và dữ liệu truy vết được.</div>
     <p class="lede">Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe.</p>
     <div class="footer"><span>Q&A</span><span class="slide-number" data-current="16" data-total="16"></span></div>
-    <aside class="notes"><p>Để kết luận, nhóm đã hoàn thành bộ mô hình phân tích và thiết kế cho Steam Store. Kết quả gồm mô tả bài toán, yêu cầu chức năng, yêu cầu phi chức năng, phân quyền actor, giao diện chính, use case diagram, sequence diagram, activity diagram, state diagram, BCE, class design, ERD và deployment diagram.</p>
+    <aside class="notes"><h3>Slide 16 - Kết luận · Đạt</h3>
+<h4>Lời trình bày</h4>
+<p>Để kết luận, nhóm đã hoàn thành bộ mô hình phân tích và thiết kế cho Steam Store. Kết quả gồm mô tả bài toán, yêu cầu chức năng, yêu cầu phi chức năng, phân quyền actor, giao diện chính, use case diagram, sequence diagram, activity diagram, state diagram, BCE, class design, ERD và deployment diagram.</p>
 <p>Điểm quan trọng là các mô hình liên kết với nhau theo một chuỗi logic. Yêu cầu dẫn đến use case. Use case dẫn đến sequence và activity. State diagram kiểm soát vòng đời order và refund. BCE và class diagram mô tả tổ chức lớp. ERD mô tả dữ liệu. Deployment diagram mô tả cách triển khai hệ thống.</p>
-<p>Hướng phát triển tiếp theo là xây dựng prototype giao diện chi tiết hơn, đặc tả API, bổ sung test case cho thanh toán và hoàn tiền, đồng thời mô phỏng database. Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe, và sẵn sàng nhận câu hỏi hoặc góp ý.</p></aside>
+<p>Thông điệp chính của nhóm là: với Steam Store, thiết kế đúng không chỉ là vẽ đủ sơ đồ, mà là bảo đảm thanh toán đúng, cấp license đúng, hoàn tiền đúng và dữ liệu truy vết được.</p>
+<p>Hướng phát triển tiếp theo là xây dựng prototype giao diện chi tiết hơn, đặc tả API, bổ sung test case cho thanh toán và hoàn tiền, đồng thời mô phỏng database. Nhóm em xin cảm ơn thầy và các bạn đã lắng nghe, và sẵn sàng nhận câu hỏi hoặc góp ý.</p>
+<h4>Điểm cần nhấn trên slide</h4>
+<ul><li>Kết luận ngắn, không mở thêm ý mới quá nhiều.</li><li>Nếu còn thời gian, nhắc lại license là điểm cốt lõi của hệ thống.</li></ul>
+<h4>Kiến thức phòng khi thầy hỏi</h4>
+<ul><li><strong>Điểm mạnh nhất của báo cáo là gì?</strong> Các UML liên kết được với nhau, không vẽ rời rạc; nghiệp vụ thanh toán-license-refund được kiểm soát rõ.</li><li><strong>Hướng phát triển thực tế là gì?</strong> Prototype UI, API spec, test case, mô phỏng database và có thể triển khai bản demo nhỏ.</li></ul></aside>
   </section>
 
 </div>
